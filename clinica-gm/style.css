@@ -1011,6 +1011,16 @@ body {
   color: var(--color-text-muted);
   opacity: 0.5;
 }
+.testimonial-initial::after {
+  content: attr(data-initial);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  line-height: 1;
+}
+.testimonial-initial {
+  background: var(--color-surface-3);
+}
 .testimonial-author {
   font-size: var(--text-sm);
   font-weight: 600;
