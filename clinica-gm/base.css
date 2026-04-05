@@ -1,45 +1,201 @@
-/* base.css — Reset & Foundation */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ============================================================
+   base.css — Reset + Design Tokens + Foundations
+   "Clareza Silenciosa" — Clínica Gustavo Martins
+   ============================================================ */
 
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+/* ---------- Fontshare — General Sans ---------- */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap');
+
+/* ---------- Box-model Reset ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- CSS Custom Properties (Light Mode — Default) ---------- */
+:root {
+  /* Palette — Light */
+  --bg:          #F5F2EC;
+  --bg-surface:  #FDFCF9;
+  --text:        #1A1A1A;
+  --text-muted:  #6B6560;
+  --text-faint:  #A9A49E;
+  --accent:      #9C7D4A;
+  --accent-hover:#7D6239;
+  --border:      rgba(0,0,0,0.06);
+  --divider:     rgba(0,0,0,0.04);
+  --shadow-sm:   0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.08);
+
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-body:    'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Type scale (clamp for fluid) */
+  --text-xs:    0.75rem;   /* 12px */
+  --text-sm:    0.875rem;  /* 14px */
+  --text-base:  1rem;      /* 16px */
+  --text-lg:    1.125rem;  /* 18px */
+  --text-xl:    1.25rem;   /* 20px */
+  --text-2xl:   1.5rem;    /* 24px */
+  --text-3xl:   clamp(1.75rem, 2.5vw, 2.25rem);   /* 28-36px */
+  --text-4xl:   clamp(2rem, 3vw, 3rem);            /* 32-48px */
+  --text-hero:  clamp(3rem, 7vw, 7rem);            /* 48-112px */
+
+  /* Spacing scale */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:    cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out:cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 800px;
+  --header-h: 72px;
+
+  /* Logo filter — default (gold version visible in light mode) */
+  --logo-filter: none;
+}
+
+/* ---------- Dark Mode ---------- */
+[data-theme="dark"] {
+  --bg:          #0F0F0E;
+  --bg-surface:  #1A1918;
+  --text:        #E8E5E0;
+  --text-muted:  #8A8580;
+  --text-faint:  #5A5755;
+  --accent:      #C4A265;
+  --accent-hover:#A8893F;
+  --border:      rgba(255,255,255,0.08);
+  --divider:     rgba(255,255,255,0.04);
+  --shadow-sm:   0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.4);
+  --logo-filter: brightness(0) invert(1);
+}
+
+/* ---------- Document Reset ---------- */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
-  hanging-punctuation: first last;
-  scroll-padding-top: 5rem;
 }
 
 body {
-  min-height: 100dvh;
-  line-height: 1.6;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  min-height: 100dvh;
 }
 
-img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
-ul[role="list"], ol[role="list"] { list-style: none; }
-input, button, textarea, select { font: inherit; color: inherit; }
-
-h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
-p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
-
-::selection {
-  background: rgba(201, 168, 76, 0.3);
-  color: var(--color-text);
+/* ---------- Typography Reset ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  text-wrap: balance;
 }
 
+p {
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+iframe {
+  border: 0;
+}
+
+/* ---------- Utility Classes ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+/* ---------- Focus visible ---------- */
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
+/* ---------- Selection ---------- */
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-faint);
+  border-radius: 3px;
+}
+
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -47,20 +203,4 @@ p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-button { cursor: pointer; background: none; border: none; }
-table { border-collapse: collapse; width: 100%; }
-
-a, button, [role="button"], [role="link"], input, textarea, select {
-  transition: color 180ms cubic-bezier(0.16, 1, 0.3, 1),
-              background 180ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
 }

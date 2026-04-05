@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
 
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,6 +24,8 @@
 <link rel="canonical" href="https://clinica-gm.vercel.app/clinica-gm/">
 
 <!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 
 <!-- Styles -->
@@ -32,7 +33,7 @@
 <link rel="stylesheet" href="./style.css">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a1628'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23c9a84c' text-anchor='middle' font-weight='400'%3EGM%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F5F2EC'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%239C7D4A' text-anchor='middle' font-weight='400'%3EGM%3C/text%3E%3C/svg%3E">
 
 <!-- JSON-LD -->
 <script type="application/ld+json">
@@ -89,7 +90,7 @@
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#" class="logo" aria-label="Clínica Gustavo Martins — Página inicial">
-      <img src="./assets/logo-clinica-white.png" alt="Clínica Gustavo Martins" class="logo-img">
+      <img src="./assets/logo-clinica-gold.png" alt="Clínica Gustavo Martins" class="logo-img">
     </a>
 
     <nav class="nav-desktop" aria-label="Navegação principal">
@@ -102,11 +103,16 @@
       <a href="#contato">Contato</a>
     </nav>
 
-    <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold header-cta header-cta-desktop" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
-
-    <button class="hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold header-cta header-cta-desktop" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -122,40 +128,41 @@
   <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
 </nav>
 
+<!-- ============ MAIN ============ -->
+<main>
+
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <div class="hero-text reveal">
-      <div class="section-label">Clínica Gustavo Martins</div>
-      <h1>Realçamos sua <em>beleza única</em> com naturalidade e segurança</h1>
-      <p>Utilizamos técnicas minimamente invasivas para um resultado sutil e equilibrado. Agende sua consulta com um dos maiores especialistas em harmonização com naturalidade.</p>
-      <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Agendar uma Consulta
-      </a>
-    </div>
-    <div class="hero-video reveal">
-      <iframe
-        src="https://www.youtube.com/embed/0x4W8kIWo6s?rel=0&modestbranding=1"
-        title="Clínica Gustavo Martins — Harmonização Facial"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
-    </div>
+  <div class="hero-text">
+    <div class="section-label">Clínica Gustavo Martins</div>
+    <h1>Realçamos sua <em>beleza única</em> com naturalidade e segurança</h1>
+    <p>Utilizamos técnicas minimamente invasivas para um resultado sutil e equilibrado. Agende sua consulta com um dos maiores especialistas em harmonização com naturalidade.</p>
+    <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Agendar uma Consulta
+    </a>
+  </div>
+  <div class="hero-video">
+    <iframe
+      src="https://www.youtube.com/embed/0x4W8kIWo6s?rel=0&modestbranding=1"
+      title="Clínica Gustavo Martins — Harmonização Facial"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
   </div>
 </section>
 
+<!-- ============ SOBRE ============ -->
 <section class="sobre section-padding" id="sobre">
   <div class="container">
     <div class="sobre-grid">
-      <div class="sobre-photo reveal">
+      <div class="sobre-photo fade-in">
         <img src="./assets/dr-gustavo-novo.jpg"
              alt="Dr. Gustavo Martins — Especialista em Harmonização Facial"
              loading="lazy" width="600" height="800">
       </div>
-      <div class="sobre-content reveal">
+      <div class="sobre-content fade-in">
         <div class="section-label">Sobre o Especialista</div>
         <h2 class="section-title">Dr. Gustavo Martins</h2>
         <div class="gold-line"></div>
@@ -195,62 +202,64 @@
   </div>
 </section>
 
+<!-- ============ PROCEDIMENTOS ============ -->
 <section class="section-padding" id="procedimentos">
   <div class="container">
-    <div class="section-label reveal">Nossos Tratamentos</div>
-    <h2 class="section-title reveal">Procedimentos</h2>
-    <div class="gold-line reveal"></div>
+    <div class="section-label fade-in">Nossos Tratamentos</div>
+    <h2 class="section-title fade-in">Procedimentos</h2>
+    <div class="gold-line fade-in"></div>
 
-    <div class="proc-grid">
-      <div class="proc-card reveal">
+    <div class="proc-scroll">
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/procedimento-botox.jpg" alt="Toxina Botulínica (Botox)" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Toxina Botulínica (Botox)</h3>
           <p>Suaviza rugas e previne novos sinais do tempo, proporcionando uma aparência descansada e rejuvenescida sem perder sua naturalidade. Duração média: 4 a 6 meses.</p>
         </div>
-      </div>
-      <div class="proc-card reveal">
+      </article>
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/preenchimento.jpg" alt="Preenchimento Facial" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Preenchimento Facial</h3>
           <p>Repõe volume e redefine os contornos do rosto, proporcionando um aspecto jovem e equilibrado, sem exageros. Duração: 12 a 24 meses.</p>
         </div>
-      </div>
-      <div class="proc-card reveal">
+      </article>
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/bioestimuladores.jpg" alt="Bioestimuladores de Colágeno" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Bioestimuladores de Colágeno</h3>
           <p>Ativam a produção natural de colágeno, restaurando a firmeza, a elasticidade e o brilho da sua pele de maneira progressiva e duradoura. Estimulam colágeno por até 2 anos.</p>
         </div>
-      </div>
-      <div class="proc-card reveal">
+      </article>
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/fios-sustentacao.jpg" alt="Fios de Sustentação" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Fios de Sustentação</h3>
           <p>Promovem um efeito de lifting imediato e estimulam o colágeno, deixando sua pele mais firme e rejuvenescida sem necessidade de cirurgia.</p>
         </div>
-      </div>
-      <div class="proc-card reveal">
+      </article>
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/iskintech.jpg" alt="iSkinTech" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>iSkinTech</h3>
           <p>Protocolo que combina limpeza profunda e revitalização, deixando sua pele mais uniforme, hidratada e com um brilho saudável.</p>
         </div>
-      </div>
-      <div class="proc-card reveal">
+      </article>
+      <article class="proc-card fade-in">
         <img class="proc-card-img" src="assets/proc/labios.jpg" alt="Preenchimento Labial" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Preenchimento Labial</h3>
           <p>Realça o contorno, corrige assimetrias e devolve a hidratação, garantindo um efeito sofisticado e equilibrado.</p>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- ============ NATURALUP ============ -->
 <section class="naturalup section-padding" id="naturalup">
   <div class="container">
-    <div class="naturalup-header reveal">
+    <div class="naturalup-header fade-in">
       <div class="section-label">Protocolo Exclusivo</div>
       <div class="naturalup-logo-mark" aria-label="NaturalUp®">
         <span class="nu-word">Natural</span><span class="nu-up">Up</span><span class="nu-reg">®</span>
@@ -260,69 +269,70 @@
       <p class="section-subtitle" style="margin: 0 auto; font-size: var(--text-sm);">O NaturalUp® é um protocolo exclusivo criado pelo Dr. Gustavo Martins que integra diferentes técnicas para um rejuvenescimento natural e progressivo. Em vez de corrigir pontualmente, o método trata de forma contínua, respeitando a biologia de cada paciente.</p>
     </div>
 
-    <div class="pillars-grid">
-      <div class="pillar-card reveal">
+    <div class="pillars-timeline">
+      <div class="pillar-step fade-in">
         <div class="pillar-number">01</div>
         <h3>Suporte Estrutural</h3>
         <p>Devolvemos sustentação e projeção aos tecidos profundos da face com bioestimuladores de última geração.</p>
       </div>
-      <div class="pillar-card reveal">
+      <div class="pillar-step fade-in">
         <div class="pillar-number">02</div>
         <h3>Estimulação Global</h3>
         <p>Ativamos a produção natural de colágeno em toda a face, melhorando textura e firmeza de forma progressiva.</p>
       </div>
-      <div class="pillar-card reveal">
+      <div class="pillar-step fade-in">
         <div class="pillar-number">03</div>
         <h3>Toxina Inteligente</h3>
         <p>Aplicação estratégica para suavizar marcas de expressão, preservando a naturalidade dos movimentos.</p>
       </div>
-      <div class="pillar-card reveal">
+      <div class="pillar-step fade-in">
         <div class="pillar-number">04</div>
         <h3>Preenchimento Direcionado</h3>
         <p>Volume e definição onde realmente importa. Cada milímetro planejado para harmonia e equilíbrio.</p>
       </div>
-      <div class="pillar-card reveal">
+      <div class="pillar-step fade-in">
         <div class="pillar-number">05</div>
         <h3>Regeneração Tecidual</h3>
         <p>Materiais autólogos e regenerativos que ativam a capacidade natural do seu corpo de se reparar. Biologia a seu favor.</p>
       </div>
     </div>
 
-    <div class="naturalup-quote reveal">
+    <div class="naturalup-quote fade-in">
       <blockquote>"O tempo deixa de ser o vilão e passa a ser aliado dos seus procedimentos."</blockquote>
     </div>
 
-    <div class="naturalup-cta reveal">
+    <div class="naturalup-cta fade-in">
       <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Protocolo%20NaturalUp" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Conheça o Protocolo NaturalUp®</a>
     </div>
   </div>
 </section>
 
+<!-- ============ RESULTADOS ============ -->
 <section class="section-padding" id="resultados">
   <div class="container">
-    <div style="text-align: center; margin-bottom: var(--space-10);">
-      <div class="section-label reveal">Antes e Depois</div>
-      <h2 class="section-title reveal">Resultados dos nossos pacientes</h2>
-      <div class="gold-line reveal" style="margin-inline: auto;"></div>
+    <div style="text-align: center; margin-bottom: var(--space-12);">
+      <div class="section-label fade-in">Antes e Depois</div>
+      <h2 class="section-title fade-in">Resultados dos nossos pacientes</h2>
+      <div class="gold-line fade-in" style="margin-inline: auto;"></div>
     </div>
 
-    <div class="results-grid">
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-1.jpg" alt="Resultado paciente 1" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-3.jpg" alt="Resultado paciente 2" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-4.jpg" alt="Resultado paciente 4" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-5.jpg" alt="Resultado paciente 5" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-6.jpg" alt="Resultado paciente 6" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-7.jpg" alt="Resultado paciente 7" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-8.jpg" alt="Resultado paciente 8" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-9.jpg" alt="Resultado paciente 9" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-10.jpg" alt="Resultado paciente 10" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-12.jpg" alt="Resultado paciente 12" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-13.jpg" alt="Resultado paciente 13" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-14.jpg" alt="Resultado paciente 14" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap reveal" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-15.jpg" alt="Resultado paciente 15" loading="lazy" width="300" height="300"></div>
+    <div class="results-masonry">
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-1.jpg" alt="Resultado paciente 1" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-3.jpg" alt="Resultado paciente 2" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-4.jpg" alt="Resultado paciente 4" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-5.jpg" alt="Resultado paciente 5" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-6.jpg" alt="Resultado paciente 6" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-7.jpg" alt="Resultado paciente 7" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-8.jpg" alt="Resultado paciente 8" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-9.jpg" alt="Resultado paciente 9" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-10.jpg" alt="Resultado paciente 10" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-12.jpg" alt="Resultado paciente 12" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-13.jpg" alt="Resultado paciente 13" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-14.jpg" alt="Resultado paciente 14" loading="lazy" width="300" height="300"></div>
+      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-15.jpg" alt="Resultado paciente 15" loading="lazy" width="300" height="300"></div>
     </div>
 
-    <div class="counters reveal">
+    <div class="counters fade-in">
       <div class="counter">
         <div class="counter-number" data-target="2040">0</div>
         <div class="counter-label">Pacientes atendidos</div>
@@ -335,16 +345,17 @@
   </div>
 </section>
 
+<!-- ============ ODONTOLOGIA ============ -->
 <section class="odonto section-padding" id="odontologia">
   <div class="container">
-    <div class="odonto-header reveal">
+    <div class="odonto-header fade-in">
       <div class="section-label">Atendimento Odontológico</div>
       <h2 class="section-title">Odontologia Integrada</h2>
       <div class="gold-line"></div>
       <p class="section-subtitle" style="margin: 0 auto;">A Clínica Gustavo Martins conta com uma equipe odontológica completa, unindo estética e saúde bucal. Os atendimentos acontecem nas unidades Barra da Tijuca e Santa Cruz, com parceria em Botafogo.</p>
     </div>
 
-    <div class="odonto-team reveal">
+    <div class="odonto-team fade-in">
       <div class="odonto-member">
         <div class="odonto-member-photo">
           <img src="./assets/dra-leila-nova.jpg" alt="Dra. Leila Márcia" loading="lazy" width="300" height="300">
@@ -363,11 +374,11 @@
       </div>
     </div>
 
-    <div class="odonto-action-photo reveal">
+    <div class="odonto-action-photo fade-in">
       <img src="./assets/dra-leila-atendendo.jpeg" alt="Equipe odontológica em atendimento" loading="lazy" width="800" height="600">
     </div>
 
-    <div class="odonto-specialties reveal">
+    <div class="odonto-specialties fade-in">
       <h3 class="odonto-specialties-title">Especialidades</h3>
       <div class="odonto-spec-grid">
         <div class="odonto-spec-item">
@@ -389,7 +400,7 @@
       </div>
     </div>
 
-    <div class="odonto-botafogo reveal">
+    <div class="odonto-botafogo fade-in">
       <div class="odonto-botafogo-inner">
         <div class="odonto-botafogo-badge">Parceria</div>
         <h3>Unidade Botafogo</h3>
@@ -401,21 +412,22 @@
       </div>
     </div>
 
-    <div class="odonto-cta reveal">
+    <div class="odonto-cta fade-in">
       <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20odontol%C3%B3gica" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Agendar Consulta Odontológica</a>
     </div>
   </div>
 </section>
 
+<!-- ============ DEPOIMENTOS ============ -->
 <section class="depoimentos section-padding" id="depoimentos">
   <div class="container">
-    <div class="depoimentos-header reveal">
+    <div class="depoimentos-header fade-in">
       <div class="section-label">Avaliações</div>
       <h2 class="section-title">O que nossos pacientes dizem</h2>
       <div class="gold-line"></div>
     </div>
 
-    <div class="rating-display reveal" aria-label="Avaliação 5.0 de 5 estrelas, 51 avaliações no Google">
+    <div class="rating-display fade-in" aria-label="Avaliação 5.0 de 5 estrelas, 51 avaliações no Google">
       <div class="google-badge">
         <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         <span>Google</span>
@@ -430,196 +442,180 @@
       <span class="rating-text">5.0/5 estrelas · 51 avaliações no Google</span>
     </div>
 
-    <div class="testimonials-carousel" id="testimonialsCarousel">
-      <div class="testimonials-track-scroll">
+    <!-- Featured Testimonial (one at a time) -->
+    <div class="testimonial-featured" id="testimonialFeatured">
 
-        <!-- Fabio Paixão -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Simplesmente a melhor clínica que já fui! Fiz minha harmonização facial com o Dr. Gustavo Martins e o resultado ficou impecável — super natural, exatamente como eu queria. Recomendo de olhos fechados!"</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/fabio-paixao.jpg" alt="Fabio Paixão" loading="lazy"></div>
-              <div class="testimonial-author">Fabio Paixão</div>
-            </div>
-          </div>
+      <!-- Slide 1: Fabio Paixão -->
+      <div class="testimonial-slide active" data-slide="0">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-
-        <!-- Monique Monteiro -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"O Dr Gustavo é excepcional! Super atencioso, avalia a sua necessidade com cuidado e te deixa a vontade para esclarecer as dúvidas e preocupações. Super recomendo!"</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/monique-monteiro.jpg" alt="Monique Monteiro" loading="lazy"></div>
-              <div class="testimonial-author">Monique Monteiro</div>
-            </div>
-          </div>
+        <p class="testimonial-big-quote">Simplesmente a melhor clínica que já fui! Fiz minha harmonização facial com o Dr. Gustavo Martins e o resultado ficou impecável — super natural, exatamente como eu queria. Recomendo de olhos fechados!</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/fabio-paixao.jpg" alt="Fabio Paixão" loading="lazy"></div>
+          <span class="testimonial-slide-author">Fabio Paixão</span>
         </div>
-
-        <!-- Gabriela Sá -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span class="local-guide-badge">Local Guide</span>
-            </div>
-            <p>"Há cerca de quatro anos, conheci o Gustavo Martins, e desde então ele se tornou uma referência nos cuidados com meu rosto. A clínica dele é um lugar onde você realmente se sente acolhido, quase como estar em casa. Suuuuuper indico o Gustavo de olhos fechados!"</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/gabriela-sa.jpg" alt="Gabriela Sá" loading="lazy"></div>
-              <div class="testimonial-author">Gabriela Sá</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lais Guimaraes -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Dr Gustavo dispensa comentários, profissional de excelência! Todos os profissionais que atuam com ele também são impecáveis! Espaço super aconchegante! Obrigada por tanto carinho, estamos encantadas com vocês."</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/lais-guimaraes.jpg" alt="Lais Guimaraes" loading="lazy"></div>
-              <div class="testimonial-author">Lais Guimaraes</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Simone Sobrinho -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Maravilhosooooo! Adoro vir aqui, sempre cuidada com muito carinho, atenção e competência. Amo amo!"</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/simone-sobrinho.jpg" alt="Simone Sobrinho" loading="lazy"></div>
-              <div class="testimonial-author">Simone Sobrinho</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gustavo Auni -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Fiz diversos procedimentos com este especialista maravilhoso. Esse meu chará manda MUITO BEM!"</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/gustavo-auni.jpg" alt="Gustavo Auni" loading="lazy"></div>
-              <div class="testimonial-author">Gustavo Auni</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Luiz Guilherme -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Adoro ser atendida pelo Dr. Gustavo, um amor de ser humano e um super profissional."</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/luiz-guilherme.jpg" alt="Luiz Guilherme Ferreira" loading="lazy"></div>
-              <div class="testimonial-author">Luiz Guilherme Ferreira</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dani Yasmine -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Cada detalhe foi único! Assim que cheguei a Fernanda me ofereceu um cappuccino maravilhoso. A clínica tem uma energia incrível, com uma vista sensacional da Barra da Tijuca."</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/dani-yasmine.jpg" alt="Dani Yasmine" loading="lazy"></div>
-              <div class="testimonial-author">Dani Yasmine</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Glaucia De Araujo Souza -->
-        <div class="testimonial-card-v2 reveal">
-          <div class="testimonial-body">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-            <p>"Profissional maravilhoso! Ele cuida da minha harmonização facial com uma delicadeza e naturalidade que me encantam. Já fiz botox, preenchimento de lábios e mento, e todos os resultados ficam impecáveis, exatamente como sempre sonhei."</p>
-            <div class="testimonial-footer">
-              <div class="testimonial-avatar"><img src="assets/reviews/glaucia-souza.jpg" alt="Glaucia De Araujo Souza" loading="lazy"></div>
-              <div class="testimonial-author">Glaucia De Araujo Souza</div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn carousel-prev" aria-label="Anterior">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="carousel-btn carousel-next" aria-label="Próximo">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
+      <!-- Slide 2: Monique Monteiro -->
+      <div class="testimonial-slide" data-slide="1">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">O Dr Gustavo é excepcional! Super atencioso, avalia a sua necessidade com cuidado e te deixa a vontade para esclarecer as dúvidas e preocupações. Super recomendo!</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/monique-monteiro.jpg" alt="Monique Monteiro" loading="lazy"></div>
+          <span class="testimonial-slide-author">Monique Monteiro</span>
+        </div>
       </div>
+
+      <!-- Slide 3: Gabriela Sá -->
+      <div class="testimonial-slide" data-slide="2">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span class="local-guide-badge">Local Guide</span>
+        </div>
+        <p class="testimonial-big-quote">Há cerca de quatro anos, conheci o Gustavo Martins, e desde então ele se tornou uma referência nos cuidados com meu rosto. A clínica dele é um lugar onde você realmente se sente acolhido, quase como estar em casa. Suuuuuper indico o Gustavo de olhos fechados!</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/gabriela-sa.jpg" alt="Gabriela Sá" loading="lazy"></div>
+          <span class="testimonial-slide-author">Gabriela Sá</span>
+        </div>
+      </div>
+
+      <!-- Slide 4: Lais Guimaraes -->
+      <div class="testimonial-slide" data-slide="3">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Dr Gustavo dispensa comentários, profissional de excelência! Todos os profissionais que atuam com ele também são impecáveis! Espaço super aconchegante! Obrigada por tanto carinho, estamos encantadas com vocês.</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/lais-guimaraes.jpg" alt="Lais Guimaraes" loading="lazy"></div>
+          <span class="testimonial-slide-author">Lais Guimaraes</span>
+        </div>
+      </div>
+
+      <!-- Slide 5: Simone Sobrinho -->
+      <div class="testimonial-slide" data-slide="4">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Maravilhosooooo! Adoro vir aqui, sempre cuidada com muito carinho, atenção e competência. Amo amo!</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/simone-sobrinho.jpg" alt="Simone Sobrinho" loading="lazy"></div>
+          <span class="testimonial-slide-author">Simone Sobrinho</span>
+        </div>
+      </div>
+
+      <!-- Slide 6: Gustavo Auni -->
+      <div class="testimonial-slide" data-slide="5">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Fiz diversos procedimentos com este especialista maravilhoso. Esse meu chará manda MUITO BEM!</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/gustavo-auni.jpg" alt="Gustavo Auni" loading="lazy"></div>
+          <span class="testimonial-slide-author">Gustavo Auni</span>
+        </div>
+      </div>
+
+      <!-- Slide 7: Luiz Guilherme -->
+      <div class="testimonial-slide" data-slide="6">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Adoro ser atendida pelo Dr. Gustavo, um amor de ser humano e um super profissional.</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/luiz-guilherme.jpg" alt="Luiz Guilherme Ferreira" loading="lazy"></div>
+          <span class="testimonial-slide-author">Luiz Guilherme Ferreira</span>
+        </div>
+      </div>
+
+      <!-- Slide 8: Dani Yasmine -->
+      <div class="testimonial-slide" data-slide="7">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Cada detalhe foi único! Assim que cheguei a Fernanda me ofereceu um cappuccino maravilhoso. A clínica tem uma energia incrível, com uma vista sensacional da Barra da Tijuca.</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/dani-yasmine.jpg" alt="Dani Yasmine" loading="lazy"></div>
+          <span class="testimonial-slide-author">Dani Yasmine</span>
+        </div>
+      </div>
+
+      <!-- Slide 9: Glaucia De Araujo Souza -->
+      <div class="testimonial-slide" data-slide="8">
+        <div class="testimonial-slide-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-big-quote">Profissional maravilhoso! Ele cuida da minha harmonização facial com uma delicadeza e naturalidade que me encantam. Já fiz botox, preenchimento de lábios e mento, e todos os resultados ficam impecáveis, exatamente como sempre sonhei.</p>
+        <div class="testimonial-slide-footer">
+          <div class="testimonial-slide-avatar"><img src="assets/reviews/glaucia-souza.jpg" alt="Glaucia De Araujo Souza" loading="lazy"></div>
+          <span class="testimonial-slide-author">Glaucia De Araujo Souza</span>
+        </div>
+      </div>
+
     </div>
+
+    <div class="testimonial-nav">
+      <button class="carousel-btn carousel-prev" aria-label="Depoimento anterior" id="testPrev">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+      <button class="carousel-btn carousel-next" aria-label="Próximo depoimento" id="testNext">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
 <section class="section-padding" id="faq">
   <div class="container">
-    <div style="text-align: center; margin-bottom: var(--space-10);">
-      <div class="section-label reveal">Dúvidas</div>
-      <h2 class="section-title reveal">Perguntas Frequentes</h2>
-      <div class="gold-line reveal" style="margin-inline: auto;"></div>
+    <div style="text-align: center; margin-bottom: var(--space-12);">
+      <div class="section-label fade-in">Dúvidas</div>
+      <h2 class="section-title fade-in">Perguntas Frequentes</h2>
+      <div class="gold-line fade-in" style="margin-inline: auto;"></div>
     </div>
 
     <div class="faq-list">
-      <div class="faq-item reveal">
+      <div class="faq-item fade-in">
         <button class="faq-question" aria-expanded="false">
           Os procedimentos são dolorosos?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -628,7 +624,7 @@
           <p>Não! Utilizamos técnicas avançadas de anestesia para garantir o máximo de conforto. A experiência é tranquila e praticamente indolor.</p>
         </div>
       </div>
-      <div class="faq-item reveal">
+      <div class="faq-item fade-in">
         <button class="faq-question" aria-expanded="false">
           Quanto tempo dura o efeito dos procedimentos?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -637,7 +633,7 @@
           <p>A duração varia conforme o tratamento realizado. Quando o protocolo NaturalUp® é seguido, conseguimos montar um plano terapêutico personalizado para que os resultados dos procedimentos durem cada vez mais ao longo do tempo. A cada sessão, o organismo responde melhor aos estímulos, e o efeito acumulativo permite intervalos maiores entre os procedimentos.</p>
         </div>
       </div>
-      <div class="faq-item reveal">
+      <div class="faq-item fade-in">
         <button class="faq-question" aria-expanded="false">
           Em quanto tempo vejo os resultados?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -646,7 +642,7 @@
           <p>O tempo varia de acordo com o procedimento: Preenchimentos apresentam efeito imediato. Bioestimuladores começam a mostrar resultados progressivamente, com melhora visível após algumas semanas.</p>
         </div>
       </div>
-      <div class="faq-item reveal">
+      <div class="faq-item fade-in">
         <button class="faq-question" aria-expanded="false">
           Os produtos utilizados são seguros?
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -659,23 +655,24 @@
   </div>
 </section>
 
+<!-- ============ CLÍNICA / CONTATO ============ -->
 <section class="clinica section-padding" id="contato">
   <div class="container">
-    <div class="clinica-intro reveal">
+    <div class="clinica-intro fade-in">
       <div class="section-label">Conheça Nosso Espaço</div>
       <h2 class="section-title">Sobre a Clínica</h2>
       <div class="gold-line"></div>
       <p class="section-subtitle" style="margin: 0 auto;">A Clínica Gustavo Martins oferece uma abordagem multidisciplinar em estética e bem-estar, unindo tratamentos faciais, corporais, odontológicos e cirurgias estéticas da face. Com unidades na Barra da Tijuca, Copacabana e Santa Cruz, acolhemos cada paciente com excelência e humanidade.</p>
     </div>
 
-    <div class="clinica-gallery reveal">
+    <div class="clinica-gallery fade-in">
       <img src="./assets/sobre-clinica-02.png" alt="Recepção e interior da Clínica Gustavo Martins" loading="lazy" width="960" height="860">
     </div>
 
-    <div class="section-label reveal" style="margin-top: var(--space-12);">Nossas Unidades</div>
+    <div class="section-label fade-in" style="text-align:center; margin-top: var(--space-16);">Nossas Unidades</div>
 
     <div class="locations-grid">
-      <div class="location-card reveal">
+      <div class="location-card fade-in">
         <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.5537962617723!2d-43.328065524067895!3d-23.003429979187217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd1a2268b6c85%3A0xa4ace90e9b5306aa!2sBarra%20Space%20Center!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Barra da Tijuca"></iframe>
         <div class="location-info">
           <h3>Barra da Tijuca</h3>
@@ -683,7 +680,7 @@
           <p>Rio de Janeiro, RJ</p>
         </div>
       </div>
-      <div class="location-card reveal">
+      <div class="location-card fade-in">
         <iframe class="map-embed" src="https://www.google.com/maps?q=Av.+Nossa+Senhora+de+Copacabana+195,+Copacabana,+Rio+de+Janeiro&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Copacabana"></iframe>
         <div class="location-info">
           <h3>Copacabana</h3>
@@ -691,7 +688,7 @@
           <p>Rio de Janeiro, RJ</p>
         </div>
       </div>
-      <div class="location-card reveal">
+      <div class="location-card fade-in">
         <iframe class="map-embed" src="https://www.google.com/maps?q=Rua+Lopes+de+Moura+80,+Santa+Cruz,+Rio+de+Janeiro&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Santa Cruz"></iframe>
         <div class="location-info">
           <h3>Santa Cruz</h3>
@@ -703,6 +700,7 @@
   </div>
 </section>
 
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
@@ -761,7 +759,19 @@
 
 <!-- ============ SCRIPTS ============ -->
 <script>
-// Hamburger menu
+// ---- Dark Mode Toggle ----
+const themeToggle = document.getElementById('themeToggle');
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+});
+
+// ---- Hamburger Menu ----
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.getElementById('mobileNav');
 
@@ -772,7 +782,6 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
 });
 
-// Close mobile nav on link click
 mobileNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
@@ -781,7 +790,7 @@ mobileNav.querySelectorAll('a').forEach(link => {
   });
 });
 
-// FAQ accordion
+// ---- FAQ Accordion ----
 document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -795,7 +804,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Lightbox
+// ---- Lightbox ----
 function openLightbox(el) {
   const img = el.querySelector('img');
   document.getElementById('lightboxImg').src = img.src;
@@ -810,19 +819,25 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// Scroll reveal with IntersectionObserver
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
+// ---- Scroll Reveal (IntersectionObserver fallback for browsers without scroll-driven animations) ----
+if (!CSS.supports('animation-timeline', 'scroll()')) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    el.classList.add('reveal');
+    el.classList.remove('fade-in');
+    revealObserver.observe(el);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Counter animation
+// ---- Counter Animation ----
 function animateCounter(el) {
   const target = parseInt(el.dataset.target);
   const duration = 2000;
@@ -831,7 +846,7 @@ function animateCounter(el) {
   function update(now) {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(eased * target);
     el.textContent = current.toLocaleString('pt-BR') + '+';
     if (progress < 1) requestAnimationFrame(update);
@@ -850,34 +865,63 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.counter-number[data-target]').forEach(el => counterObserver.observe(el));
 
-// Testimonials Carousel
+// ---- Testimonial Carousel (Featured — one at a time) ----
 (function() {
-  const track = document.querySelector('.testimonials-track-scroll');
-  const prevBtn = document.querySelector('.carousel-prev');
-  const nextBtn = document.querySelector('.carousel-next');
-  if (!track || !prevBtn || !nextBtn) return;
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dotsContainer = document.getElementById('testimonialDots');
+  const prevBtn = document.getElementById('testPrev');
+  const nextBtn = document.getElementById('testNext');
+  if (!slides.length || !dotsContainer) return;
 
-  const scrollAmount = 360;
+  let current = 0;
+  const total = slides.length;
 
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  // Create dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Depoimento ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Auto-advance every 6s
+  let autoplay = setInterval(() => goTo(current + 1), 6000);
+  const container = document.getElementById('testimonialFeatured');
+  container.addEventListener('mouseenter', () => clearInterval(autoplay));
+  container.addEventListener('mouseleave', () => {
+    autoplay = setInterval(() => goTo(current + 1), 6000);
   });
 })();
 
-// Header scroll behavior
+// ---- Header Hide/Show on Scroll ----
 let lastScroll = 0;
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
   const current = window.scrollY;
+
   if (current > 100) {
-    header.style.boxShadow = 'var(--shadow-md)';
+    if (current > lastScroll && current > 200) {
+      header.classList.add('hidden');
+    } else {
+      header.classList.remove('hidden');
+    }
   } else {
-    header.style.boxShadow = 'none';
+    header.classList.remove('hidden');
   }
+
   lastScroll = current;
 }, { passive: true });
 </script>
