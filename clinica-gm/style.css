@@ -611,18 +611,18 @@
 }
 
 .results-masonry {
-  columns: 4;
-  column-gap: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
   margin-bottom: var(--space-16);
 }
 
 .result-img-wrap {
-  break-inside: avoid;
-  margin-bottom: var(--space-4);
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: zoom-in;
   transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+  aspect-ratio: 1 / 1;
 }
 
 .result-img-wrap:hover {
@@ -634,6 +634,8 @@
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  image-rendering: auto;
 }
 
 /* Counters */
@@ -724,23 +726,30 @@
   font-weight: 300;
 }
 
-/* Action photo */
-.odonto-action-photo {
-  max-width: 800px;
+/* Action photo + Specialties row */
+.odonto-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+  max-width: 960px;
   margin: 0 auto var(--space-12);
+}
+
+.odonto-action-photo {
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .odonto-action-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 /* Specialties */
 .odonto-specialties {
-  max-width: 700px;
-  margin: 0 auto var(--space-12);
 }
 
 .odonto-specialties-title {
@@ -1208,6 +1217,14 @@
   color: var(--accent);
 }
 
+.footer-contact .btn-gold {
+  color: #fff;
+}
+
+.footer-contact .btn-gold:hover {
+  color: #fff;
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: var(--space-8);
@@ -1384,7 +1401,12 @@
   }
 
   .results-masonry {
-    columns: 3;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .odonto-action-row {
+    grid-template-columns: 1fr;
+    max-width: 600px;
   }
 
   .odonto-team {
@@ -1459,7 +1481,7 @@
   }
 
   .results-masonry {
-    columns: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .counters {
