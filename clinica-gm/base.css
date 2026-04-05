@@ -21,9 +21,9 @@
   /* Palette — Light */
   --bg:          #F5F2EC;
   --bg-surface:  #FDFCF9;
-  --text:        #1A1A1A;
-  --text-muted:  #6B6560;
-  --text-faint:  #A9A49E;
+  --text:        #0a1628;
+  --text-muted:  #2a3a52;
+  --text-faint:  #7a8699;
   --accent:      #9C7D4A;
   --accent-hover:#7D6239;
   --border:      rgba(0,0,0,0.06);
@@ -84,20 +84,20 @@
   --logo-filter: none;
 }
 
-/* ---------- Dark Mode ---------- */
+/* ---------- Dark Mode — Navy Blue ---------- */
 [data-theme="dark"] {
-  --bg:          #0F0F0E;
-  --bg-surface:  #1A1918;
+  --bg:          #0a1628;
+  --bg-surface:  #0f1d34;
   --text:        #E8E5E0;
-  --text-muted:  #8A8580;
-  --text-faint:  #5A5755;
+  --text-muted:  #9EAABB;
+  --text-faint:  #5A6678;
   --accent:      #C4A265;
   --accent-hover:#A8893F;
   --border:      rgba(255,255,255,0.08);
-  --divider:     rgba(255,255,255,0.04);
-  --shadow-sm:   0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md:   0 4px 16px rgba(0,0,0,0.3);
-  --shadow-lg:   0 8px 40px rgba(0,0,0,0.4);
+  --divider:     rgba(255,255,255,0.06);
+  --shadow-sm:   0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:   0 8px 40px rgba(0,0,0,0.5);
   --logo-filter: brightness(0) invert(1);
 }
 
