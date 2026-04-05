@@ -23,10 +23,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://clinica-gm.vercel.app/clinica-gm/">
 
-<!-- Fonts -->
+<!-- Fonts — Montserrat from Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 
 <!-- Styles -->
 <link rel="stylesheet" href="./base.css">
@@ -104,10 +103,6 @@
     </nav>
 
     <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
       <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold header-cta header-cta-desktop" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
       <button class="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -135,7 +130,7 @@
 <section class="hero" id="hero">
   <div class="hero-text">
     <div class="section-label">Clínica Gustavo Martins</div>
-    <h1>Realçamos sua <em>beleza única</em> com naturalidade e segurança</h1>
+    <h1>Realçamos sua <span class="accent-text">beleza única</span> com naturalidade e segurança</h1>
     <p>Utilizamos técnicas minimamente invasivas para um resultado sutil e equilibrado. Agende sua consulta com um dos maiores especialistas em harmonização com naturalidade.</p>
     <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -211,42 +206,35 @@
 
     <div class="proc-scroll">
       <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/procedimento-botox.jpg" alt="Toxina Botulínica (Botox)" loading="lazy" width="400" height="300">
+        <img class="proc-card-img" src="assets/proc/proc-botox.jpg" alt="Toxina Botulínica (Botox)" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Toxina Botulínica (Botox)</h3>
           <p>Suaviza rugas e previne novos sinais do tempo, proporcionando uma aparência descansada e rejuvenescida sem perder sua naturalidade. Duração média: 4 a 6 meses.</p>
         </div>
       </article>
       <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/preenchimento.jpg" alt="Preenchimento Facial" loading="lazy" width="400" height="300">
+        <img class="proc-card-img" src="assets/proc/proc-preenchimento.jpg" alt="Preenchimento Facial" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Preenchimento Facial</h3>
           <p>Repõe volume e redefine os contornos do rosto, proporcionando um aspecto jovem e equilibrado, sem exageros. Duração: 12 a 24 meses.</p>
         </div>
       </article>
       <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/bioestimuladores.jpg" alt="Bioestimuladores de Colágeno" loading="lazy" width="400" height="300">
+        <img class="proc-card-img" src="assets/proc/proc-bioestimuladores.jpg" alt="Bioestimuladores de Colágeno" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Bioestimuladores de Colágeno</h3>
           <p>Ativam a produção natural de colágeno, restaurando a firmeza, a elasticidade e o brilho da sua pele de maneira progressiva e duradoura. Estimulam colágeno por até 2 anos.</p>
         </div>
       </article>
       <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/fios-sustentacao.jpg" alt="Fios de Sustentação" loading="lazy" width="400" height="300">
+        <img class="proc-card-img" src="assets/proc/proc-fios.jpg" alt="Fios de Sustentação" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Fios de Sustentação</h3>
           <p>Promovem um efeito de lifting imediato e estimulam o colágeno, deixando sua pele mais firme e rejuvenescida sem necessidade de cirurgia.</p>
         </div>
       </article>
       <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/iskintech.jpg" alt="iSkinTech" loading="lazy" width="400" height="300">
-        <div class="proc-card-body">
-          <h3>iSkinTech</h3>
-          <p>Protocolo que combina limpeza profunda e revitalização, deixando sua pele mais uniforme, hidratada e com um brilho saudável.</p>
-        </div>
-      </article>
-      <article class="proc-card fade-in">
-        <img class="proc-card-img" src="assets/proc/labios.jpg" alt="Preenchimento Labial" loading="lazy" width="400" height="300">
+        <img class="proc-card-img" src="assets/proc/proc-labios.jpg" alt="Preenchimento Labial" loading="lazy" width="400" height="300">
         <div class="proc-card-body">
           <h3>Preenchimento Labial</h3>
           <p>Realça o contorno, corrige assimetrias e devolve a hidratação, garantindo um efeito sofisticado e equilibrado.</p>
@@ -257,7 +245,7 @@
 </section>
 
 <!-- ============ NATURALUP ============ -->
-<section class="naturalup section-padding" id="naturalup">
+<section class="naturalup section-padding section-dark" id="naturalup">
   <div class="container">
     <div class="naturalup-header fade-in">
       <div class="section-label">Protocolo Exclusivo</div>
@@ -419,7 +407,7 @@
 </section>
 
 <!-- ============ DEPOIMENTOS ============ -->
-<section class="depoimentos section-padding" id="depoimentos">
+<section class="depoimentos section-padding section-dark" id="depoimentos">
   <div class="container">
     <div class="depoimentos-header fade-in">
       <div class="section-label">Avaliações</div>
@@ -703,12 +691,12 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer">
+<footer class="footer section-dark">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo" aria-label="Clínica Gustavo Martins">
-          <img src="assets/logo-clinica-gold.png" alt="Clínica Gustavo Martins" class="logo-img footer-logo-img">
+          <img src="assets/logo-clinica-white.png" alt="Clínica Gustavo Martins" class="logo-img footer-logo-img">
         </a>
         <p>Harmonização facial com naturalidade e segurança. Referência em estética facial no Rio de Janeiro.</p>
       </div>
@@ -759,18 +747,6 @@
 
 <!-- ============ SCRIPTS ============ -->
 <script>
-// ---- Dark Mode Toggle ----
-const themeToggle = document.getElementById('themeToggle');
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.setAttribute('data-theme', 'dark');
-}
-
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-});
-
 // ---- Hamburger Menu ----
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.getElementById('mobileNav');

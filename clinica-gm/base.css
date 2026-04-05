@@ -1,13 +1,10 @@
 /* ============================================================
    base.css — Reset + Design Tokens + Foundations
-   "Clareza Silenciosa" — Clínica Gustavo Martins
+   Clínica Gustavo Martins — Redesign 2026
    ============================================================ */
 
-/* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-
-/* ---------- Fontshare — General Sans ---------- */
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap');
+/* ---------- Google Fonts — Montserrat ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* ---------- Box-model Reset ---------- */
 *, *::before, *::after {
@@ -16,9 +13,9 @@
   box-sizing: border-box;
 }
 
-/* ---------- CSS Custom Properties (Light Mode — Default) ---------- */
+/* ---------- CSS Custom Properties (Light — Default) ---------- */
 :root {
-  /* Palette — Light */
+  /* Palette — Light (cream) */
   --bg:          #F5F2EC;
   --bg-surface:  #FDFCF9;
   --text:        #0a1628;
@@ -32,9 +29,9 @@
   --shadow-md:   0 4px 16px rgba(0,0,0,0.06);
   --shadow-lg:   0 8px 40px rgba(0,0,0,0.08);
 
-  /* Typography */
-  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --font-body:    'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Typography — Montserrat only */
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body:    'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Type scale (clamp for fluid) */
   --text-xs:    0.75rem;   /* 12px */
@@ -45,7 +42,7 @@
   --text-2xl:   1.5rem;    /* 24px */
   --text-3xl:   clamp(1.75rem, 2.5vw, 2.25rem);   /* 28-36px */
   --text-4xl:   clamp(2rem, 3vw, 3rem);            /* 32-48px */
-  --text-hero:  clamp(3rem, 7vw, 7rem);            /* 48-112px */
+  --text-hero:  clamp(3rem, 7vw, 5rem);            /* 48-80px */
 
   /* Spacing scale */
   --space-1:  0.25rem;
@@ -79,16 +76,13 @@
   --container-max: 1200px;
   --container-narrow: 800px;
   --header-h: 72px;
-
-  /* Logo filter — default (gold version visible in light mode) */
-  --logo-filter: none;
 }
 
-/* ---------- Dark Mode — Navy Blue ---------- */
-[data-theme="dark"] {
+/* ---------- Dark Section Overrides ---------- */
+.section-dark {
   --bg:          #0a1628;
   --bg-surface:  #0f1d34;
-  --text:        #E8E5E0;
+  --text:        #e8e6e1;
   --text-muted:  #9EAABB;
   --text-faint:  #5A6678;
   --accent:      #C4A265;
@@ -98,7 +92,9 @@
   --shadow-sm:   0 1px 2px rgba(0,0,0,0.3);
   --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
   --shadow-lg:   0 8px 40px rgba(0,0,0,0.5);
-  --logo-filter: brightness(0) invert(1);
+
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 /* ---------- Document Reset ---------- */
@@ -115,6 +111,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
+  font-weight: 400;
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
@@ -125,7 +122,7 @@ body {
 /* ---------- Typography Reset ---------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--text);
   text-wrap: balance;
