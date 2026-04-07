@@ -1364,6 +1364,60 @@
 }
 
 /* ===================== WHATSAPP FLOAT ===================== */
+/* Floating Schedule Button */
+.fab-schedule {
+  position: fixed;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(196, 162, 101, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.fab-schedule.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.fab-schedule:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(196, 162, 101, 0.55);
+  color: #fff;
+}
+
+.fab-schedule svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .fab-schedule span {
+    display: none;
+  }
+  .fab-schedule {
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: var(--space-6);
