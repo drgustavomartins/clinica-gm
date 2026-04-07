@@ -1073,16 +1073,17 @@ document.querySelectorAll('.counter-number[data-target]').forEach(el => counterO
     dotsContainer.children[current].classList.add('active');
   }
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
+  // Auto-advance every 5s — resets on manual navigation
+  let autoplay;
+  function startAutoplay() {
+    clearInterval(autoplay);
+    autoplay = setInterval(() => goTo(current + 1), 5000);
+  }
 
-  // Auto-advance every 6s
-  let autoplay = setInterval(() => goTo(current + 1), 6000);
-  const container = document.getElementById('testimonialFeatured');
-  container.addEventListener('mouseenter', () => clearInterval(autoplay));
-  container.addEventListener('mouseleave', () => {
-    autoplay = setInterval(() => goTo(current + 1), 6000);
-  });
+  prevBtn.addEventListener('click', () => { goTo(current - 1); startAutoplay(); });
+  nextBtn.addEventListener('click', () => { goTo(current + 1); startAutoplay(); });
+
+  startAutoplay();
 })();
 
 // ---- Header Hide/Show on Scroll ----
