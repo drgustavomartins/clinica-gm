@@ -327,20 +327,50 @@
       <div class="gold-line fade-in" style="margin-inline: auto;"></div>
     </div>
 
-    <div class="results-masonry">
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-1.jpg" alt="Resultado paciente 1" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-3.jpg" alt="Resultado paciente 2" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-4.jpg" alt="Resultado paciente 4" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-5.jpg" alt="Resultado paciente 5" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-6.jpg" alt="Resultado paciente 6" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-7.jpg" alt="Resultado paciente 7" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-8.jpg" alt="Resultado paciente 8" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-9.jpg" alt="Resultado paciente 9" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-10.jpg" alt="Resultado paciente 10" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-12.jpg" alt="Resultado paciente 12" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-13.jpg" alt="Resultado paciente 13" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-14.jpg" alt="Resultado paciente 14" loading="lazy" width="300" height="300"></div>
-      <div class="result-img-wrap fade-in" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/resultado-15.jpg" alt="Resultado paciente 15" loading="lazy" width="300" height="300"></div>
+    <!-- Filtros por categoria -->
+    <div class="result-filters fade-in" role="tablist" aria-label="Filtrar por procedimento">
+      <button class="result-filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+      <button class="result-filter-btn" data-filter="harmonia" role="tab" aria-selected="false">Harmonização Facial</button>
+      <button class="result-filter-btn" data-filter="labios" role="tab" aria-selected="false">Lábios</button>
+      <button class="result-filter-btn" data-filter="botox" role="tab" aria-selected="false">Toxina Botulínica</button>
+      <button class="result-filter-btn" data-filter="olheira" role="tab" aria-selected="false">Olheiras</button>
+    </div>
+
+    <div class="results-masonry" id="resultsMasonry">
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-01.png" alt="Harmonização Facial — paciente 1" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-02.png" alt="Harmonização Facial — paciente 2" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-03.png" alt="Harmonização Facial — paciente 3" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-04.png" alt="Harmonização Facial — paciente 4" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-05.png" alt="Harmonização Facial — paciente 5" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-06.png" alt="Harmonização Facial — paciente 6" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-07.png" alt="Harmonização Facial — paciente 7" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-08.png" alt="Harmonização Facial — paciente 8" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-09.png" alt="Harmonização Facial — paciente 9" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-10.png" alt="Harmonização Facial — paciente 10" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-11.png" alt="Harmonização Facial — paciente 11" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-12.png" alt="Harmonização Facial — paciente 12" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-13.png" alt="Harmonização Facial — paciente 13" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-14.png" alt="Harmonização Facial — paciente 14" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-15.png" alt="Harmonização Facial — paciente 15" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-16.png" alt="Harmonização Facial — paciente 16" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-17.png" alt="Harmonização Facial — paciente 17" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-18.png" alt="Harmonização Facial — paciente 18" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-19.png" alt="Harmonização Facial — paciente 19" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-20.png" alt="Harmonização Facial — paciente 20" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-21.png" alt="Harmonização Facial — paciente 21" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-22.png" alt="Harmonização Facial — paciente 22" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-23.png" alt="Harmonização Facial — paciente 23" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-24.png" alt="Harmonização Facial — paciente 24" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-25.png" alt="Harmonização Facial — paciente 25" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="harmonia" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/harmonia-26.png" alt="Harmonização Facial — paciente 26" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="labios" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/labios-01.png" alt="Preenchimento Labial — paciente 1" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="labios" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/labios-02.png" alt="Preenchimento Labial — paciente 2" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="labios" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/labios-03.png" alt="Preenchimento Labial — paciente 3" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="labios" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/labios-04.png" alt="Preenchimento Labial — paciente 4" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="botox" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/botox-01.png" alt="Toxina Botulínica — paciente 1" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="botox" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/botox-02.png" alt="Toxina Botulínica — paciente 2" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="olheira" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/olheira-01.png" alt="Tratamento de Olheiras — paciente 1" loading="lazy"></div>
+      <div class="result-img-wrap fade-in" data-cat="olheira" role="button" tabindex="0" onclick="openLightbox(this)" onkeydown="if(event.key==='Enter')openLightbox(this)"><img src="assets/resultados/olheira-02.png" alt="Tratamento de Olheiras — paciente 2" loading="lazy"></div>
     </div>
 
     <div class="counters fade-in">
@@ -953,6 +983,32 @@ window.addEventListener('scroll', () => {
 
   lastScroll = current;
 }, { passive: true });
+
+// ---- Result Gallery Filter ----
+(function() {
+  const filterBtns = document.querySelectorAll('.result-filter-btn');
+  const resultItems = document.querySelectorAll('.result-img-wrap[data-cat]');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      resultItems.forEach(function(item) {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+})();
 </script>
 
 </body>
