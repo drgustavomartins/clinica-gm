@@ -470,6 +470,87 @@
 }
 
 /* ===================== NATURALUP ===================== */
+/* ============================================================
+   QUEIXAS / CONCERNS SECTION
+   ============================================================ */
+
+.concerns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+.concern-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.concern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.concern-icon {
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+
+.concern-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.concern-desc {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Bridge */
+.concerns-bridge {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.concerns-bridge-text {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-8);
+}
+
+.concerns-bridge-text strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nu-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.nu-pillar-tag {
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .naturalup {
   text-align: center;
 }
@@ -1384,6 +1465,10 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
+  .concerns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav-desktop {
     display: none;
   }
@@ -1468,6 +1553,10 @@
 @media (max-width: 640px) {
   :root {
     --header-h: 60px;
+  }
+
+  .concerns-grid {
+    grid-template-columns: 1fr;
   }
 
   .section-padding {
