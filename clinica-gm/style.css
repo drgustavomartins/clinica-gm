@@ -213,10 +213,9 @@
    HERO — Split layout (text left, vertical video right)
    ============================================================ */
 .hero {
-  min-height: 100dvh;
   display: flex;
-  align-items: center;
-  padding: calc(var(--header-h) + var(--space-12)) var(--space-6) var(--space-12);
+  align-items: flex-start;
+  padding: calc(var(--header-h) + var(--space-12)) var(--space-6) var(--space-16);
   position: relative;
   overflow: hidden;
   background-color: #FFFFFF;
