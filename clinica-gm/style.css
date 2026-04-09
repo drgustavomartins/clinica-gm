@@ -264,9 +264,37 @@
   font-size: var(--text-lg);
   color: var(--text-muted);
   max-width: 520px;
-  margin: 0 0 var(--space-10);
+  margin: 0 0 var(--space-8);
   line-height: 1.7;
   font-weight: 300;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.hero-cta-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.hero-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero-unit-btn {
+  font-size: var(--text-sm) !important;
+  padding: 0.6rem 1.1rem !important;
+  gap: var(--space-2) !important;
+  white-space: nowrap;
 }
 
 /* Vertical video — 9:16 */
