@@ -209,22 +209,31 @@
 }
 
 /* ===================== HERO ===================== */
+/* ============================================================
+   HERO — Split layout (text left, vertical video right)
+   ============================================================ */
 .hero {
   min-height: 100dvh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: calc(var(--header-h) + var(--space-16)) var(--space-6) var(--space-16);
+  padding: calc(var(--header-h) + var(--space-12)) var(--space-6) var(--space-12);
   position: relative;
   overflow: hidden;
   background-color: #FFFFFF;
 }
 
-.hero-text {
-  max-width: 900px;
+.hero-inner {
+  max-width: var(--container-max);
   margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero .section-label {
@@ -241,7 +250,6 @@
   font-family: var(--font-display);
   font-size: var(--text-hero);
   font-weight: 600;
-  font-style: normal;
   line-height: 1.1;
   color: #0B1D3A;
   margin-bottom: var(--space-8);
@@ -250,32 +258,43 @@
 
 .hero h1 .accent-text {
   color: var(--accent);
-  font-style: normal;
   font-weight: 700;
 }
 
 .hero-text > p {
   font-size: var(--text-lg);
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto var(--space-10);
+  max-width: 520px;
+  margin: 0 0 var(--space-10);
   line-height: 1.7;
   font-weight: 300;
 }
 
+/* Vertical video — 9:16 */
 .hero-video {
-  width: 100%;
-  max-width: 800px;
-  margin: var(--space-16) auto 0;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-video iframe {
+.hero-video-frame {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(11, 29, 58, 0.22),
+    0 8px 24px rgba(11, 29, 58, 0.12),
+    0 0 0 1px rgba(201, 168, 76, 0.18);
+  position: relative;
+}
+
+.hero-video-frame iframe {
   width: 100%;
   height: 100%;
+  display: block;
+  border: none;
 }
 
 /* Hero load animation */
@@ -1525,6 +1544,22 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
+  /* Hero — stack on tablet */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .hero-text > p {
+    margin-inline: auto;
+  }
+  .hero-video {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
   .concerns-grid {
     grid-template-columns: repeat(2, 1fr);
   }
