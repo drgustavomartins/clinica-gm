@@ -873,13 +873,13 @@
   font-weight: 300;
 }
 
-/* Action photo + Specialties row */
+/* Vídeo | Especialidades | Vídeo */
 .odonto-action-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-10);
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: var(--space-8);
   align-items: center;
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto var(--space-12);
 }
 
@@ -895,15 +895,8 @@
   aspect-ratio: 4 / 3;
 }
 
-/* Vídeos das doutoras */
-.odonto-videos {
-  display: flex;
-  gap: var(--space-4);
-  align-items: flex-start;
-}
-
+/* Card de vídeo individual */
 .odonto-video-card {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1676,10 +1669,9 @@
     max-width: 600px;
   }
 
-  .odonto-videos {
-    flex-direction: row;
-    max-width: 400px;
-    margin: 0 auto;
+  .odonto-action-row {
+    grid-template-columns: 1fr;
+    max-width: 360px;
   }
 
   .odonto-team {
