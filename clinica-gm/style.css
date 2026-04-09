@@ -895,6 +895,46 @@
   aspect-ratio: 4 / 3;
 }
 
+/* Vídeos das doutoras */
+.odonto-videos {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.odonto-video-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.odonto-video-wrap {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--text);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.odonto-video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+.odonto-video-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 /* Specialties */
 .odonto-specialties {
 }
@@ -1634,6 +1674,12 @@
   .odonto-action-row {
     grid-template-columns: 1fr;
     max-width: 600px;
+  }
+
+  .odonto-videos {
+    flex-direction: row;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .odonto-team {
