@@ -120,7 +120,7 @@
 
 .btn-gold:hover {
   background: var(--accent-hover);
-  box-shadow: 0 4px 20px rgba(156, 125, 74, 0.3);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
 }
 
 .btn-outline {
@@ -219,7 +219,7 @@
   padding: calc(var(--header-h) + var(--space-16)) var(--space-6) var(--space-16);
   position: relative;
   overflow: hidden;
-  background-color: #F5F2EC;
+  background-color: #FFFFFF;
 }
 
 .hero-text {
@@ -243,7 +243,7 @@
   font-weight: 600;
   font-style: normal;
   line-height: 1.1;
-  color: #0a1628;
+  color: #0B1D3A;
   margin-bottom: var(--space-8);
   letter-spacing: -0.02em;
 }
@@ -1382,7 +1382,7 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(196, 162, 101, 0.4);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
@@ -1398,7 +1398,7 @@
 
 .fab-schedule:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(196, 162, 101, 0.55);
+  box-shadow: 0 6px 28px rgba(201, 168, 76, 0.55);
   color: #fff;
 }
 

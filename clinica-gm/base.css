@@ -16,15 +16,15 @@
 /* ---------- CSS Custom Properties (Light — Default) ---------- */
 :root {
   /* Palette — Light (cream) */
-  --bg:          #F5F2EC;
-  --bg-surface:  #FDFCF9;
-  --text:        #0a1628;
-  --text-muted:  #2a3a52;
-  --text-faint:  #7a8699;
-  --accent:      #9C7D4A;
-  --accent-hover:#7D6239;
-  --border:      rgba(0,0,0,0.06);
-  --divider:     rgba(0,0,0,0.04);
+  --bg:          #FFFFFF;
+  --bg-surface:  #F4F7FB;
+  --text:        #0B1D3A;
+  --text-muted:  #2E4068;
+  --text-faint:  #6A7E9C;
+  --accent:      #C9A84C;
+  --accent-hover:#AA8A2E;
+  --border:      rgba(11,29,58,0.08);
+  --divider:     rgba(11,29,58,0.05);
   --shadow-sm:   0 1px 2px rgba(0,0,0,0.04);
   --shadow-md:   0 4px 16px rgba(0,0,0,0.06);
   --shadow-lg:   0 8px 40px rgba(0,0,0,0.08);
@@ -80,15 +80,15 @@
 
 /* ---------- Dark Section Overrides ---------- */
 .section-dark {
-  --bg:          #0a1628;
-  --bg-surface:  #0f1d34;
-  --text:        #e8e6e1;
-  --text-muted:  #9EAABB;
-  --text-faint:  #5A6678;
-  --accent:      #C4A265;
-  --accent-hover:#A8893F;
-  --border:      rgba(255,255,255,0.08);
-  --divider:     rgba(255,255,255,0.06);
+  --bg:          #0B1D3A;
+  --bg-surface:  #132B52;
+  --text:        #F0EFE8;
+  --text-muted:  #9AAEC8;
+  --text-faint:  #4A6080;
+  --accent:      #C9A84C;
+  --accent-hover:#D4BC72;
+  --border:      rgba(201,168,76,0.15);
+  --divider:     rgba(201,168,76,0.08);
   --shadow-sm:   0 1px 2px rgba(0,0,0,0.3);
   --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
   --shadow-lg:   0 8px 40px rgba(0,0,0,0.5);
