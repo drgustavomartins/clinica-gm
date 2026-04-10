@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/harmonizacao-facial", "destination": "/clinica-gm/harmonizacao-facial.html" },
+    { "source": "/botox", "destination": "/clinica-gm/botox.html" },
+    { "source": "/dtm", "destination": "/clinica-gm/dtm.html" },
+    { "source": "/aparelhos-invisiveis", "destination": "/clinica-gm/aparelhos-invisiveis.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
