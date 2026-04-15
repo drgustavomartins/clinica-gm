@@ -288,6 +288,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+  justify-content: center;
 }
 
 .hero-unit-btn {
@@ -397,6 +398,7 @@
   height: auto;
   aspect-ratio: 3/4;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .sobre-content {
@@ -1654,7 +1656,8 @@
   }
 
   .sobre-photo img {
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
+    object-position: center 15%;
   }
 
   .proc-card {
