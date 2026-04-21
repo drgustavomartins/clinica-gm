@@ -1534,6 +1534,97 @@
   fill: #fff;
 }
 
+/* ===================== INSTAGRAM ===================== */
+.instagram-float {
+  position: fixed;
+  bottom: calc(var(--space-6) + 72px);
+  right: var(--space-6);
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
+  color: #fff;
+  transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.instagram-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(220, 39, 67, 0.45);
+}
+
+.instagram-float svg {
+  width: 28px;
+  height: 28px;
+}
+
+.header-ig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.header-ig:hover {
+  color: #fff;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+@media (max-width: 900px) {
+  .header-ig { display: none; }
+}
+
+.mobile-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+}
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn-instagram:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.naturalup-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  color: rgba(255,255,255,0.75);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-full);
+  transition: all 0.25s;
+}
+
+.naturalup-ig-link:hover {
+  color: #fff;
+  border-color: var(--accent);
+  background: rgba(201, 168, 76, 0.08);
+}
+
 /* ===================== LIGHTBOX ===================== */
 .lightbox {
   position: fixed;
