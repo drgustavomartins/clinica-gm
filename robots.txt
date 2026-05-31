@@ -1,4 +1,17 @@
+# Clínica Dr. Gustavo Martins - robots.txt
+# Sitio multilingüe: PT (raíz), EN (/en/), ES (/es/)
+
 User-agent: *
 Allow: /
 
+# Permitir acceso explícito a las versiones internacionales
+Allow: /en/
+Allow: /es/
+
+# Bloquear archivos administrativos y de configuración
+Disallow: /.git/
+Disallow: /vercel.json
+Disallow: /.gitignore
+
+# Sitemap
 Sitemap: https://www.clinicagustavomartins.com.br/sitemap.xml
