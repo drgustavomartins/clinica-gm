@@ -1,0 +1,508 @@
+/* ============================================
+   ORIENTAÇÕES PÓS-PROCEDIMENTO
+   Estilo claro, escaneável, mobile-first
+   ============================================ */
+
+.orientacoes-page {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Cabeçalho da página */
+.orient-header {
+  padding: var(--space-12) 0 var(--space-8);
+  text-align: center;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.orient-header .breadcrumb {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.orient-header .breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.orient-header .breadcrumb a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.orient-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 auto var(--space-4);
+  max-width: 800px;
+  color: var(--text);
+}
+
+.orient-header .lead {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.orient-header .gold-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: var(--space-6) auto 0;
+}
+
+/* Container principal de conteúdo */
+.orient-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6);
+}
+
+/* Seções */
+.orient-section {
+  margin-bottom: var(--space-12);
+}
+
+.orient-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid rgba(201, 168, 76, 0.2);
+}
+
+.orient-section h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: var(--space-6) 0 var(--space-3);
+  color: var(--text);
+}
+
+.orient-section p,
+.orient-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Caixas Pode / Não Pode */
+.dual-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+@media (min-width: 720px) {
+  .dual-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dual-box .box {
+  padding: var(--space-6);
+  border-radius: 12px;
+  border-left: 4px solid;
+}
+
+.dual-box .box-do {
+  background: rgba(34, 139, 78, 0.08);
+  border-color: #22A86F;
+}
+
+.dual-box .box-dont {
+  background: rgba(220, 53, 69, 0.08);
+  border-color: #E25563;
+}
+
+.dual-box .box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dual-box .box-do h4 { color: #22A86F; }
+.dual-box .box-dont h4 { color: #E25563; }
+
+.dual-box .box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dual-box .box li {
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.dual-box .box-do li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: var(--space-2);
+  color: #22A86F;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.dual-box .box-dont li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: var(--space-2);
+  color: #E25563;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Caixa de alerta importante */
+.alert-box {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: rgba(201, 168, 76, 0.1);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  margin: var(--space-6) 0;
+}
+
+.alert-box .alert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.alert-box .alert-content {
+  flex: 1;
+}
+
+.alert-box strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: var(--space-1);
+}
+
+.alert-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Timeline de recuperação */
+.timeline {
+  position: relative;
+  padding-left: var(--space-8);
+  margin: var(--space-6) 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), rgba(201, 168, 76, 0.2));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-6);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-8) + 2px);
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.timeline-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* FAQ accordion */
+.orient-faq {
+  margin-top: var(--space-6);
+}
+
+.orient-faq-item {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.orient-faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: var(--space-5) 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  transition: color 0.2s;
+}
+
+.orient-faq-question:hover {
+  color: var(--accent);
+}
+
+.orient-faq-question::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.orient-faq-item.active .orient-faq-question::after {
+  transform: rotate(45deg);
+}
+
+.orient-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+
+.orient-faq-item.active .orient-faq-answer {
+  max-height: 500px;
+  padding-bottom: var(--space-5);
+}
+
+.orient-faq-answer p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Regiões específicas (para preenchimento) */
+.region-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.region-tab {
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.region-tab.active,
+.region-tab:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.region-panel {
+  display: none;
+  padding-top: var(--space-2);
+}
+
+.region-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA final */
+.orient-cta-block {
+  margin: var(--space-16) 0 var(--space-12);
+  padding: var(--space-10) var(--space-8);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.04));
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.orient-cta-block h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-3);
+  border: none;
+  padding: 0;
+}
+
+.orient-cta-block p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto var(--space-6);
+  line-height: 1.6;
+}
+
+.orient-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.orient-cta-buttons .btn {
+  min-width: 220px;
+}
+
+/* Botão WhatsApp inline na página */
+.whatsapp-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: #25D366;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-inline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Card-grid para o índice */
+.orient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.orient-card {
+  display: block;
+  padding: var(--space-6);
+  background: var(--bg-surface);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.orient-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.orient-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+  color: var(--text);
+}
+
+.orient-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-3);
+  line-height: 1.5;
+}
+
+.orient-card .read-more {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Header simples para páginas de orientação (sem nav completa) */
+.orient-mini-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+}
+
+.orient-mini-header .logo img {
+  height: 36px;
+  width: auto;
+}
+
+.orient-mini-header .back-link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.orient-mini-header .back-link:hover {
+  color: var(--accent);
+}
+
+/* Print friendly (caso paciente queira imprimir) */
+@media print {
+  .orient-mini-header,
+  .orient-cta-block,
+  .whatsapp-inline {
+    display: none;
+  }
+  body { background: #fff; color: #000; }
+  .orient-section h2 { color: #000; border-bottom-color: #000; }
+}
