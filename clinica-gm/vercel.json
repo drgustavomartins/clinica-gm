@@ -7,7 +7,9 @@
     { "source": "/dtm", "destination": "/dtm.html" },
     { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" },
     { "source": "/rio", "destination": "/rio/index.html" },
-    { "source": "/rio-es", "destination": "/rio-es/index.html" }
+    { "source": "/rio-es", "destination": "/rio-es/index.html" },
+    { "source": "/orientacoes", "destination": "/orientacoes/index.html" },
+    { "source": "/orientacoes/:slug", "destination": "/orientacoes/:slug.html" }
   ],
   "headers": [
     {
