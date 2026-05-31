@@ -5,7 +5,10 @@
     { "source": "/harmonizacao-facial", "destination": "/harmonizacao-facial.html" },
     { "source": "/botox", "destination": "/botox.html" },
     { "source": "/dtm", "destination": "/dtm.html" },
-    { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" }
+    { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" },
+    { "source": "/orientacoes/:slug", "destination": "/orientacoes/:slug.html" },
+    { "source": "/en/orientacoes/:slug", "destination": "/en/orientacoes/:slug.html" },
+    { "source": "/es/orientacoes/:slug", "destination": "/es/orientacoes/:slug.html" }
   ],
   "headers": [
     {
