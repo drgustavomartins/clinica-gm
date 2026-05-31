@@ -5,9 +5,7 @@
     { "source": "/harmonizacao-facial", "destination": "/harmonizacao-facial.html" },
     { "source": "/botox", "destination": "/botox.html" },
     { "source": "/dtm", "destination": "/dtm.html" },
-    { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" },
-    { "source": "/rio", "destination": "/rio/index.html" },
-    { "source": "/rio-es", "destination": "/rio-es/index.html" }
+    { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" }
   ],
   "headers": [
     {
