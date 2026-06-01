@@ -1,0 +1,704 @@
+/* ============================================
+   ORIENTACOES COMBINADAS, SELETOR DE PROCEDIMENTOS
+   Estilos especificos da pagina minhas-orientacoes
+   Reusa base.css, style.css e orientacoes.css
+   ============================================ */
+
+/* Bloco seletor */
+.seletor-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-6);
+  line-height: 1.6;
+}
+
+.seletor-categoria {
+  margin-bottom: var(--space-8);
+}
+
+.seletor-categoria h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.seletor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 560px) {
+  .seletor-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .seletor-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Card seletor com checkbox visual */
+.seletor-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-surface);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s, background 0.2s;
+}
+
+.seletor-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Esconde apenas o checkbox principal do card (o check visual customizado o substitui).
+   Sub-checkboxes das regiões ([data-pai]) seguem visíveis. */
+.seletor-card > input[type="checkbox"]:not([data-pai]) {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.seletor-card .check-visual {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 2px solid rgba(11, 29, 58, 0.25);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.seletor-card .check-visual svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s, transform 0.2s;
+  color: #fff;
+}
+
+.seletor-card .card-text { flex: 1; }
+
+.seletor-card .card-nome {
+  display: block;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.seletor-card .card-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin-top: var(--space-1);
+  line-height: 1.4;
+}
+
+.seletor-card .card-tag-placeholder {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-hover);
+  background: rgba(201, 168, 76, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Estado selecionado */
+.seletor-card.is-checked {
+  border-color: var(--accent);
+  background: rgba(201, 168, 76, 0.07);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.seletor-card.is-checked .check-visual {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.seletor-card.is-checked .check-visual svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Botao ver orientacoes */
+.seletor-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.btn-ver-orientacoes {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-ver-orientacoes:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(201, 168, 76, 0.3);
+}
+
+.btn-ver-orientacoes:disabled {
+  background: rgba(11, 29, 58, 0.12);
+  color: var(--text-faint);
+  cursor: not-allowed;
+}
+
+.seletor-contador {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.seletor-contador strong { color: var(--accent-hover); }
+
+/* Bloco de resultado consolidado */
+.resultado-bloco { display: none; }
+.resultado-bloco.is-visible {
+  display: block;
+  animation: fadeInResultado 0.4s ease;
+}
+
+@keyframes fadeInResultado {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Nota de link pre-preenchido */
+.nota-prepreenchido {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  background: rgba(201, 168, 76, 0.1);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  margin: 0 0 var(--space-8);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.nota-prepreenchido svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+
+/* Tags douradas dos procedimentos selecionados */
+.proc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-8);
+}
+
+.proc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.08));
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+}
+
+.proc-tag svg { width: 13px; height: 13px; }
+
+/* Box restritivo com nota de prazo conflitante */
+.prazo-conflito {
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.prazo-conflito strong { color: var(--accent-hover); }
+
+.prazo-lista {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.prazo-lista li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.prazo-lista .prazo-label { font-weight: 500; color: var(--text); flex: 1 1 60%; min-width: 0; }
+.prazo-lista .prazo-valor {
+  font-weight: 700;
+  color: var(--accent-hover);
+}
+
+/* Box de sinais de alerta em destaque vermelho/dourado */
+.sinais-alerta-box {
+  margin: var(--space-6) 0;
+  padding: var(--space-6) var(--space-6);
+  background: rgba(220, 53, 69, 0.05);
+  border: 2px solid #E25563;
+  border-radius: 14px;
+}
+
+.sinais-alerta-box .sinais-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.sinais-alerta-box .sinais-header svg {
+  flex-shrink: 0;
+  color: #E25563;
+}
+
+.sinais-alerta-box .sinais-header h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #C0303D;
+}
+
+.sinais-alerta-box .sinais-intro {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+}
+
+.sinais-alerta-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sinais-alerta-box li {
+  position: relative;
+  padding: var(--space-2) 0 var(--space-2) var(--space-6);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.sinais-alerta-box li::before {
+  content: "!";
+  position: absolute;
+  left: 0;
+  top: var(--space-2);
+  width: 18px;
+  height: 18px;
+  background: #E25563;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sinais-alerta-box .sinais-rodape {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(201, 168, 76, 0.12);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+}
+
+/* Cuidados detalhados unificados por procedimento */
+.cuidado-grupo { margin-bottom: var(--space-8); }
+
+.cuidado-grupo > h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid rgba(201, 168, 76, 0.25);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cuidado-item { margin-bottom: var(--space-4); }
+.cuidado-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-hover);
+  margin: 0 0 var(--space-1);
+}
+.cuidado-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.placeholder-nota {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-surface);
+  border: 1px dashed rgba(201, 168, 76, 0.4);
+  border-radius: 10px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.placeholder-nota svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+
+.frase-individual {
+  margin-top: var(--space-6);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+/* CTA de saida com 3 botoes */
+.saida-cta { text-align: center; }
+
+.saida-cta .saida-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+.btn-saida {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.btn-saida:hover { transform: translateY(-2px); }
+
+.btn-imprimir {
+  background: var(--text);
+  color: #fff;
+}
+.btn-imprimir:hover { box-shadow: 0 8px 20px rgba(11, 29, 58, 0.25); }
+
+.btn-whatsapp-saida {
+  background: #25D366;
+  color: #fff;
+}
+.btn-whatsapp-saida:hover { box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+
+.btn-falar {
+  background: transparent;
+  color: var(--accent-hover);
+  border-color: var(--accent);
+}
+.btn-falar:hover { background: rgba(201, 168, 76, 0.1); }
+
+.btn-saida svg { width: 18px; height: 18px; }
+
+/* CTA banner no indice */
+.combinadas-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin: var(--space-8) 0 0;
+  padding: var(--space-6) var(--space-8);
+  background: linear-gradient(135deg, var(--text), #16315c);
+  border-radius: 16px;
+  color: #fff;
+}
+
+.combinadas-banner .banner-texto { flex: 1 1 360px; }
+
+.combinadas-banner h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+  color: #fff;
+  border: none;
+  padding: 0;
+}
+
+.combinadas-banner p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.combinadas-banner .banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--accent);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.combinadas-banner .banner-btn:hover {
+  background: #E0C46B;
+  transform: translateY(-2px);
+}
+
+/* Estado vazio */
+.resultado-vazio {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  color: var(--text-faint);
+}
+
+/* ============================================
+   IMPRESSAO, layout limpo para PDF
+   ============================================ */
+@media print {
+  .orient-mini-header,
+  .seletor-bloco,
+  .seletor-acoes,
+  .saida-cta,
+  .nota-prepreenchido,
+  .combinadas-banner {
+    display: none !important;
+  }
+
+  body { background: #fff; color: #000; }
+
+  .orient-header { padding: 0 0 12pt; border-bottom: 1pt solid #000; }
+  .orient-header .breadcrumb { display: none; }
+  .orient-header h1 { font-size: 20pt; color: #000; }
+  .orient-header .lead { font-size: 10pt; }
+
+  .orient-content { padding: 12pt 0; max-width: 100%; }
+
+  .resultado-bloco { display: block !important; }
+
+  .orient-section h2 {
+    color: #000;
+    border-bottom-color: #000;
+    page-break-after: avoid;
+  }
+
+  .proc-tag {
+    background: #fff;
+    border: 1pt solid #000;
+    color: #000;
+  }
+
+  .dual-box { grid-template-columns: 1fr 1fr; gap: 10pt; }
+  .dual-box .box { border: 1pt solid #999; background: #fff; page-break-inside: avoid; }
+  .dual-box .box-do h4 { color: #000; }
+  .dual-box .box-dont h4 { color: #000; }
+
+  .timeline-item { page-break-inside: avoid; }
+  .timeline-item h4 { color: #000; }
+
+  .cuidado-grupo { page-break-inside: avoid; }
+  .cuidado-item h4 { color: #000; }
+
+  .sinais-alerta-box {
+    border: 1.5pt solid #000;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .sinais-alerta-box .sinais-header h3 { color: #000; }
+  .sinais-alerta-box li::before { background: #000; }
+
+  .prazo-conflito { background: #fff; border: 1pt dashed #000; }
+  .prazo-lista li { background: #fff; border-left: 2pt solid #000; }
+  .prazo-lista .prazo-valor { color: #000; }
+
+  .orient-faq-item { page-break-inside: avoid; }
+  .orient-faq-answer { max-height: none !important; overflow: visible !important; padding-bottom: 8pt !important; }
+  .orient-faq-question::after { display: none; }
+
+  .print-rodape { display: block !important; }
+}
+
+/* Rodape de impressao, oculto na tela */
+.print-rodape {
+  display: none;
+  margin-top: 16pt;
+  padding-top: 8pt;
+  border-top: 1pt solid #000;
+  font-size: 9pt;
+  color: #000;
+  text-align: center;
+}
+
+/* ============================================
+   SUB-SELECAO DE REGIOES (Preenchimento Facial)
+   ============================================ */
+
+/* Sub-selecao de regioes */
+.subselecao {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e7e3d5;
+  width: 100%;
+}
+.seletor-card.is-checked .subselecao {
+  display: block;
+}
+.subselecao-label {
+  font-size: 0.85rem;
+  color: #5f5a4e;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+.subcheck {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  color: #2d2b22;
+}
+.subcheck input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  cursor: pointer;
+  accent-color: #C9A84C;
+  position: static;
+  opacity: 1;
+  margin: 0;
+}
+.subcheck:hover {
+  color: #0B1D3A;
+}
+
+/* Tag de sinal de alerta absoluto (nasal) */
+.sinais-alerta-box li.sinal-absoluto {
+  background: #fef2f2;
+  border-left: 4px solid #b91c1c;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* Paragrafo de cuidado com alerta absoluto (rinomodelacao) */
+.cuidados-regionais p.sinal-absoluto {
+  background: #fef2f2;
+  border-left: 4px solid #b91c1c;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* Bloco de cuidados regionais */
+.cuidados-regionais {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+.cuidados-regionais h4 {
+  margin-top: 0;
+  color: #0B1D3A;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.cuidados-regionais .regiao-bloco {
+  margin-bottom: 1rem;
+}
+.cuidados-regionais .regiao-bloco:last-child {
+  margin-bottom: 0;
+}
+.cuidados-regionais .regiao-bloco h5 {
+  color: #C9A84C;
+  margin: 0.5rem 0 0.3rem 0;
+  font-size: 0.95rem;
+}
+.cuidados-regionais .regiao-bloco p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2d2b22;
+}
+
+/* Ajuste da grade do card para acomodar sub-selecao (card fica em coluna unica quando necessario) */
+.seletor-card {
+  flex-wrap: wrap;
+}
+.seletor-card .card-text {
+  width: 100%;
+  min-width: 0;
+}
