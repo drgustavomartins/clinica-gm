@@ -8,7 +8,7 @@ var CATEGORIAS = [
   { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'preenchimento', 'lipolise'] },
   { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento'] },
   { id: 'fios', titulo: 'Fios', codigos: ['fios-lisos', 'fios-tracao'] },
-  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lip-lift', 'brow-lift', 'blefaro-superior', 'blefaro-inferior', 'lipo-platisma', 'bichectomia'] }
+  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lip-lift', 'brow-lift', 'blefaro-superior', 'blefaro-inferior', 'lipo-platisma', 'bichectomia', 'lobuloplastia'] }
 ];
 
 /* Peso de categoria para ordenacao, cirurgia primeiro */
@@ -474,6 +474,65 @@ var PROCEDIMENTOS = {
       { q: 'Os pontos da bichectomia precisam ser retirados?', a: 'Sim. É utilizado fio não reabsorvível, com retirada em 7 dias na consulta de retorno.' },
       { q: 'O resultado da bichectomia é permanente?', a: 'A gordura de Bichat removida não retorna, então o resultado é permanente. No entanto, variações de peso e o envelhecimento podem influenciar a aparência. O excesso de emagrecimento pode comprometer o resultado estético.' },
       { q: 'Posso usar canudo após a bichectomia?', a: 'Nas primeiras 48 horas o canudo é contraindicado, pois a pressão negativa pode prejudicar a cicatrização. Depois, pode ser retomado com cuidado.' }
+    ]
+  },
+
+  'lobuloplastia': {
+    nome: 'Lobuloplastia Cirúrgica',
+    desc: 'Reconstrução cirúrgica do lóbulo da orelha rasgado, alargado ou com fenda.',
+    categoria: 'cirurgico',
+    placeholder: false,
+    pode: [
+      'Fazer a limpeza da região com soro fisiológico de 2 a 3 vezes ao dia, conforme orientação',
+      'Aplicar pomada antibiótica sobre a cicatriz conforme orientação da equipe clínica',
+      'Manter a região seca e protegida nas primeiras 24 horas',
+      'Dormir de maneira que não pressione nem trace a orelha operada',
+      'Usar protetor solar FPS 50 sobre a cicatriz após a retirada dos pontos'
+    ],
+    evite: [
+      'Molhar a região nas primeiras 24 horas',
+      'Usar brincos por pelo menos 30 dias, e depois apenas brincos leves',
+      'Qualquer tração, puxão ou pressão sobre o lóbulo durante a cicatrização',
+      'Exercício físico intenso por pelo menos 7 dias',
+      'Manipular, coçar ou retirar as crostas que se formam sobre a cicatriz',
+      'Fumar durante o período de recuperação'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Mantenha a região seca e protegida, sem molhar o local. A anestesia local vai perdendo efeito progressivamente, podendo surgir leve desconforto. Repouse e evite qualquer tração sobre a orelha.',
+      'Primeiros dias': 'Inicie a limpeza com soro fisiológico de 2 a 3 vezes ao dia e aplique a pomada antibiótica conforme orientação. Pode haver leve inchaço e vermelhidão local, o que é esperado. Evite dormir sobre o lado operado.',
+      '7 a 10 dias': 'A retirada dos pontos ocorre entre 7 e 10 dias, pois é utilizado fio não reabsorvível. Evite exercício físico intenso ao longo desse período.',
+      'Até 30 dias': 'Após a retirada dos pontos, mantenha o protetor solar FPS 50 sobre a cicatriz. Não use brincos. A cicatriz pode apresentar mancha avermelhada e sensação de endurecimento, o que faz parte do processo.',
+      'Após 30 dias': 'O uso de brincos leves pode ser retomado conforme a avaliação do Dr. Gustavo. Continue protegendo a cicatriz do sol.',
+      '60 a 90 dias': 'Avaliação do resultado estável após maturação da cicatriz. A coloração e a textura tendem a se aproximar da pele ao redor, com aparência mais discreta.'
+    },
+    prazos: {
+      exercicio: { dias: 7, label: '7 dias' },
+      sol: { dias: 0, label: 'FPS 50 na cicatriz após os pontos' },
+      tabagismo: { dias: 0, label: 'durante a recuperação' },
+      pontos: { dias: 10, label: '7 a 10 dias (fio não reabsorvível)' }
+    },
+    sinaisAlerta: [
+      'Febre acima de 38°C',
+      'Sangramento ativo, abundante ou que não cessa na região operada',
+      'Dor intensa que não cede com a medicação prescrita',
+      'Inchaço crescente e progressivo após as primeiras 48 horas',
+      'Secreção purulenta ou com odor fétido na cicatriz',
+      'Vermelhidão muito intensa e calor local que pioram progressivamente',
+      'Sensação de que a sutura está se abrindo (deiscência dos pontos)'
+    ],
+    cuidados: {
+      higiene: 'Evite molhar a região nas primeiras 24 horas. Depois, faça a limpeza da cicatriz com soro fisiológico de 2 a 3 vezes ao dia, com movimentos suaves, e aplique a pomada antibiótica conforme orientação. Não retire nem manipule as crostas que se formam sobre a cicatriz.',
+      medicacao: 'Siga rigorosamente a prescrição do Dr. Gustavo. Podem ser indicados analgésicos, anti-inflamatórios e pomada antibiótica de uso local. Não substitua, adicione ou suspenda medicação sem consultar a equipe clínica.',
+      posicao: 'Evite dormir sobre o lado operado nos primeiros dias para não pressionar nem tracionar o lóbulo.',
+      atividade: 'Evite exercício físico intenso por pelo menos 7 dias. A retomada das atividades deve ser gradual e conforme a liberação do Dr. Gustavo.',
+      sol: 'Após a retirada dos pontos, use protetor solar FPS 50 sobre a cicatriz sempre que houver exposição, para prevenir o escurecimento e favorecer um resultado mais discreto.',
+      retorno: 'A retirada dos pontos ocorre entre 7 e 10 dias, pois é utilizado fio não reabsorvível. Compareça a todas as consultas de retorno.'
+    },
+    faq: [
+      { q: 'Quando posso usar brincos novamente após a lobuloplastia?', a: 'Recomenda-se aguardar pelo menos 30 dias e, ao retomar, optar por brincos leves. A liberação para um novo furo e brincos mais pesados é avaliada individualmente pelo Dr. Gustavo.' },
+      { q: 'Os pontos da lobuloplastia precisam ser retirados?', a: 'Sim. É utilizado fio não reabsorvível, com retirada entre 7 e 10 dias na consulta de retorno.' },
+      { q: 'É normal o lóbulo ficar avermelhado e endurecido?', a: 'Sim. Mancha avermelhada e sensação de endurecimento podem ocorrer nos primeiros 60 dias e fazem parte da cicatrização, suavizando progressivamente.' },
+      { q: 'Quando vou ver o resultado estável?', a: 'O resultado estável após maturação da cicatriz é avaliado entre 60 e 90 dias após o procedimento.' }
     ]
   },
 
