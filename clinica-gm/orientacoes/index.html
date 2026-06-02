@@ -21,6 +21,12 @@
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../orientacoes.css">
 <link rel="stylesheet" href="../orientacoes-seletor.css">
+<style>
+.orient-card-wrap { display: flex; flex-direction: column; }
+.orient-card-wrap .orient-card { flex: 1; }
+.orient-card-sublink { display: inline-block; margin-top: 10px; font-size: 13px; color: #C9A84C; text-decoration: underline; text-align: center; }
+.orient-card-sublink:hover { color: #0B1D3A; }
+</style>
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B1D3A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23C9A84C' text-anchor='middle' font-weight='400'%3EGM%3C/text%3E%3C/svg%3E">
 </head>
@@ -68,47 +74,56 @@
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
-      <h3>Preenchimento Facial</h3>
-      <p>Cuidados gerais + orientações específicas para lábios, malar, mandíbula e olheiras.</p>
-      <span class="read-more">Em breve</span>
+    <div class="orient-card-wrap">
+      <a href="/orientacoes/preenchimento-facial" class="orient-card">
+        <h3>Preenchimento Facial</h3>
+        <p>Cuidados gerais + orientações específicas para lábios, nariz, mandíbula, mento e malar.</p>
+        <span class="read-more">Ler orientações →</span>
+      </a>
+      <a href="/orientacoes/minhas-orientacoes?p=preenchimento" class="orient-card-sublink">ou ver com sub-seleção por região</a>
     </div>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/bioestimulador-radiesse" class="orient-card">
       <h3>Bioestimulador (Radiesse)</h3>
       <p>Massagens, recuperação e o que esperar após a aplicação de bioestimuladores.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/iprf-plaquetas" class="orient-card">
       <h3>iPRF (Plaquetas)</h3>
-      <p>Cuidados após sessão com agregados leucoplaquetários injetáveis.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <p>Cuidados após sessão com plaquetas autólogas, na forma injetada ou por microagulhamento.</p>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/lipolise-quimica" class="orient-card">
+      <h3>Lipólise Química</h3>
+      <p>Cuidados após sessão de lipólise injetável para gordura localizada, com drenagem e múltiplas sessões.</p>
+      <span class="read-more">Ler orientações →</span>
+    </a>
+
+    <a href="/orientacoes/microagulhamento" class="orient-card">
       <h3>Microagulhamento</h3>
       <p>Proteção solar, uso de Cicaplast e cuidados nos primeiros dias.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/plasma-gel" class="orient-card">
       <h3>Plasma Gel</h3>
       <p>Recuperação e cuidados após a aplicação de plasma gel.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/fios-pdo-tracao" class="orient-card">
       <h3>Fios PDO Espiculados</h3>
       <p>Restrições de movimentos, alimentação e cuidados nos primeiros 30 dias.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/fios-pdo-lisos" class="orient-card">
       <h3>Fios PDO Lisos</h3>
       <p>Cuidados após a aplicação de fios lisos para bioestimulação.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
     <a href="/orientacoes/lipo-papada-platismoplastia" class="orient-card">
       <h3>Lipo de Papada com Platismoplastia</h3>
@@ -134,11 +149,11 @@
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/mini-lifting-facial" class="orient-card">
       <h3>Mini-Lifting Facial</h3>
       <p>Recuperação cirúrgica: pontos, edema, repouso e retorno gradual.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
     <a href="/orientacoes/liplift" class="orient-card">
       <h3>Lifting de Lábio (Lip Lift)</h3>
@@ -152,11 +167,11 @@
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <div class="orient-card" style="opacity: 0.5; cursor: default;">
+    <a href="/orientacoes/cirurgias-gengivais" class="orient-card">
       <h3>Cirurgias Estéticas Gengivais</h3>
-      <p>Higienização, alimentação e cuidados após gengivoplastia/gengivectomia.</p>
-      <span class="read-more">Em breve</span>
-    </div>
+      <p>Higienização, alimentação e cuidados após gengivoplastia, gengivectomia e aumento de coroa clínica.</p>
+      <span class="read-more">Ler orientações →</span>
+    </a>
 
   </div>
 
