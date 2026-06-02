@@ -119,15 +119,25 @@
   font-weight: 600;
 }
 
-.article-body a {
+.article-body a:not(.btn) {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid rgba(201, 168, 76, 0.3);
   transition: border-color 0.2s;
 }
 
-.article-body a:hover {
+.article-body a:not(.btn):hover {
   border-bottom-color: var(--accent);
+}
+
+.article-body a.btn-gold {
+  color: #fff;
+  border-bottom: none;
+}
+
+.article-body a.btn-gold:hover {
+  color: #fff;
+  border-bottom: none;
 }
 
 .article-body ul,
