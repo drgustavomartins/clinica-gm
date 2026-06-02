@@ -1,9 +1,9 @@
 /* ============================================================
-   base.css — Reset + Design Tokens + Foundations
-   Clínica Gustavo Martins — Redesign 2026
+   base.css | Reset + Design Tokens + Foundations
+   Clínica Gustavo Martins | Redesign 2026
    ============================================================ */
 
-/* ---------- Google Fonts — Montserrat ---------- */
+/* ---------- Google Fonts | Montserrat ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* ---------- Box-model Reset ---------- */
@@ -13,9 +13,9 @@
   box-sizing: border-box;
 }
 
-/* ---------- CSS Custom Properties (Light — Default) ---------- */
+/* ---------- CSS Custom Properties (Light | Default) ---------- */
 :root {
-  /* Palette — Light (cream) */
+  /* Palette | Light (cream) */
   --bg:          #FFFFFF;
   --bg-surface:  #F4F7FB;
   --text:        #0B1D3A;
@@ -29,7 +29,7 @@
   --shadow-md:   0 4px 16px rgba(0,0,0,0.06);
   --shadow-lg:   0 8px 40px rgba(0,0,0,0.08);
 
-  /* Typography — Montserrat only */
+  /* Typography | Montserrat only */
   --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body:    'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -102,6 +102,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
+  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
