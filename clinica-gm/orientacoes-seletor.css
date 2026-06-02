@@ -463,9 +463,11 @@
 /* CTA banner no indice */
 .combinadas-banner {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   gap: var(--space-5);
   margin: var(--space-8) 0 0;
   padding: var(--space-6) var(--space-8);
@@ -474,7 +476,7 @@
   color: #fff;
 }
 
-.combinadas-banner .banner-texto { flex: 1 1 360px; }
+.combinadas-banner .banner-texto { flex: 0 1 auto; max-width: 640px; }
 
 .combinadas-banner h2 {
   font-family: var(--font-display);
@@ -495,6 +497,7 @@
 
 .combinadas-banner .banner-btn {
   display: inline-flex;
+  align-self: center;
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);

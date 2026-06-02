@@ -14,7 +14,7 @@ var CATEGORIAS = [
 /* Peso de categoria para ordenacao, cirurgia primeiro */
 var PESO_CATEGORIA = { cirurgico: 4, fios: 3, colageno: 2, injetavel: 1 };
 
-var NOTA_PLACEHOLDER = 'Orientações em revisão. Consulte o Dr. Gustavo via WhatsApp para protocolo personalizado.';
+var NOTA_PLACEHOLDER = 'Para orientações detalhadas deste procedimento, entre em contato com a equipe da clínica pelo WhatsApp.';
 var FRASE_INDIVIDUAL = 'As orientações podem variar conforme avaliação individual do Dr. Gustavo Martins.';
 
 /* Horizontes temporais da timeline unificada, em ordem */
@@ -547,6 +547,40 @@ var PROCEDIMENTOS = {
           'Tratamentos faciais (limpeza, massagem facial) por 14 dias'
         ],
         cuidados: 'Edema na região malar pode descer e parecer que está na bochecha ou na pálpebra inferior nas primeiras 48 horas, isso é normal. O sorriso pode ficar levemente diferente nos primeiros dias até o edema resolver.'
+      },
+      'olheiras': {
+        nome: 'Olheiras',
+        pode: [
+          'Aplicar gelo de forma intermitente (compressa fria com pano limpo) nas primeiras 24 horas'
+        ],
+        evite: [
+          'Pressionar a região das olheiras',
+          'Esfregar ou massagear a área aplicada'
+        ],
+        cuidados: 'A região das olheiras é delicada. Use gelo intermitente nas primeiras 24 horas e não pressione a área. É possível ocorrer hematoma na região, que costuma se resolver em 7 a 14 dias.'
+      },
+      'fullface': {
+        nome: 'Full Face',
+        pode: [
+          'Seguir os cuidados gerais de todas as regiões aplicadas'
+        ],
+        evite: [
+          'Pressionar ou massagear qualquer região aplicada',
+          'Deitar de lado nos primeiros 3 dias'
+        ],
+        cuidados: 'O Full Face é a técnica de preenchimento global da face e combina os cuidados de todas as regiões aplicadas. Siga, em conjunto, as orientações específicas de cada área tratada (labial, nasal, mandíbula, mento, malar e olheiras), conforme o que foi realizado.'
+      },
+      'topmodel': {
+        nome: 'Top Model Look',
+        pode: [
+          'Dormir de barriga para cima nos primeiros 3 dias'
+        ],
+        evite: [
+          'Dormir de lado por 3 dias',
+          'Exercício físico por 48 horas',
+          'Pressionar a região malar e o arco zigomático'
+        ],
+        cuidados: 'O Top Model Look trabalha a região malar e o arco zigomático. Evite dormir de lado por 3 dias e exercício físico por 48 horas. O edema pode ser mais intenso na região malar nas primeiras 48 a 72 horas, o que é esperado.'
       }
     },
     pode: [
@@ -601,11 +635,517 @@ var PROCEDIMENTOS = {
       { q: 'Hematomas após o preenchimento são normais?', a: 'Sim, pequenos hematomas (manchas roxas) podem ocorrer e desaparecem em 7 a 14 dias. HIRUDOID gel 500mg pode ser aplicado nas manchas, evitando a região da incisão.' }
     ]
   },
-  'bioestimulador': { nome: 'Bioestimulador de Colágeno', desc: 'Estímulo de colágeno injetável.', categoria: 'colageno', placeholder: true, nota: NOTA_PLACEHOLDER },
-  'lipolise': { nome: 'Lipólise Química', desc: 'Aplicação para redução de gordura localizada.', categoria: 'injetavel', placeholder: true, nota: NOTA_PLACEHOLDER },
-  'microagulhamento': { nome: 'Microagulhamento', desc: 'Estímulo de colágeno com microagulhas.', categoria: 'colageno', placeholder: true, nota: NOTA_PLACEHOLDER },
-  'fios-lisos': { nome: 'Fios Lisos de PDO', desc: 'Bioestimulação com fios lisos.', categoria: 'fios', placeholder: true, nota: NOTA_PLACEHOLDER },
-  'fios-tracao': { nome: 'Fios de PDO de Tração', desc: 'Fios para sustentação e lifting.', categoria: 'fios', placeholder: true, nota: NOTA_PLACEHOLDER }
+  /* ---------- BIOESTIMULADOR (Radiesse) ---------- */
+  'bioestimulador': {
+    nome: 'Bioestimulador (Radiesse)',
+    desc: 'Estímulo de colágeno injetável.',
+    categoria: 'colageno',
+    placeholder: false,
+    pode: [
+      'Realizar a massagem orientada pela equipe clínica nos primeiros 5 dias, com a técnica demonstrada na consulta',
+      'Aplicar compressas frias com pano limpo nas primeiras horas, se houver desconforto',
+      'Usar protetor solar FPS 50 diariamente',
+      'Voltar à rotina sedentária no mesmo dia',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Exercício físico intenso por 48 horas',
+      'Calor intenso (sauna, banho muito quente, exposição solar direta) nas primeiras 48 horas',
+      'Massagear a região fora da técnica e do período orientados pela equipe clínica',
+      'Limpeza de pele, peeling, laser ou outros tratamentos faciais por 14 dias',
+      'Bebidas alcoólicas em excesso nas primeiras 24 horas'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Inchaço e sensibilidade local são esperados. Compressas frias com pano limpo ajudam no conforto. Prefira atividades leves e evite exercício intenso.',
+      'Primeiros 7 dias': 'Realize a massagem orientada pela equipe clínica conforme a técnica demonstrada na consulta nos primeiros 5 dias. O inchaço e a sensibilidade reduzem gradualmente. Aguarde 14 dias para retomar tratamentos faciais como limpeza de pele e laser.',
+      '1 a 3 meses': 'O estímulo de colágeno é progressivo. O resultado estável aparece após maturação, em torno de 60 a 90 dias, com melhora de qualidade e sustentação da pele. A avaliação de nova sessão, se indicada, é feita pelo Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 2, label: '48 horas (calor e sol direto)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Inchaço muito assimétrico e progressivo após os primeiros dias',
+      'Nódulos endurecidos, dolorosos ou que aumentam de tamanho',
+      'Alteração de cor da pele, bolhas ou áreas escurecidas',
+      'Febre, calafrios ou secreção na área aplicada'
+    ],
+    cuidados: {
+      higiene: 'Higiene suave da pele, sem esfregar a região aplicada nos primeiros dias.',
+      medicacao: 'Analgésico simples pode ser usado se houver desconforto, conforme orientação da equipe clínica.',
+      atividade: 'Atividades sedentárias liberadas no mesmo dia. Exercício físico intenso somente após 48 horas.',
+      sol: 'Use protetor solar FPS 50 diariamente. Evite calor intenso e sol direto nas primeiras 48 horas.',
+      retorno: 'A produção de colágeno é progressiva, com resultado estável após 60 a 90 dias. A massagem orientada nos primeiros 5 dias ajuda na distribuição uniforme do produto.'
+    },
+    faq: [
+      { q: 'Preciso mesmo fazer a massagem após o bioestimulador?', a: 'Quando indicada, a massagem ajuda na distribuição uniforme do produto. Siga a técnica, a frequência e a duração orientadas pela equipe clínica nos primeiros 5 dias.' },
+      { q: 'Quando vejo o resultado do bioestimulador?', a: 'A produção de colágeno é progressiva. O resultado estável aparece após a maturação, em torno de 60 a 90 dias.' }
+    ]
+  },
+
+  /* ---------- LIPOLISE QUIMICA ---------- */
+  'lipolise': {
+    nome: 'Lipólise Química',
+    desc: 'Aplicação injetável para redução de gordura localizada.',
+    categoria: 'injetavel',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo nas primeiras horas, se houver desconforto',
+      'Realizar drenagem linfática a partir do 3º dia, com profissional qualificado de escolha do paciente',
+      'Manter boa hidratação e alimentação equilibrada',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica',
+      'Voltar à rotina sedentária no mesmo dia'
+    ],
+    evite: [
+      'Exercício físico intenso por 72 horas',
+      'Calor intenso (sauna, banho muito quente) nas primeiras 48 horas',
+      'Pressionar fortemente ou massagear a região fora da drenagem orientada',
+      'Bebidas alcoólicas em excesso nas primeiras 24 horas',
+      'Esperar resultado imediato em sessão única (o resultado é progressivo)'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Inchaço e endurecimento local são esperados e fazem parte do processo. Compressas frias com pano limpo ajudam no conforto. Evite calor intenso.',
+      'Primeiros 7 dias': 'A drenagem linfática pode ser iniciada a partir do 3º dia, com profissional qualificado de escolha do paciente. O inchaço e o endurecimento começam a reduzir.',
+      '7 a 14 dias': 'O inchaço e o endurecimento local reduzem progressivamente. A região vai ficando mais confortável.',
+      '1 a 3 meses': 'As sessões costumam ser feitas com intervalo de 30 dias, em geral de 4 a 6 sessões. O resultado é progressivo e fica mais perceptível ao longo das sessões. A avaliação é feita pelo Dr. Gustavo a cada etapa.'
+    },
+    prazos: {
+      exercicio: { dias: 3, label: '72 horas' },
+      sol: { dias: 2, label: '48 horas (calor intenso)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Vermelhidão intensa, calor local, secreção ou pus na região aplicada',
+      'Endurecimento muito doloroso, crescente ou com áreas escurecidas na pele',
+      'Febre ou mal-estar geral',
+      'Qualquer sintoma diferente do esperado ou que cause preocupação'
+    ],
+    cuidados: {
+      higiene: 'Evite pressionar fortemente ou massagear a região fora da drenagem orientada.',
+      medicacao: 'Analgésico simples pode ser usado se houver desconforto, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 72 horas, pois o esforço pode aumentar o inchaço na fase inicial.',
+      retorno: 'O tratamento costuma exigir de 4 a 6 sessões, com intervalo de 30 dias entre elas. A drenagem linfática pode iniciar a partir do 3º dia, com profissional qualificado de escolha do paciente.'
+    },
+    faq: [
+      { q: 'É normal a região ficar inchada e endurecida após a lipólise química?', a: 'Sim, inchaço e endurecimento local são esperados e costumam durar de 7 a 14 dias, fazendo parte do processo. Reduzem progressivamente.' },
+      { q: 'Quando posso fazer drenagem linfática após a lipólise química?', a: 'A drenagem pode começar a partir do 3º dia, realizada por profissional qualificado de escolha do paciente.' },
+      { q: 'Quantas sessões de lipólise química são necessárias?', a: 'Geralmente de 4 a 6 sessões, com intervalo de 30 dias, conforme a área e a resposta individual.' }
+    ]
+  },
+
+  /* ---------- MICROAGULHAMENTO ---------- */
+  'microagulhamento': {
+    nome: 'Microagulhamento',
+    desc: 'Estímulo de colágeno com microagulhas.',
+    categoria: 'colageno',
+    placeholder: false,
+    pode: [
+      'Usar hidratante reparador (Cicaplast Baume B5 ou Cicalfate) 3 vezes ao dia',
+      'Lavar o rosto com água e sabonete neutro, com movimentos suaves',
+      'Usar protetor solar FPS 50 a partir do 2º dia, de forma obrigatória',
+      'Beber bastante água e manter a pele hidratada',
+      'Usar analgésico simples se houver desconforto, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Maquiagem nas primeiras 24 horas',
+      'Exercício físico intenso por 48 horas',
+      'Exposição solar direta por 7 dias',
+      'Esfoliantes e ácidos por 7 dias',
+      'Coçar, esfregar ou descamar a pele manualmente',
+      'Sauna, banho muito quente e calor intenso nas primeiras 48 horas'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'A pele fica sensível e avermelhada, o que é esperado. Não use maquiagem neste período. Aplique o hidratante reparador conforme orientação e mantenha a pele limpa com movimentos suaves.',
+      'Primeiros 7 dias': 'A vermelhidão e a sensibilidade reduzem gradualmente. A partir do 2º dia, o protetor solar FPS 50 é obrigatório. Pode haver leve descamação, que não deve ser removida manualmente. Evite exposição solar direta, esfoliantes e ácidos.',
+      '2 a 4 semanas': 'O estímulo de colágeno está em andamento. A textura e o viço da pele começam a melhorar de forma progressiva. O microagulhamento costuma ser feito em sessões, conforme o planejamento do Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 7, label: '7 dias (sol direto)' },
+      maquiagem: { dias: 1, label: '24 horas' }
+    },
+    sinaisAlerta: [
+      'Vermelhidão muito intensa que piora após 72 horas',
+      'Inchaço importante, bolhas ou feridas na pele',
+      'Sinais de infecção: dor intensa, calor local, secreção ou pus',
+      'Febre ou mal-estar geral',
+      'Qualquer reação na pele diferente do esperado ou que cause preocupação'
+    ],
+    cuidados: {
+      higiene: 'Lave o rosto com água e sabonete neutro, com movimentos suaves. Use hidratante reparador (Cicaplast Baume B5 ou Cicalfate) 3 vezes ao dia. Não coce, esfregue ou descame a pele manualmente.',
+      medicacao: 'Analgésico simples pode ser usado se houver desconforto, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 48 horas.',
+      sol: 'Protetor solar FPS 50 obrigatório a partir do 2º dia. Evite exposição solar direta por 7 dias.',
+      maquiagem: 'Evite maquiagem nas primeiras 24 horas. Depois, prefira produtos suaves. Sem ácidos e esfoliantes por 7 dias.'
+    },
+    faq: [
+      { q: 'Quando começo a usar protetor solar após o microagulhamento?', a: 'A partir do 2º dia o protetor solar FPS 50 é obrigatório, e a exposição solar direta deve ser evitada por 7 dias.' },
+      { q: 'Posso usar maquiagem depois do microagulhamento?', a: 'Evite maquiagem nas primeiras 24 horas. Depois desse período, prefira produtos suaves.' }
+    ]
+  },
+
+  /* ---------- PDRN ---------- */
+  'pdrn': {
+    nome: 'PDRN',
+    desc: 'Estimulador biológico de regeneração tecidual.',
+    categoria: 'colageno',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo de forma intermitente nas primeiras 24 horas, sem gelo direto',
+      'Higiene suave da pele, sem esfregar a região aplicada',
+      'Usar protetor solar FPS 50 desde o primeiro dia',
+      'Manter boa hidratação',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Massagear a região aplicada nos primeiros dias',
+      'Exercício físico intenso por 48 horas',
+      'Calor intenso (sauna, banho muito quente, exposição solar direta) nas primeiras 48 horas',
+      'Maquiagem nas primeiras 24 horas (forma por microagulhamento)',
+      'Esfoliantes e ácidos por 7 dias (forma por microagulhamento)'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Inchaço local de 24 a 72 horas e sensibilidade são esperados. Use compressas frias intermitentes nas primeiras 24 horas. Não massageie a região. Proteção solar FPS 50 desde o primeiro dia.',
+      'Primeiros 7 dias': 'A sensibilidade reduz gradualmente. Na forma por microagulhamento, mantenha hidratante reparador (Cicaplast ou Cicalfate), fotoproteção FPS 50 a partir do 2º dia, sem maquiagem por 24 horas e sem ácidos por 7 dias.',
+      '2 a 4 semanas': 'O resultado é progressivo. O PDRN costuma exigir múltiplas sessões para o resultado completo, conforme o planejamento do Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 1, label: 'FPS 50 desde o 1º dia' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Vermelhidão intensa, calor local, secreção ou pus na região aplicada',
+      'Inchaço muito assimétrico e progressivo após as primeiras 72 horas',
+      'Bolhas, feridas ou áreas escurecidas na pele',
+      'Febre ou mal-estar geral'
+    ],
+    cuidados: {
+      higiene: 'Higiene suave da pele, sem esfregar a região aplicada. Na forma por microagulhamento, use hidratante reparador (Cicaplast ou Cicalfate).',
+      medicacao: 'Analgésico simples pode ser usado se necessário, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 48 horas.',
+      sol: 'Use protetor solar FPS 50 desde o primeiro dia na forma injetada, e a partir do 2º dia na forma por microagulhamento.',
+      retorno: 'O PDRN pode ser aplicado de forma injetada ou por microagulhamento, conforme decisão clínica caso a caso. O resultado é progressivo e costuma exigir múltiplas sessões.'
+    },
+    faq: [
+      { q: 'O PDRN é aplicado injetado ou por microagulhamento?', a: 'O PDRN pode ser aplicado das duas formas. A escolha é feita caso a caso, conforme decisão clínica do Dr. Gustavo.' },
+      { q: 'Quantas sessões de PDRN são necessárias?', a: 'O PDRN costuma exigir múltiplas sessões para o resultado completo, que é progressivo, conforme o planejamento do Dr. Gustavo.' }
+    ]
+  },
+
+  /* ---------- iPRF / PRF ---------- */
+  'iprf': {
+    nome: 'iPRF / PRF (Plaquetas)',
+    desc: 'Plaquetas autólogas, injetada ou por microagulhamento.',
+    categoria: 'plaquetas',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo de forma intermitente nas primeiras 48 horas, sem gelo direto',
+      'Higiene suave da pele, sem esfregar a região aplicada',
+      'Usar protetor solar FPS 50 normalmente',
+      'Manter boa hidratação',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Massagear a região aplicada nos primeiros dias',
+      'Exercício físico intenso por 48 horas',
+      'Calor intenso (sauna, banho muito quente, exposição solar direta) nas primeiras 48 horas',
+      'Esfregar ou pressionar fortemente a região tratada',
+      'Bebidas alcoólicas em excesso nas primeiras 24 horas'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Inchaço leve e sensibilidade local podem ocorrer. Os cuidados dependem da forma de aplicação. Na forma por microagulhamento, mantenha a fotoproteção a partir do 2º dia.',
+      'Primeiros 7 dias': 'A sensibilidade reduz gradualmente. A pele segue se recuperando. Na aplicação por microagulhamento, mantenha a fotoproteção e evite ácidos.',
+      '2 a 4 semanas': 'O resultado de qualidade da pele é progressivo. O iPRF costuma ser feito em sessões, conforme o planejamento do Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 2, label: '48 horas (sol direto)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Vermelhidão intensa, calor local, secreção ou pus na região tratada',
+      'Inchaço muito assimétrico e progressivo após as primeiras 72 horas',
+      'Bolhas, feridas ou áreas escurecidas na pele',
+      'Febre ou mal-estar geral'
+    ],
+    cuidados: {
+      higiene: 'Higiene suave da pele, sem esfregar a região aplicada. Não pressione fortemente a região tratada.',
+      medicacao: 'Analgésico simples pode ser usado se necessário, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 48 horas.',
+      sol: 'Use protetor solar FPS 50 normalmente. Na forma por microagulhamento, a fotoproteção é ainda mais importante a partir do 2º dia.',
+      retorno: 'O iPRF pode ser aplicado de forma injetada ou por microagulhamento. O resultado de qualidade da pele é progressivo e costuma exigir sessões, conforme o planejamento do Dr. Gustavo.'
+    },
+    faq: [
+      { q: 'Posso tomar sol depois do iPRF?', a: 'Evite exposição solar direta nas primeiras 48 horas e use protetor solar FPS 50. Na aplicação por microagulhamento, a fotoproteção é ainda mais importante a partir do 2º dia.' },
+      { q: 'Quantas sessões de iPRF são necessárias?', a: 'O resultado de qualidade da pele é progressivo ao longo das semanas e costuma exigir sessões, conforme o planejamento do Dr. Gustavo.' }
+    ]
+  },
+
+  /* ---------- PLASMA GEL ---------- */
+  'plasma-gel': {
+    nome: 'Plasma Gel',
+    desc: 'Aplicação de plasma gel autólogo.',
+    categoria: 'plaquetas',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo de forma intermitente nas primeiras 24 horas, sem gelo direto',
+      'Manter a cabeça elevada ao dormir nas primeiras noites',
+      'Higiene suave da pele, sem esfregar a região aplicada',
+      'Usar protetor solar FPS 50 normalmente após 24 horas',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Massagear a região aplicada por 5 dias',
+      'Pressionar a região aplicada por 5 dias',
+      'Exercício físico intenso por 48 horas',
+      'Calor intenso (sauna, banho muito quente, exposição solar direta) nas primeiras 48 horas',
+      'Maquiagem pesada sobre a região nas primeiras 24 horas'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Inchaço e sensibilidade local são esperados. Use compressas frias com pano limpo de forma intermitente. Prefira a posição com a cabeça elevada e não pressione a região.',
+      'Primeiros 7 dias': 'O inchaço e a sensibilidade reduzem gradualmente. Não massageie nem pressione a região aplicada por 5 dias, para preservar o posicionamento do gel.',
+      '1 a 3 meses': 'Na maioria das regiões, o efeito é de curta duração. Na região das olheiras, o resultado tende a durar mais tempo. O Plasma Gel pode ser repetido para manutenção, conforme a avaliação do Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 2, label: '48 horas (calor e sol direto)' },
+      maquiagem: { dias: 1, label: '24 horas (maquiagem pesada)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Alteração de cor da pele, bolhas ou áreas escurecidas na região aplicada',
+      'Inchaço muito assimétrico e progressivo após as primeiras 72 horas',
+      'Vermelhidão intensa, calor local, secreção ou pus',
+      'Febre ou mal-estar geral'
+    ],
+    cuidados: {
+      higiene: 'Higiene suave da pele, sem esfregar a região aplicada. Não massageie nem pressione a região por 5 dias.',
+      medicacao: 'Analgésico simples pode ser usado se necessário, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 48 horas.',
+      sol: 'Use protetor solar FPS 50 normalmente após 24 horas. Evite calor e sol direto nas primeiras 48 horas.',
+      maquiagem: 'Evite maquiagem pesada sobre a região nas primeiras 24 horas.'
+    },
+    faq: [
+      { q: 'Posso massagear a região após o Plasma Gel?', a: 'Não massageie nem pressione a região aplicada por 5 dias, para preservar o posicionamento do gel.' },
+      { q: 'Quanto tempo dura o resultado do Plasma Gel?', a: 'A duração é variável: curta na maioria das regiões e mais prolongada na região das olheiras. O Plasma Gel pode ser repetido para manutenção.' }
+    ]
+  },
+
+  /* ---------- FIOS PDO LISOS ---------- */
+  'fios-lisos': {
+    nome: 'Fios PDO Lisos',
+    desc: 'Bioestimulação com fios lisos.',
+    categoria: 'fios',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo nas primeiras horas, se houver desconforto',
+      'Alimentar-se normalmente, sem restrição específica',
+      'Higiene facial suave, sem esfregar a região tratada',
+      'Dormir com a cabeça elevada nas primeiras noites',
+      'Usar protetor solar FPS 50 normalmente',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Massagem facial por 7 dias',
+      'Exercício físico intenso por 48 horas',
+      'Calor intenso (sauna, banho muito quente, exposição solar direta) nas primeiras 48 horas',
+      'Pressionar, apoiar a mão ou manipular a região tratada nos primeiros dias',
+      'Outros tratamentos faciais por 14 dias'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Edema discreto e leve sensibilidade podem ocorrer. Compressas frias com pano limpo ajudam no conforto. Prefira atividades leves.',
+      'Primeiros 7 dias': 'O edema discreto, quando presente, tende a se resolver. Evite massagem facial. Mantenha a higiene suave e a fotoproteção.',
+      '2 a 4 semanas': 'Aguarde até 14 dias para retomar outros tratamentos faciais. O estímulo de colágeno é progressivo, com melhora de qualidade e firmeza da pele ao longo das semanas.'
+    },
+    prazos: {
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 2, label: '48 horas (calor e sol direto)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Vermelhidão intensa, calor local ou secreção na região tratada',
+      'Nódulos dolorosos ou irregularidades progressivas',
+      'Febre ou mal-estar geral',
+      'Qualquer sintoma diferente do esperado ou que cause preocupação'
+    ],
+    cuidados: {
+      higiene: 'Higiene facial suave, sem esfregar a região tratada. Não pressione nem manipule a região nos primeiros dias.',
+      medicacao: 'Analgésico simples pode ser usado se necessário, conforme orientação da equipe clínica.',
+      atividade: 'Evite exercício físico intenso por 48 horas e massagem facial por 7 dias.',
+      sol: 'Use protetor solar FPS 50 normalmente. Evite calor e sol direto nas primeiras 48 horas.',
+      retorno: 'O estímulo de colágeno é progressivo, com melhora de qualidade e firmeza da pele ao longo das semanas.'
+    },
+    faq: [
+      { q: 'Posso me alimentar normalmente após os fios lisos?', a: 'Sim, não há restrição alimentar específica para os fios lisos. Você pode se alimentar normalmente.' },
+      { q: 'Quando posso fazer massagem facial após os fios lisos?', a: 'Evite massagem facial por 7 dias.' }
+    ]
+  },
+
+  /* ---------- FIOS PDO DE TRACAO ---------- */
+  'fios-tracao': {
+    nome: 'Fios PDO Tração',
+    desc: 'Fios para sustentação e lifting.',
+    categoria: 'fios',
+    placeholder: false,
+    pode: [
+      'Aplicar compressas frias com pano limpo nas primeiras 24 a 48 horas, sem gelo direto',
+      'Dormir de barriga para cima por 7 dias, com a cabeça elevada',
+      'Alimentar-se com alimentos macios nos primeiros dias',
+      'Higiene facial suave, sem esfregar a região tratada',
+      'Usar protetor solar FPS 50 normalmente',
+      'Usar analgésico simples se necessário, conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Mastigar alimentos duros por 7 dias',
+      'Movimentos faciais amplos (rir gargalhando, abrir muito a boca) por 7 dias',
+      'Dormir de lado ou de bruços por 7 dias',
+      'Massagem facial por 30 dias',
+      'Outros procedimentos faciais por 30 dias',
+      'Exercício físico intenso por 48 a 72 horas',
+      'Pressionar, apoiar a mão ou manipular a região tratada'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Edema e sensibilidade são esperados. Use compressas frias com pano limpo. Durma de barriga para cima com a cabeça elevada. Evite movimentos faciais amplos.',
+      'Primeiros 7 dias': 'Mantenha as restrições principais: não mastigue alimentos duros, evite movimentos faciais amplos e durma de barriga para cima. O edema reduz gradualmente.',
+      '7 a 14 dias': 'Hematomas, se presentes, vão clareando. A região fica mais confortável. Continue evitando massagem facial.',
+      '2 a 4 semanas': 'Evite massagem facial e outros procedimentos faciais por 30 dias, para não interferir na acomodação dos fios e na estabilização do resultado.',
+      '1 a 3 meses': 'Os tecidos estão mais acomodados. O resultado se torna mais natural. A avaliação de retoque ou nova sessão, se indicada, é feita pelo Dr. Gustavo.'
+    },
+    prazos: {
+      exercicio: { dias: 3, label: '48 a 72 horas' },
+      sol: { dias: 2, label: '48 horas (calor e sol direto)' }
+    },
+    sinaisAlerta: [
+      'Dor intensa e crescente que não responde a analgésico',
+      'Assimetria importante, ondulações ou irregularidades visíveis e progressivas',
+      'Extrusão (sensação de que o fio está aparecendo ou saindo pela pele)',
+      'Sinais de infecção: vermelhidão intensa, calor local, secreção ou pus',
+      'Febre ou mal-estar geral'
+    ],
+    cuidados: {
+      higiene: 'Higiene facial suave, sem esfregar a região tratada. Não pressione nem manipule a região.',
+      alimentacao: 'Prefira alimentos macios nos primeiros dias. Não mastigue alimentos duros por 7 dias.',
+      posicao: 'Durma de barriga para cima por 7 dias, com a cabeça elevada. Evite dormir de lado ou de bruços.',
+      atividade: 'Evite exercício físico intenso por 48 a 72 horas, massagem facial e outros procedimentos faciais por 30 dias.',
+      sol: 'Use protetor solar FPS 50 normalmente.',
+      retorno: 'Os tecidos se acomodam ao longo das semanas. A avaliação de retoque ou nova sessão, se indicada, é feita pelo Dr. Gustavo após 30 dias.'
+    },
+    faq: [
+      { q: 'Por que preciso comer alimentos macios após os fios de tração?', a: 'A mastigação intensa pode tracionar os fios antes da estabilização. Por isso, prefira alimentos macios por 7 dias.' },
+      { q: 'Posso dormir de lado após os fios de tração?', a: 'Evite dormir de lado ou de bruços por 7 dias. Durma de barriga para cima com a cabeça elevada.' }
+    ]
+  },
+
+  /* ---------- MINI-LIFTING FACIAL ---------- */
+  'mini-lifting': {
+    nome: 'Mini-Lifting Facial',
+    desc: 'Lifting facial cirúrgico de recuperação reduzida.',
+    categoria: 'cirurgico',
+    placeholder: false,
+    pode: [
+      'Dormir com a cabeça elevada por 7 dias',
+      'Aplicar compressas frias com pano limpo conforme orientação nas primeiras horas',
+      'Realizar drenagem linfática a partir do 5º dia, com profissional qualificado de escolha do paciente',
+      'Higiene suave da face, respeitando a região das suturas',
+      'Usar protetor solar FPS 50 diariamente',
+      'Tomar as medicações conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Exercício físico intenso por 4 semanas',
+      'Exposição solar direta por 4 semanas',
+      'Fumar por 4 semanas após o procedimento (compromete a cicatrização)',
+      'Dormir de lado ou pressionar a região operada nos primeiros dias',
+      'Movimentos faciais amplos e esforço excessivo na primeira semana',
+      'Manipular, coçar ou molhar excessivamente a região das suturas antes da liberação'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Edema e desconforto são esperados. Durma com a cabeça elevada e use compressas frias com pano limpo conforme orientação. Repouso é fundamental.',
+      'Primeiros 7 dias': 'A drenagem linfática pode ser iniciada a partir do 5º dia, com profissional qualificado de escolha do paciente. A retirada dos pontos ocorre entre 7 e 10 dias, conforme avaliação. O edema continua reduzindo.',
+      '2 a 4 semanas': 'Edema e hematoma vão se resolvendo. Liberação gradual de exercício físico e exposição solar após 4 semanas, conforme avaliação do Dr. Gustavo. Mantenha a abstinência de tabagismo por 4 semanas.',
+      '1 a 3 meses': 'Resultado estável após maturação, em torno de 60 a 90 dias. Os tecidos estão acomodados e o contorno facial se apresenta de forma mais natural.'
+    },
+    prazos: {
+      exercicio: { dias: 28, label: '4 semanas' },
+      sol: { dias: 28, label: '4 semanas' },
+      tabagismo: { dias: 28, label: '4 semanas' },
+      pontos: { dias: 10, label: '7 a 10 dias' }
+    },
+    sinaisAlerta: [
+      'Febre acima de 38°C',
+      'Sangramento ativo ou abundante na região operada',
+      'Dor intensa e desproporcional que não cede com a medicação orientada',
+      'Inchaço muito assimétrico, crescente e progressivo após as primeiras 48 horas',
+      'Secreção purulenta, odor fétido ou abertura das suturas',
+      'Áreas de pele muito pálidas, arroxeadas ou escurecidas',
+      'Qualquer sintoma que cause preocupação ou que seja diferente do esperado'
+    ],
+    cuidados: {
+      higiene: 'Higiene suave da face, respeitando a região das suturas. Não manipule, coce ou molhe excessivamente a região antes da liberação.',
+      medicacao: 'Tome as medicações conforme orientação da equipe clínica.',
+      posicao: 'Durma com a cabeça elevada por 7 dias. Evite dormir de lado ou pressionar a região operada nos primeiros dias.',
+      atividade: 'Evite exercício físico intenso por 4 semanas, com retomada gradual conforme liberação do Dr. Gustavo.',
+      sol: 'Use protetor solar FPS 50 diariamente. Evite exposição solar direta por 4 semanas.',
+      retorno: 'A retirada dos pontos ocorre entre 7 e 10 dias. A drenagem linfática pode iniciar a partir do 5º dia, com profissional qualificado de escolha do paciente.'
+    },
+    faq: [
+      { q: 'Quando posso fazer drenagem linfática após o mini-lifting facial?', a: 'A drenagem pode começar a partir do 5º dia, realizada por profissional qualificado de escolha do paciente.' },
+      { q: 'Quando posso voltar a fazer exercício e tomar sol após o mini-lifting?', a: 'Evite exercício físico intenso e exposição solar direta por 4 semanas, com retomada gradual conforme liberação do Dr. Gustavo.' }
+    ]
+  },
+
+  /* ---------- CIRURGIAS ESTETICAS GENGIVAIS ---------- */
+  'gengivais': {
+    nome: 'Cirurgias Estéticas Gengivais',
+    desc: 'Gengivoplastia, gengivectomia e aumento de coroa clínica.',
+    categoria: 'cirurgico',
+    placeholder: false,
+    pode: [
+      'Manter dieta líquida e fria nas primeiras 24 horas',
+      'Manter dieta pastosa e fria por 3 a 5 dias',
+      'Fazer limpeza da região operada com gaze umedecida em clorexidina 0,12%, conforme orientação da equipe clínica',
+      'Fazer bochechos com clorexidina 0,12% duas vezes ao dia por 7 dias',
+      'Aplicar compressas frias externas no rosto nas primeiras horas, se houver desconforto',
+      'Tomar as medicações conforme orientação da equipe clínica'
+    ],
+    evite: [
+      'Escovar a região operada por 7 dias (faça a limpeza com gaze e clorexidina, conforme orientação)',
+      'Cuspir ou sugar nas primeiras 48 horas',
+      'Alimentos quentes, duros, crocantes ou condimentados nos primeiros dias',
+      'Bebidas alcoólicas durante o uso das medicações',
+      'Fumar durante o período de recuperação (compromete a cicatrização gengival)',
+      'Esforço físico intenso nos primeiros dias'
+    ],
+    timeline: {
+      'Primeiras 24 horas': 'Pode haver sangramento leve, o que é normal. Mantenha dieta líquida e fria. Não cuspa nem sugue. Compressas frias externas no rosto ajudam no conforto.',
+      'Primeiros 7 dias': 'Após 48 horas, inicie os bochechos com clorexidina 0,12% duas vezes ao dia. Mantenha dieta pastosa e fria por 3 a 5 dias. Faça a limpeza da região operada com gaze e clorexidina, sem escovar diretamente. Retorno de acompanhamento em 7 dias.',
+      '2 a 4 semanas': 'Retorno de acompanhamento em 30 dias. A gengiva segue em processo de maturação.',
+      '1 a 3 meses': 'Resultado estável após a maturação gengival, em torno de 30 a 60 dias. O contorno da gengiva se apresenta de forma mais definida e harmoniosa.'
+    },
+    prazos: {
+      exercicio: { dias: 7, label: 'primeiros dias, conforme liberação' }
+    },
+    sinaisAlerta: [
+      'Febre acima de 38°C',
+      'Sangramento ativo, abundante ou que não cessa na região operada',
+      'Dor intensa e desproporcional que não cede com a medicação orientada',
+      'Secreção purulenta ou odor fétido na região operada',
+      'Inchaço importante e progressivo após as primeiras 48 horas',
+      'Qualquer sintoma que cause preocupação ou que seja diferente do esperado'
+    ],
+    cuidados: {
+      higiene: 'Faça a limpeza da região operada com gaze umedecida em clorexidina 0,12%, sem escovar diretamente por 7 dias. Bochechos com clorexidina 0,12% duas vezes ao dia por 7 dias.',
+      medicacao: 'Tome as medicações conforme orientação da equipe clínica. Evite bebidas alcoólicas durante o uso das medicações.',
+      alimentacao: 'Dieta líquida e fria nas primeiras 24 horas, depois pastosa e fria por 3 a 5 dias. Evite alimentos quentes, duros, crocantes ou condimentados nos primeiros dias.',
+      atividade: 'Evite esforço físico intenso nos primeiros dias.',
+      retorno: 'Os retornos costumam ser agendados em 7 e 30 dias. O resultado fica estável após 30 a 60 dias, com a maturação gengival. Estas orientações não se aplicam a enxerto gengival.'
+    },
+    faq: [
+      { q: 'É normal sangrar após a cirurgia gengival?', a: 'Sim, pode haver sangramento leve nas primeiras 24 horas, o que é normal. Sangramento ativo ou abundante que não cessa exige contato com a clínica.' },
+      { q: 'Quando posso voltar a escovar a região operada?', a: 'Evite escovar a região operada por 7 dias. Faça a limpeza com gaze e clorexidina, conforme orientação, até a liberação no retorno.' }
+    ]
+  }
 };
 
 /* Rotulos amigaveis dos prazos numericos */
@@ -811,7 +1351,7 @@ function montarSeletor() {
         '<span class="check-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
         '<span class="card-text"><span class="card-nome">' + esc(p.nome) + '</span>' +
         '<span class="card-desc">' + esc(p.desc) + '</span>' +
-        (p.placeholder ? '<span class="card-tag-placeholder">Em revisão</span>' : '') +
+        (p.placeholder ? '<span class="card-tag-placeholder">Consulte a equipe</span>' : '') +
         subselecaoHtml +
         '</span></label>';
     });
@@ -977,7 +1517,7 @@ function renderResultado(selecionados, mapaRegioes) {
 
   /* Nota dos placeholders selecionados junto com reais */
   if (placeholders.length && reais.length > 0) {
-    html += '<div class="orient-section"><h2>Procedimentos em revisão</h2>';
+    html += '<div class="orient-section"><h2>Procedimentos com orientações sob consulta</h2>';
     placeholders.forEach(function (c) {
       html += '<div class="placeholder-nota"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span><strong>' + esc(PROCEDIMENTOS[c].nome) + ':</strong> ' + esc(NOTA_PLACEHOLDER) + '</span></div>';
     });
