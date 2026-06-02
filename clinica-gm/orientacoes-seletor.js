@@ -1691,6 +1691,9 @@ function configurarSaida(selecionados, mapaRegioes) {
 
   var listaTexto = nomes.join(', ');
 
+  /* Considera apenas procedimentos com orientações reais (sem placeholders) */
+  var reais = ordenados.filter(function (c) { return PROCEDIMENTOS[c] && !PROCEDIMENTOS[c].placeholder; });
+
   /* Monta o corpo com o conteúdo das orientações combinadas, em texto neutro,
      para que possa ser usado tanto pelo paciente quanto pela equipe da clínica. */
   var corpo = montarTextoOrientacoes(reais, mapaRegioes);
