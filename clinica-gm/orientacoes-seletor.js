@@ -1018,6 +1018,38 @@ function ativarFAQ() {
    SAIDA, query string, WhatsApp, impressao
    ============================================ */
 
+/* Monta um resumo em texto puro das orientações combinadas, em linguagem neutra,
+   para envio pelo WhatsApp. Usa Pode, Evite, Prazos e Sinais de alerta. */
+function montarTextoOrientacoes(reais, mapaRegioes) {
+  mapaRegioes = mapaRegioes || {};
+  if (!reais || !reais.length) { return ''; }
+  var partes = [];
+
+  var pe = consolidaPodeEvite(reais, mapaRegioes);
+  if (pe.pode.length) {
+    partes.push('PODE:\n' + pe.pode.map(function (x) { return '- ' + x; }).join('\n'));
+  }
+  if (pe.evite.length) {
+    partes.push('EVITE:\n' + pe.evite.map(function (x) { return '- ' + x; }).join('\n'));
+  }
+
+  var prazos = consolidaPrazos(reais);
+  if (prazos.length) {
+    partes.push('PRAZOS A RESPEITAR:\n' + prazos.map(function (p) {
+      return '- ' + p.rotulo + ': ' + p.label + (p.conflito ? ' (prazo mais restritivo)' : '');
+    }).join('\n'));
+  }
+
+  var sinais = consolidaSinaisAlerta(reais, mapaRegioes);
+  if (sinais.length) {
+    partes.push('SINAIS DE ALERTA (contato imediato com a clínica):\n' + sinais.map(function (s) {
+      return '- ' + s;
+    }).join('\n'));
+  }
+
+  return partes.join('\n\n') + '\n\n';
+}
+
 function configurarSaida(selecionados, mapaRegioes) {
   /* mapaRegioes: objeto opcional { 'preenchimento': ['labial','nasal'], ... } */
   mapaRegioes = mapaRegioes || {};
@@ -1046,7 +1078,15 @@ function configurarSaida(selecionados, mapaRegioes) {
   var urlComQuery = urlBase + '?p=' + codigos;
 
   var listaTexto = nomes.join(', ');
-  var msg = 'Olá Dr. Gustavo, fiz ' + listaTexto + ' e estou consultando minhas orientações em: ' + urlComQuery;
+
+  /* Monta o corpo com o conteúdo das orientações combinadas, em texto neutro,
+     para que possa ser usado tanto pelo paciente quanto pela equipe da clínica. */
+  var corpo = montarTextoOrientacoes(reais, mapaRegioes);
+
+  var msg = 'Olá! Aqui seguem as orientações pós-procedimento referentes ao(s) procedimento(s) realizado(s): ' + listaTexto + '.\n\n' +
+    corpo +
+    'Consulte a versão completa em: ' + urlComQuery + '\n\n' +
+    'Em caso de dúvidas, entre em contato com a equipe da clínica.';
   var btnWhats = document.getElementById('btnWhatsApp');
   btnWhats.href = 'https://wa.me/5521995523509?text=' + encodeURIComponent(msg);
 
