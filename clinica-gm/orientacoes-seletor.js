@@ -5,14 +5,16 @@
 
 /* Categorias do seletor, na ordem de exibicao */
 var CATEGORIAS = [
-  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'preenchimento', 'lipolise'] },
-  { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento'] },
+  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'lipolise'] },
+  { id: 'preenchimento', titulo: 'Preenchimento facial', codigos: ['preenchimento'] },
+  { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento', 'pdrn'] },
+  { id: 'plaquetas', titulo: 'Procedimentos com plaquetas', codigos: ['iprf', 'plasma-gel'] },
   { id: 'fios', titulo: 'Fios', codigos: ['fios-lisos', 'fios-tracao'] },
-  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lip-lift', 'brow-lift', 'blefaro-superior', 'blefaro-inferior', 'lipo-platisma', 'bichectomia', 'lobuloplastia'] }
+  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lipo-platisma', 'blefaro-superior', 'blefaro-inferior', 'brow-lift', 'lip-lift', 'bichectomia', 'lobuloplastia', 'mini-lifting', 'gengivais'] }
 ];
 
 /* Peso de categoria para ordenacao, cirurgia primeiro */
-var PESO_CATEGORIA = { cirurgico: 4, fios: 3, colageno: 2, injetavel: 1 };
+var PESO_CATEGORIA = { cirurgico: 6, fios: 5, plaquetas: 4, colageno: 3, preenchimento: 2, injetavel: 1 };
 
 var NOTA_PLACEHOLDER = 'Para orientações detalhadas deste procedimento, entre em contato com a equipe da clínica pelo WhatsApp.';
 var FRASE_INDIVIDUAL = 'As orientações podem variar conforme avaliação individual do Dr. Gustavo Martins.';
@@ -540,7 +542,7 @@ var PROCEDIMENTOS = {
   'preenchimento': {
     nome: 'Preenchimento Facial',
     desc: 'Aplicação de ácido hialurônico injetável.',
-    categoria: 'injetavel',
+    categoria: 'preenchimento',
     placeholder: false,
     temRegioes: true,
     regioes: {
@@ -1384,14 +1386,25 @@ function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+/* Subgrupo: cirurgias da regiao dos olhos, agrupadas dentro de cirurgico */
+var CIRURGIAS_OLHOS = ['blefaro-superior', 'blefaro-inferior', 'brow-lift'];
+
 function montarSeletor() {
   var alvo = document.getElementById('seletorCategorias');
   var html = '';
   CATEGORIAS.forEach(function (cat) {
     html += '<div class="seletor-categoria"><h3>' + cat.titulo + '</h3><div class="seletor-grid">';
+    var subgrupoOlhosAberto = false;
     cat.codigos.forEach(function (cod) {
       var p = PROCEDIMENTOS[cod];
       if (!p) return;
+      /* Insere rotulo do subgrupo de cirurgias da regiao dos olhos antes do primeiro item */
+      if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) !== -1 && !subgrupoOlhosAberto) {
+        html += '<p class="seletor-subgrupo">Cirurgias da região dos olhos</p>';
+        subgrupoOlhosAberto = true;
+      } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
+        subgrupoOlhosAberto = false;
+      }
       /* Monta bloco de sub-selecao de regioes, se aplicavel */
       var subselecaoHtml = '';
       if (p.temRegioes && p.regioes) {
