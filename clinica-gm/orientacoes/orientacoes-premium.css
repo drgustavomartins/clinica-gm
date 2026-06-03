@@ -1,0 +1,708 @@
+/* ============================================================
+   orientacoes-premium.css | Refino premium, sereno e lirico
+   Clinica Dr. Gustavo Martins | Area de Orientacoes
+   Carregado por ultimo: refina classes existentes sem alterar
+   a paleta (navy #0B1D3A + gold #C9A84C) nem o JS do seletor.
+   ============================================================ */
+
+/* ---------- Serifa elegante para titulos (font-display: swap) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap');
+
+/* ---------- Tokens premium (escopados na area de orientacoes) ---------- */
+.orientacoes-page {
+  /* Fundo cremoso, mais quente que branco puro */
+  --bg: #FAFAF7;
+  --bg-surface: #FFFFFF;
+  --bg-cream: #F8F6F1;
+
+  /* Serifa de display */
+  --font-serif: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+
+  /* Bordas e textos mais suaves */
+  --border-subtle: rgba(11, 29, 58, 0.08);
+  --border-hairline: rgba(11, 29, 58, 0.06);
+  --navy-soft: rgba(11, 29, 58, 0.65);
+  --navy-faint: rgba(11, 29, 58, 0.55);
+  --gold-soft: rgba(201, 168, 76, 0.5);
+
+  /* Sombras premium */
+  --shadow-card: 0 8px 24px rgba(11, 29, 58, 0.06);
+  --shadow-card-hover: 0 18px 48px rgba(11, 29, 58, 0.12);
+
+  /* Transicao premium suave */
+  --transition-premium: 450ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  background: var(--bg);
+}
+
+/* ============================================================
+   UTILITARIOS LIRICOS
+   ============================================================ */
+
+.orientacoes-page .eyebrow,
+.orientacoes-page .premium-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-hover);
+  margin: 0 0 var(--space-4);
+}
+
+.orientacoes-page .serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Divisor gold curto e fino */
+.orientacoes-page .gold-rule {
+  width: 60px;
+  height: 1px;
+  background: var(--accent);
+  border: 0;
+  margin: var(--space-6) 0;
+}
+
+/* Numero elegante em serifa */
+.orientacoes-page .number-elegant {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Fade-in suave em scroll (sem libraries) */
+.orientacoes-page [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.orientacoes-page [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .orientacoes-page [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   MINI HEADER, mais respiro, link tipografico sutil
+   ============================================================ */
+.orientacoes-page .orient-mini-header {
+  padding: var(--space-6) var(--space-8);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.orientacoes-page .orient-mini-header .logo img { height: 38px; }
+
+.orientacoes-page .orient-mini-header .back-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--navy-soft);
+  position: relative;
+  transition: color var(--transition-premium);
+  gap: var(--space-2);
+}
+.orientacoes-page .orient-mini-header .back-link svg { stroke-width: 1.4; }
+.orientacoes-page .orient-mini-header .back-link:hover { color: var(--accent); }
+
+/* ============================================================
+   HEADER DA ORIENTACAO, hero lirico
+   ============================================================ */
+.orientacoes-page .orient-header {
+  padding: clamp(72px, 10vw, 120px) 0 clamp(48px, 7vw, 80px);
+  border-bottom: 1px solid var(--border-hairline);
+  background: linear-gradient(180deg, var(--bg-cream), var(--bg));
+}
+
+.orientacoes-page .orient-header .breadcrumb {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy-faint);
+  margin-bottom: var(--space-5);
+}
+.orientacoes-page .orient-header .breadcrumb a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+}
+.orientacoes-page .orient-header .breadcrumb a:hover { border-bottom-color: var(--gold-soft); }
+
+.orientacoes-page .orient-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  max-width: 18ch;
+  margin: 0 auto var(--space-5);
+}
+
+.orientacoes-page .orient-header .lead {
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.7;
+  color: var(--navy-soft);
+  max-width: 56ch;
+  margin: 0 auto;
+}
+
+.orientacoes-page .orient-header .gold-line {
+  width: 60px;
+  height: 1px;
+  background: var(--accent);
+  margin: var(--space-8) auto 0;
+}
+
+/* ============================================================
+   CONTEUDO, ritmo e leitura
+   ============================================================ */
+.orientacoes-page .orient-content {
+  max-width: 720px;
+  padding: clamp(56px, 8vw, 96px) var(--space-6);
+}
+
+.orientacoes-page .orient-section { margin-bottom: clamp(56px, 8vw, 88px); }
+
+.orientacoes-page .orient-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0 0 var(--space-5);
+  position: relative;
+}
+/* Divisor gold fino abaixo do h2 */
+.orientacoes-page .orient-section > h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: var(--space-4);
+}
+
+.orientacoes-page .orient-section h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: var(--space-8) 0 var(--space-3);
+}
+
+.orientacoes-page .orient-section p,
+.orientacoes-page .orient-section li {
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: var(--navy-soft);
+}
+.orientacoes-page .orient-section p strong { color: var(--text); }
+.orientacoes-page .orient-section em { font-family: var(--font-serif); font-size: 1.12em; color: var(--navy-soft); }
+
+/* ============================================================
+   CAIXAS PODE / EVITE, sombras suaves
+   ============================================================ */
+.orientacoes-page .dual-box { gap: var(--space-6); margin: var(--space-8) 0; }
+
+.orientacoes-page .dual-box .box {
+  padding: var(--space-8);
+  border-radius: 12px;
+  border-left: none;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+  border-top: 2px solid;
+  transition: box-shadow var(--transition-premium), transform var(--transition-premium);
+}
+.orientacoes-page .dual-box .box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+.orientacoes-page .dual-box .box-do { border-top-color: #2E7D5B; background: var(--bg-surface); }
+.orientacoes-page .dual-box .box-dont { border-top-color: #B5505A; background: var(--bg-surface); }
+
+.orientacoes-page .dual-box .box h4 {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+.orientacoes-page .dual-box .box-do h4 { color: #2E7D5B; }
+.orientacoes-page .dual-box .box-dont h4 { color: #B5505A; }
+
+.orientacoes-page .dual-box .box li { font-size: 0.98rem; line-height: 1.6; padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.orientacoes-page .dual-box .box-do li::before { color: #2E7D5B; font-weight: 600; }
+.orientacoes-page .dual-box .box-dont li::before { color: #B5505A; font-weight: 600; }
+
+/* ============================================================
+   TIMELINE, numeracao serifa e bullets gold
+   ============================================================ */
+.orientacoes-page .timeline { padding-left: var(--space-8); margin: var(--space-8) 0; }
+.orientacoes-page .timeline::before {
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), rgba(201,168,76,0.15));
+}
+.orientacoes-page .timeline-item { padding-bottom: var(--space-8); }
+.orientacoes-page .timeline-item::before {
+  left: calc(-1 * var(--space-8) + 1px);
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--bg);
+}
+.orientacoes-page .timeline-item h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+.orientacoes-page .timeline-item p { font-size: 1rem; line-height: 1.72; color: var(--navy-soft); }
+
+/* ============================================================
+   FAQ accordion, mais sereno
+   ============================================================ */
+.orientacoes-page .orient-faq-item { border-bottom: 1px solid var(--border-subtle); }
+.orientacoes-page .orient-faq-question {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: var(--space-6) 0;
+  transition: color var(--transition-premium);
+}
+.orientacoes-page .orient-faq-question:hover { color: var(--accent); }
+.orientacoes-page .orient-faq-question::after { font-weight: 300; }
+.orientacoes-page .orient-faq-answer p { font-size: 1rem; line-height: 1.75; color: var(--navy-soft); }
+
+/* ============================================================
+   CAIXA DE ALERTA (orient-alert-box reutiliza orient-section)
+   ============================================================ */
+.orientacoes-page .orient-alert-box {
+  background: var(--bg-surface);
+  border: 1px solid rgba(181, 80, 90, 0.25);
+  border-left: 3px solid #B5505A;
+  border-radius: 12px;
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+}
+.orientacoes-page .orient-alert-box > h2 { color: #B5505A; }
+.orientacoes-page .orient-alert-box > h2::after { background: #B5505A; }
+.orientacoes-page .orient-alert-box .alert-header-text { font-weight: 500; color: var(--text); }
+.orientacoes-page .orient-alert-box li {
+  position: relative;
+  padding-left: var(--space-6);
+}
+.orientacoes-page .orient-alert-box ul { margin: var(--space-4) 0; }
+.orientacoes-page .orient-alert-box li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 5px;
+  height: 5px;
+  background: #B5505A;
+  transform: rotate(45deg);
+}
+
+/* Bullets gold em losango para listas comuns dentro de secoes */
+.orientacoes-page .orient-section > ul { margin: var(--space-4) 0; }
+.orientacoes-page .orient-section > ul > li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+.orientacoes-page .orient-section > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+/* ============================================================
+   CTA FINAL, editorial e centralizado
+   ============================================================ */
+.orientacoes-page .orient-cta-block {
+  margin: clamp(72px, 10vw, 112px) 0 clamp(48px, 7vw, 80px);
+  padding: clamp(48px, 7vw, 72px) clamp(32px, 5vw, 56px);
+  background: var(--bg-cream);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+.orientacoes-page .orient-cta-block h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 400;
+  color: var(--text);
+}
+.orientacoes-page .orient-cta-block > p { font-size: 1.05rem; color: var(--navy-soft); line-height: 1.7; }
+.orientacoes-page .orient-cta-buttons { margin-top: var(--space-8); gap: var(--space-4); }
+
+/* CTA WhatsApp como botao gold solido, sans uppercase pequeno */
+.orientacoes-page .whatsapp-inline {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-premium), transform var(--transition-premium), box-shadow var(--transition-premium);
+}
+.orientacoes-page .whatsapp-inline svg { width: 18px; height: 18px; }
+.orientacoes-page .whatsapp-inline:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(201, 168, 76, 0.28);
+}
+
+/* Botao secundario outline navy preenchendo no hover */
+.orientacoes-page .orient-cta-buttons .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text);
+  color: var(--text);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-premium), color var(--transition-premium), transform var(--transition-premium);
+}
+.orientacoes-page .orient-cta-buttons .btn-outline:hover {
+  background: var(--text);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   INDEX, grid de cards lirico
+   ============================================================ */
+.orientacoes-page .orient-content { /* container leve mais largo para grid */ }
+
+.orientacoes-page .orient-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+.orientacoes-page .orient-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium), border-color var(--transition-premium);
+}
+.orientacoes-page .orient-card::before {
+  content: "Orienta\E7\E3o";
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-hover);
+  margin-bottom: var(--space-3);
+}
+.orientacoes-page .orient-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--gold-soft);
+  box-shadow: var(--shadow-card-hover);
+}
+.orientacoes-page .orient-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+.orientacoes-page .orient-card p { font-size: 0.95rem; line-height: 1.6; color: var(--navy-soft); }
+.orientacoes-page .orient-card .read-more {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-hover);
+}
+
+/* Sublink elegante no card de preenchimento */
+.orientacoes-page .orient-card-sublink {
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-soft);
+  padding-bottom: 1px;
+  transition: color var(--transition-premium), border-color var(--transition-premium);
+}
+.orientacoes-page .orient-card-sublink:hover { color: var(--text); border-bottom-color: var(--text); }
+
+/* ============================================================
+   BANNER COMBINADAS, navy elegante
+   ============================================================ */
+.orientacoes-page .combinadas-banner {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding: clamp(40px, 6vw, 64px) clamp(32px, 5vw, 56px);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0B1D3A, #16315c);
+  box-shadow: 0 16px 48px rgba(11, 29, 58, 0.18);
+}
+.orientacoes-page .combinadas-banner .banner-texto::before {
+  content: "Personalizado";
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+.orientacoes-page .combinadas-banner h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  font-weight: 400;
+  color: #fff;
+}
+.orientacoes-page .combinadas-banner p { color: rgba(255,255,255,0.78); font-size: 1rem; line-height: 1.65; }
+.orientacoes-page .combinadas-banner .banner-btn {
+  background: var(--accent);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  transition: background var(--transition-premium), transform var(--transition-premium), box-shadow var(--transition-premium);
+}
+.orientacoes-page .combinadas-banner .banner-btn svg { stroke-width: 1.6; }
+.orientacoes-page .combinadas-banner .banner-btn:hover {
+  background: #E0C46B;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(201, 168, 76, 0.3);
+}
+
+/* ============================================================
+   PAGINA COMBINADA, seletor premium
+   ============================================================ */
+.orientacoes-page .seletor-intro { font-size: 1.05rem; color: var(--navy-soft); line-height: 1.7; }
+
+.orientacoes-page .seletor-categoria h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text);
+  border-bottom: none;
+  padding-bottom: var(--space-3);
+  position: relative;
+}
+.orientacoes-page .seletor-categoria h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: var(--space-3);
+}
+
+.orientacoes-page .seletor-subgrupo {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-hover);
+}
+
+.orientacoes-page .seletor-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  padding: var(--space-5) var(--space-6);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium), border-color var(--transition-premium), background var(--transition-premium);
+}
+.orientacoes-page .seletor-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-soft);
+  box-shadow: var(--shadow-card-hover);
+}
+.orientacoes-page .seletor-card .check-visual { border-color: rgba(11,29,58,0.2); border-width: 1.5px; }
+.orientacoes-page .seletor-card .card-nome { font-size: 1rem; font-weight: 600; color: var(--text); }
+.orientacoes-page .seletor-card .card-desc { font-size: 0.82rem; color: var(--navy-faint); }
+.orientacoes-page .seletor-card.is-checked {
+  border-color: var(--accent);
+  background: rgba(201, 168, 76, 0.06);
+  box-shadow: var(--shadow-card), inset 0 0 0 1px var(--accent);
+}
+
+/* Botao ver orientacoes, centralizado e elegante */
+.orientacoes-page .seletor-acoes {
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: clamp(40px, 6vw, 64px);
+}
+.orientacoes-page .btn-ver-orientacoes {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-10);
+  transition: background var(--transition-premium), transform var(--transition-premium), box-shadow var(--transition-premium);
+}
+.orientacoes-page .btn-ver-orientacoes svg { stroke-width: 1.6; }
+.orientacoes-page .btn-ver-orientacoes:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(201, 168, 76, 0.3);
+}
+.orientacoes-page .seletor-contador { font-size: 0.85rem; letter-spacing: 0.04em; color: var(--navy-soft); }
+
+/* Tags douradas dos procedimentos */
+.orientacoes-page .proc-tags { margin-bottom: clamp(40px, 6vw, 56px); }
+.orientacoes-page .proc-tag {
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--gold-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+}
+
+/* Cuidados detalhados unificados, editorial */
+.orientacoes-page .cuidado-grupo > h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: none;
+  padding-bottom: var(--space-3);
+  position: relative;
+}
+.orientacoes-page .cuidado-grupo > h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: var(--space-3);
+}
+.orientacoes-page .cuidado-item h4 { font-size: 1rem; color: var(--accent-hover); }
+.orientacoes-page .cuidado-item p { font-size: 1rem; line-height: 1.7; color: var(--navy-soft); }
+
+/* Prazos conflitantes */
+.orientacoes-page .prazo-conflito {
+  background: var(--bg-cream);
+  border: 1px solid var(--gold-soft);
+  border-radius: 12px;
+}
+.orientacoes-page .prazo-lista li {
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+  border-left: 2px solid var(--accent);
+  border-radius: 8px;
+}
+
+/* Sinais de alerta box */
+.orientacoes-page .sinais-alerta-box {
+  background: var(--bg-surface);
+  border: 1px solid rgba(181, 80, 90, 0.3);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+.orientacoes-page .sinais-alerta-box .sinais-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #B5505A;
+}
+.orientacoes-page .sinais-alerta-box li::before { background: #B5505A; }
+.orientacoes-page .sinais-alerta-box .sinais-rodape {
+  background: rgba(201, 168, 76, 0.1);
+  border-left: 2px solid var(--accent);
+}
+
+/* Nota pre preenchido */
+.orientacoes-page .nota-prepreenchido {
+  background: var(--bg-cream);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  color: var(--navy-soft);
+}
+.orientacoes-page .nota-prepreenchido svg { stroke-width: 1.6; }
+
+/* Placeholder nota */
+.orientacoes-page .placeholder-nota {
+  background: var(--bg-cream);
+  border: 1px dashed var(--gold-soft);
+  border-radius: 10px;
+  color: var(--navy-soft);
+}
+
+/* Frase individual */
+.orientacoes-page .frase-individual { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy-faint); }
+
+/* CTA de saida, botoes premium */
+.orientacoes-page .saida-cta { background: var(--bg-cream); border: 1px solid var(--border-subtle); }
+.orientacoes-page .saida-cta .saida-botoes { gap: var(--space-4); margin-top: clamp(32px, 5vw, 48px); }
+.orientacoes-page .btn-saida {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-6);
+  transition: transform var(--transition-premium), box-shadow var(--transition-premium), background var(--transition-premium);
+}
+.orientacoes-page .btn-saida svg { stroke-width: 1.6; }
+.orientacoes-page .btn-saida:hover { transform: translateY(-3px); }
+
+/* ============================================================
+   LINKS ANIMADOS (underline slide da esquerda)
+   ============================================================ */
+.orientacoes-page .orient-content a:not(.orient-card):not(.orient-card-sublink):not(.whatsapp-inline):not(.btn):not(.btn-outline):not(.banner-btn):not(.btn-saida):not(.proc-tag) {
+  position: relative;
+  color: var(--accent-hover);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 300ms cubic-bezier(0.22, 1, 0.36, 1), color var(--transition-premium);
+}
+.orientacoes-page .orient-content a:not(.orient-card):not(.orient-card-sublink):not(.whatsapp-inline):not(.btn):not(.btn-outline):not(.banner-btn):not(.btn-saida):not(.proc-tag):hover {
+  background-size: 100% 1px;
+  color: var(--accent);
+}
+
+/* ============================================================
+   RESPONSIVO, sem overflow horizontal
+   ============================================================ */
+@media (max-width: 560px) {
+  .orientacoes-page .orient-mini-header { padding: var(--space-4) var(--space-5); }
+  .orientacoes-page .dual-box .box { padding: var(--space-6); }
+  .orientacoes-page .orient-card { padding: var(--space-6); }
+  .orientacoes-page .saida-cta .saida-botoes { flex-direction: column; }
+  .orientacoes-page .btn-saida { width: 100%; }
+}
