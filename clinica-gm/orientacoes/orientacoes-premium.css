@@ -540,7 +540,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-hairline);
   border-radius: 12px;
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-5) var(--space-4);
   box-shadow: var(--shadow-card);
   transition: transform var(--transition-premium), box-shadow var(--transition-premium), border-color var(--transition-premium), background var(--transition-premium);
 }
@@ -550,7 +550,7 @@
   box-shadow: var(--shadow-card-hover);
 }
 .orientacoes-page .seletor-card .check-visual { border-color: rgba(11,29,58,0.2); border-width: 1.5px; }
-.orientacoes-page .seletor-card .card-nome { font-size: 1rem; font-weight: 600; color: var(--text); }
+.orientacoes-page .seletor-card .card-nome { font-size: 1rem; font-weight: 600; color: var(--text); overflow-wrap: anywhere; word-break: break-word; }
 .orientacoes-page .seletor-card .card-desc { font-size: 0.82rem; color: var(--navy-faint); }
 .orientacoes-page .seletor-card.is-checked {
   border-color: var(--accent);
