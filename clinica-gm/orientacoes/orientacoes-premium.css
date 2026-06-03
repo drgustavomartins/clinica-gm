@@ -550,7 +550,7 @@
   box-shadow: var(--shadow-card-hover);
 }
 .orientacoes-page .seletor-card .check-visual { border-color: rgba(11,29,58,0.2); border-width: 1.5px; }
-.orientacoes-page .seletor-card .card-nome { font-size: 1rem; font-weight: 600; color: var(--text); overflow-wrap: anywhere; word-break: break-word; }
+.orientacoes-page .seletor-card .card-nome { font-size: 0.9rem; font-weight: 600; color: var(--text); overflow-wrap: anywhere; word-break: break-word; }
 .orientacoes-page .seletor-card .card-desc { font-size: 0.82rem; color: var(--navy-faint); }
 .orientacoes-page .seletor-card.is-checked {
   border-color: var(--accent);
