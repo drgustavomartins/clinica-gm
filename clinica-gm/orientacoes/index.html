@@ -204,5 +204,139 @@
 </main>
 
 <script src="orientacoes-premium.js" defer></script>
+
+<script>
+(function() {
+  // Dados resumidos de cada procedimento (texto para a mensagem WPP)
+  var RESUMOS = {
+    'toxina-botulinica': {
+      nome: 'Toxina Botulínica',
+      resumo: '• Não deitar nas primeiras 6h\n• Sem exercícios por 24h\n• Evitar sol direto por 24h\n• Maquiagem liberada após 24h\n• Efeito aparece em 3–14 dias'
+    },
+    'preenchimento-facial': {
+      nome: 'Preenchimento Facial',
+      resumo: '• Compressas frias nas primeiras 24h\n• Sem exercícios por 24h\n• Evitar calor e sol forte por 48h\n• Sem massagear a região por 7 dias\n• Resultado visível em até 30 dias'
+    },
+    'bioestimulador-radiesse': {
+      nome: 'Bioestimulador (Radiesse)',
+      resumo: '• Massagem protocolada conforme orientação\n• Sem exercícios por 24–48h\n• Edema e nódulos esperados nas primeiras semanas\n• Resultado progressivo em 4–6 meses'
+    },
+    'iprf-plaquetas': {
+      nome: 'iPRF (Plaquetas)',
+      resumo: '• Sem exercícios por 24h\n• Evitar sol direto e calor por 48h\n• Possível edema e vermelhidão nos primeiros dias\n• Resultado progressivo em semanas'
+    },
+    'lipolise-quimica': {
+      nome: 'Lipólise Química',
+      resumo: '• Drenagem linfática recomendada\n• Edema esperado por até 4 semanas\n• Sem exercícios intensos por 48h\n• Múltiplas sessões podem ser necessárias'
+    },
+    'microagulhamento': {
+      nome: 'Microagulhamento',
+      resumo: '• Protetor solar FPS 50 obrigatório\n• Cicaplast nos primeiros dias\n• Sem maquiagem por 24–48h\n• Evitar sol e calor por 72h\n• Pele pode ficar avermelhada por 2–3 dias'
+    },
+    'pdrn': {
+      nome: 'PDRN',
+      resumo: '• Evitar sol e calor por 24–48h\n• Hidratação caprichada\n• Possível edema leve nos locais de aplicação\n• Resultado gradual ao longo das sessões'
+    },
+    'plasma-gel': {
+      nome: 'Plasma Gel',
+      resumo: '• Evitar toque e massagem na região\n• Possível edema e vermelhidão nos primeiros dias\n• Protetor solar diário obrigatório\n• Resultado progressivo em semanas'
+    },
+    'fios-pdo-tracao': {
+      nome: 'Fios PDO Espiculados',
+      resumo: '• Sem movimentos exagerados por 30 dias\n• Alimentação pastosa/mole por 2 semanas\n• Sem exercícios por 7–14 dias\n• Possível assimetria temporária nas primeiras semanas'
+    },
+    'fios-pdo-lisos': {
+      nome: 'Fios PDO Lisos',
+      resumo: '• Evitar massagem na região por 7 dias\n• Sem exercícios intensos por 48h\n• Possível edema leve nos pontos de entrada\n• Resultado de bioestimulação em 4–8 semanas'
+    },
+    'lipo-papada-platismoplastia': {
+      nome: 'Lipo de Papada com Platismoplastia',
+      resumo: '• Cinta compressiva conforme orientação\n• Drenagem linfática a partir do 3º dia\n• Repouso nas primeiras 48h\n• Retorno gradual às atividades em 2–4 semanas'
+    },
+    'blefaroplastia-superior': {
+      nome: 'Blefaroplastia Superior',
+      resumo: '• Compressas frias nas primeiras 48h\n• Cuidado com olho seco (colírio lubrificante)\n• Cabeceira elevada para dormir\n• Retirada de pontos em 7–10 dias'
+    },
+    'blefaroplastia-inferior': {
+      nome: 'Blefaroplastia Inferior',
+      resumo: '• Compressas frias nas primeiras 48h\n• Cuidado com olho seco (colírio lubrificante)\n• Evitar esforço físico por 2 semanas\n• Retirada de pontos em 7–10 dias'
+    },
+    'brow-lift': {
+      nome: 'Técnica de Castanhares (Brow Lift)',
+      resumo: '• Edema periorbital esperado nos primeiros dias\n• Cuidado com a cicatriz acima da sobrancelha\n• Protetor solar na cicatriz após liberação\n• Retorno gradual em 2–4 semanas'
+    },
+    'mini-lifting-facial': {
+      nome: 'Mini-Lifting Facial',
+      resumo: '• Repouso nas primeiras 48h\n• Cabeceira elevada para dormir\n• Retirada de pontos em 7–10 dias\n• Retorno gradual às atividades em 2–3 semanas'
+    },
+    'liplift': {
+      nome: 'Lifting de Lábio (Lip Lift)',
+      resumo: '• Alimentação pastosa/mole por 2 semanas\n• Evitar movimentos exagerados da boca\n• Cuidado com cicatriz na base do nariz\n• Fotoproteção rigorosa por 6 meses'
+    },
+    'bichectomia': {
+      nome: 'Bichectomia',
+      resumo: '• Higienização oral com antisséptico bucal\n• Alimentação fria e pastosa por 7 dias\n• Edema nas bochechas é normal\n• Retirada de pontos não reabsorvíveis em 7 dias'
+    },
+    'cirurgias-gengivais': {
+      nome: 'Cirurgias Estéticas Gengivais',
+      resumo: '• Higienização oral suave com curativo\n• Alimentação fria e pastosa nos primeiros dias\n• Evitar pressão na região operada\n• Retorno para avaliação conforme agendado'
+    },
+    'lobuloplastia-cirurgica': {
+      nome: 'Lobuloplastia Cirúrgica',
+      resumo: '• Cuidado com a cicatriz no lóbulo\n• Retirada de pontos não reabsorvíveis em 7 dias\n• Evitar brincos por pelo menos 30 dias\n• Protetor solar na cicatriz após liberação'
+    }
+  };
+
+  var BASE_URL = 'https://www.clinicagustavomartins.com.br/orientacoes/';
+  var WPP_NUMBER = '5521995523509';
+  var WPP_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+
+  function criarBotaoWpp(slug) {
+    var dados = RESUMOS[slug];
+    if (!dados) return null;
+    var link = BASE_URL + slug;
+    var msg = '*Orientações Pós-' + dados.nome + '*\n\n' + dados.resumo + '\n\nPara ver todas as orientações completas, acesse:\n' + link;
+    var url = 'https://wa.me/' + WPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    var btn = document.createElement('a');
+    btn.href = url;
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.className = 'btn-wpp-proc';
+    btn.innerHTML = WPP_SVG + ' Enviar orientações por WhatsApp';
+    return btn;
+  }
+
+  function adicionarBotoesWpp() {
+    // Find all orient-card links
+    document.querySelectorAll('a.orient-card[href]').forEach(function(card) {
+      var href = card.getAttribute('href');
+      var match = href.match(/\/orientacoes\/([^?]+)/);
+      if (!match) return;
+      var slug = match[1];
+      var btn = criarBotaoWpp(slug);
+      if (!btn) return;
+      // Wrap card + button in a bloco div, unless already inside orient-card-wrap
+      var parent = card.parentElement;
+      if (parent.classList.contains('orient-card-wrap') || parent.classList.contains('orient-card-bloco')) {
+        // Just append after card
+        card.insertAdjacentElement('afterend', btn);
+      } else {
+        // Create wrapper
+        var bloco = document.createElement('div');
+        bloco.className = 'orient-card-bloco';
+        parent.insertBefore(bloco, card);
+        bloco.appendChild(card);
+        bloco.appendChild(btn);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', adicionarBotoesWpp);
+  } else {
+    adicionarBotoesWpp();
+  }
+})();
+</script>
 </body>
 </html>
