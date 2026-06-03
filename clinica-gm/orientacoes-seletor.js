@@ -802,9 +802,11 @@ var PROCEDIMENTOS = {
     categoria: 'colageno',
     placeholder: false,
     pode: [
-      'Usar hidratante reparador (Cicaplast Baume B5 ou Cicalfate) 3 vezes ao dia',
-      'Lavar o rosto com água e sabonete neutro, com movimentos suaves',
-      'Usar protetor solar FPS 50 a partir do 2º dia, de forma obrigatória',
+      'Trocar a fronha do travesseiro diariamente',
+      'Usar toalha limpa e exclusiva para lavar e secar o rosto',
+      'Lavar o rosto com água e sabonete neutro de glicerinha (Granado Bebê amarelo), com movimentos suaves',
+      'Hidratar 2x ao dia com Cicalfate ou Cicaplast Baume B5',
+      'Usar protetor solar FPS 50 por cima do hidratante (após absorção), a partir do 2º dia, de forma obrigatória',
       'Beber bastante água e manter a pele hidratada',
       'Usar analgésico simples se houver desconforto, conforme orientação da equipe clínica'
     ],
@@ -834,7 +836,7 @@ var PROCEDIMENTOS = {
       'Qualquer reação na pele diferente do esperado ou que cause preocupação'
     ],
     cuidados: {
-      higiene: 'Lave o rosto com água e sabonete neutro, com movimentos suaves. Use hidratante reparador (Cicaplast Baume B5 ou Cicalfate) 3 vezes ao dia. Não coce, esfregue ou descame a pele manualmente.',
+      higiene: 'Lave o rosto com água e sabonete neutro de glicerinha (Granado Bebê amarelo), com movimentos suaves. Troque a fronha do travesseiro diariamente e use uma toalha limpa e exclusiva para lavar e secar o rosto. Hidrate 2x ao dia com Cicalfate ou Cicaplast Baume B5. Após a absorção do hidratante, aplique o protetor solar FPS 50. Não coce, esfregue ou descame a pele manualmente.',
       medicacao: 'Analgésico simples pode ser usado se houver desconforto, conforme orientação da equipe clínica.',
       atividade: 'Evite exercício físico intenso por 48 horas.',
       sol: 'Protetor solar FPS 50 obrigatório a partir do 2º dia. Evite exposição solar direta por 7 dias.',
