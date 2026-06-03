@@ -6,7 +6,7 @@
    ============================================================ */
 
 /* ---------- Serifa elegante para titulos (font-display: swap) ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 /* ---------- Tokens premium (escopados na area de orientacoes) ---------- */
 .orientacoes-page {
@@ -16,7 +16,7 @@
   --bg-cream: #F8F6F1;
 
   /* Serifa de display */
-  --font-serif: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-serif: 'Lora', Georgia, serif;
 
   /* Bordas e textos mais suaves */
   --border-subtle: rgba(11, 29, 58, 0.08);
