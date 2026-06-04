@@ -1399,23 +1399,13 @@ function montarSeletor() {
     cat.codigos.forEach(function (cod) {
       var p = PROCEDIMENTOS[cod];
       if (!p) return;
-      /* Insere rotulo do subgrupo de cirurgias da regiao dos olhos antes do primeiro item */
-      if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) !== -1 && !subgrupoOlhosAberto) {
-        html += '<p class="seletor-subgrupo">Cirurgias da região dos olhos</p>';
-        subgrupoOlhosAberto = true;
-      } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
-        subgrupoOlhosAberto = false;
-      }
-      /* Monta bloco de sub-selecao de regioes, se aplicavel */
-      var subselecaoHtml = '';
-      if (p.temRegioes && p.regioes) {
-        subselecaoHtml += '<div class="subselecao" data-pai="' + cod + '">' +
-          '<p class="subselecao-label">Quais regiões? (selecione uma ou mais)</p>';
-        Object.keys(p.regioes).forEach(function (regCod) {
-          var reg = p.regioes[regCod];
-          subselecaoHtml += '<label class="subcheck">' +
-            '<input type="checkbox" data-pai="' + cod + '" value="' + regCod + '"> ' +
-            '<span>' + esc(reg.nome) + '</span></label>';
+        /* Subgrupo: cirurgias da regiao dos olhos - fecha grid, abre bloco, reabre grid ao sair */
+        if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) !== -1 && !subgrupoOlhosAberto) {
+          html += '</div><div class="seletor-subgrupo-bloco"><p class="seletor-subgrupo">Cirurgias da região dos olhos</p><div class="seletor-grid">';
+          subgrupoOlhosAberto = true;
+        } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
+          html += '</div></div><div class="seletor-grid">';
+          subgrupoOlhosAberto = false;
         });
         subselecaoHtml += '</div>';
       }
