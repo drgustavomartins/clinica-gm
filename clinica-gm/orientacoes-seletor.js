@@ -1406,7 +1406,7 @@ function montarSeletor() {
         } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
           html += '</div></div><div class="seletor-grid">';
           subgrupoOlhosAberto = false;
-        });
+        }
         subselecaoHtml += '</div>';
       html += '<label class="seletor-card" data-cod="' + cod + '">' +
         '<input type="checkbox" value="' + cod + '">' +
