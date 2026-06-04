@@ -5,11 +5,11 @@
 
 /* Categorias do seletor, na ordem de exibicao */
 var CATEGORIAS = [
-  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'lipolise', 'preenchimento'] },
+  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'preenchimento', 'lipolise'] },
   { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento', 'pdrn'] },
   { id: 'plaquetas', titulo: 'Procedimentos com plaquetas', codigos: ['iprf', 'plasma-gel'] },
   { id: 'fios', titulo: 'Fios', codigos: ['fios-lisos', 'fios-tracao'] },
-  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lipo-platisma', 'blefaro-superior', 'blefaro-inferior', 'brow-lift', 'lip-lift', 'bichectomia', 'lobuloplastia', 'mini-lifting', 'gengivais'] }
+  { id: 'cirurgico', titulo: 'Procedimentos cirúrgicos', codigos: ['lipo-platisma', 'lip-lift', 'bichectomia', 'lobuloplastia', 'mini-lifting', 'gengivais', 'blefaro-superior', 'blefaro-inferior', 'brow-lift'] }
 ];
 
 /* Peso de categoria para ordenacao, cirurgia primeiro */
