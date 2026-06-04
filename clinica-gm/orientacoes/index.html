@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Orientações Pós-Procedimento | Clínica Dr. Gustavo Martins</title>
@@ -350,7 +349,7 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
     if (!dados) return null;
     var link = BASE_URL + slug;
     var msg = '*Orientações Pós-' + dados.nome + '*\n\n' + dados.resumo + '\n\nPara ver todas as orientações completas, acesse:\n' + link;
-    var url = 'https://wa.me/' + WPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    var url = 'https://wa.me/?text=' + encodeURIComponent(msg);
     var btn = document.createElement('a');
     btn.href = url;
     btn.target = '_blank';
