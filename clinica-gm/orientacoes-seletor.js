@@ -5,7 +5,7 @@
 
 /* Categorias do seletor, na ordem de exibicao */
 var CATEGORIAS = [
-  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'preenchimento', 'lipolise'] },
+  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'preenchimento', 'lipolise', 'intradermo'] },
   { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento', 'pdrn'] },
   { id: 'plaquetas', titulo: 'Procedimentos com plaquetas', codigos: ['iprf', 'plasma-gel'] },
   { id: 'fios', titulo: 'Fios', codigos: ['fios-lisos', 'fios-tracao'] },
@@ -741,6 +741,64 @@ var PROCEDIMENTOS = {
     faq: [
       { q: 'Preciso mesmo fazer a massagem após o bioestimulador?', a: 'Quando indicada, a massagem ajuda na distribuição uniforme do produto. Siga a técnica, a frequência e a duração orientadas pela equipe clínica nos primeiros 5 dias.' },
       { q: 'Quando vejo o resultado do bioestimulador?', a: 'A produção de colágeno é progressiva. O resultado estável aparece após a maturação, em torno de 60 a 90 dias.' }
+    ]
+  },
+
+  /* ---------- INTRADERMOTERAPIA COM BIORREGENERADORES ---------- */
+  'intradermo': {
+    nome: 'Intradermoterapia com Biorregeneradores',
+    desc: 'Aplicação intradérmica de ativos biorregeneradores para rejuvenescimento.',
+    categoria: 'injetavel',
+    placeholder: false,
+    pode: [
+      'Lavar o rosto suavemente com agua morna e sabonete neutro após 12 horas',
+      'Aplicar protetor solar FPS 50 de 3 em 3 horas no dia seguinte',
+      'Manter rotina normal de alimentação e hidratação',
+      'Usar analgésico comum se sentir desconforto leve nas primeiras horas',
+      'Aplicar compressas frias (sem pressão direta) nas primeiras horas para conforto'
+    ],
+    evite: [
+      'Maquiagem e cosméticos na área tratada por 24 horas',
+      'Exercícios físicos intensos por 24 a 48 horas',
+      'Sol direto e calor excessivo (sauna, banho quente) por 48 horas',
+      'Massagear ou esfregar a região tratada por 24 horas',
+      'Álcool e anti-inflamatórios nas primeiras 48 horas, salvo orientação médica',
+      'Procedimentos estéticos na área por pelo menos 7 dias'
+    ],
+    timeline: {
+      'Primeiras 6 horas': 'Pequenas pápulas no local da aplicação são normais e desaparecem em poucas horas. Manter a pele limpa e sem maquiagem.',
+      'Primeiras 24 horas': 'Possível vermelhidão leve e edema discreto. Sem exercícios físicos intensos. Proteção solar obrigatória a partir do dia seguinte.',
+      'Primeiros 7 dias': 'A pele pode apresentar ressecamento ou descamação fina, que é normal durante o processo de regeneração. Hidratar conforme orientação.',
+      '7 a 14 dias': 'Início da percepção dos primeiros resultados: melhora de textura, luminosidade e hidratação da pele.',
+      '1 a 3 meses': 'Os resultados se consolidam progressivamente. A pele apresenta melhora na firmeza e qualidade geral.',
+      '3 a 6 meses': 'Resultado pleno estabelecido. A manutenção periódica é indicada conforme avaliação do Dr. Gustavo Martins.'
+    },
+    prazos: {
+      maquiagem: { dias: 1, label: '24 horas' },
+      exercicio: { dias: 2, label: '48 horas' },
+      sol: { dias: 2, label: '48 horas' }
+    },
+    sinaisAlerta: [
+      'Vermelhidão intensa ou edema progressivo após 48 horas',
+      'Dor forte, calor excessivo ou secreção no local da aplicação',
+      'Reação alérgica: urticária, dificuldade respiratória ou inchaço de lábios e garganta',
+      'Nódulos ou endurecimento persistente na área tratada após 7 dias'
+    ],
+    cuidados: {
+      higiene: 'Não lavar o rosto por 12 horas. Após, lavar suavemente com sabonete neutro e água morna.',
+      maquiagem: 'Evitar maquiagem e cosméticos na área tratada por 24 horas.',
+      atividade: 'Sem exercícios físicos intensos por 24 a 48 horas após o procedimento.',
+      sol: 'Evitar exposição solar direta por 48 horas. Usar protetor solar FPS 50 a partir do dia seguinte.',
+      medicacao: 'Evitar anti-inflamatórios e álcool nas primeiras 48 horas, salvo orientação médica. Analgésico comum pode ser usado se necessário.',
+      retorno: 'O protocolo geralmente inclui múltiplas sessões. O retorno para avaliação e próxima sessão será agendado conforme resposta individual.'
+    },
+    faq: [
+      { q: 'O que são biorregeneradores?', a: 'São substâncias biocompatíveis (como ácido hialurônico não reticulado, aminoácidos, vitaminas e peptídeos) aplicadas na derme para estimular a regeneração celular, hidratação profunda e melhora da qualidade da pele.' },
+      { q: 'Posso usar maquiagem logo após a intradermoterapia?', a: 'Não. Aguarde pelo menos 24 horas antes de aplicar qualquer maquiagem ou cosmético na área tratada.' },
+      { q: 'É normal aparecerem pápulas após a aplicação?', a: 'Sim, pequenas pápulas (bolinhas) no local das injeções são normais e somem em poucas horas.' },
+      { q: 'Quando posso me exercitar depois da intradermoterapia?', a: 'Evite exercícios físicos intensos por 24 a 48 horas após o procedimento.' },
+      { q: 'Quantas sessões são necessárias?', a: 'O número de sessões varia conforme o protocolo e a resposta individual. O Dr. Gustavo Martins indicará a frequência ideal durante a avaliação.' },
+      { q: 'Posso tomar sol depois do procedimento?', a: 'Evite exposição solar direta por 48 horas. Após, use protetor solar FPS 50 de 3 em 3 horas.' }
     ]
   },
 
