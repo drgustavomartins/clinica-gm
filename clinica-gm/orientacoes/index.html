@@ -95,13 +95,13 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
         <span class="read-more">Ler orientações →</span>
       </a>
       <a href="/orientacoes/minhas-orientacoes?p=preenchimento" class="orient-card-sublink">ou ver com sub-seleção por região</a>
+    </div>
 
     <a href="/orientacoes/intradermoterapia" class="orient-card">
       <h3>Intradermoterapia com Biorregeneradores</h3>
       <p>Aplicação intradérmica de ativos biorregeneradores para rejuvenescimento e melhora da qualidade da pele.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
-   </div>
 
     <a href="/orientacoes/bioestimulador-radiesse" class="orient-card">
       <h3>Bioestimulador (Radiesse)</h3>
@@ -329,7 +329,6 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
   }
 
   function adicionarBotoesWpp() {
-    // Find all orient-card links
     document.querySelectorAll('a.orient-card[href]').forEach(function(card) {
       var href = card.getAttribute('href');
       var match = href.match(/\/orientacoes\/([^?]+)/);
@@ -337,13 +336,12 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
       var slug = match[1];
       var btn = criarBotaoWpp(slug);
       if (!btn) return;
-      // Wrap card + button in a bloco div, unless already inside orient-card-wrap
       var parent = card.parentElement;
-      if (parent.classList.contains('orient-card-wrap') || parent.classList.contains('orient-card-bloco')) {
-        // Just append after card
-        card.insertAdjacentElement('afterend', btn);
+      if (parent.classList.contains('orient-card-wrap')) {
+        parent.appendChild(btn);
+      } else if (parent.classList.contains('orient-card-bloco')) {
+        return;
       } else {
-        // Create wrapper
         var bloco = document.createElement('div');
         bloco.className = 'orient-card-bloco';
         parent.insertBefore(bloco, card);
