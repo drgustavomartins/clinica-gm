@@ -5,8 +5,7 @@
 
 /* Categorias do seletor, na ordem de exibicao */
 var CATEGORIAS = [
-  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'lipolise'] },
-  { id: 'preenchimento', titulo: 'Preenchimento facial', codigos: ['preenchimento'] },
+  { id: 'injetavel', titulo: 'Procedimentos injetáveis', codigos: ['toxina', 'lipolise', 'preenchimento'] },
   { id: 'colageno', titulo: 'Procedimentos para estímulo de colágeno', codigos: ['bioestimulador', 'microagulhamento', 'pdrn'] },
   { id: 'plaquetas', titulo: 'Procedimentos com plaquetas', codigos: ['iprf', 'plasma-gel'] },
   { id: 'fios', titulo: 'Fios', codigos: ['fios-lisos', 'fios-tracao'] },
@@ -14,7 +13,7 @@ var CATEGORIAS = [
 ];
 
 /* Peso de categoria para ordenacao, cirurgia primeiro */
-var PESO_CATEGORIA = { cirurgico: 6, fios: 5, plaquetas: 4, colageno: 3, preenchimento: 2, injetavel: 1 };
+var PESO_CATEGORIA = { cirurgico: 6, fios: 5, plaquetas: 4, colageno: 3, injetavel: 1 };
 
 var NOTA_PLACEHOLDER = 'Para orientações detalhadas deste procedimento, entre em contato com a equipe da clínica pelo WhatsApp.';
 var FRASE_INDIVIDUAL = 'As orientações podem variar conforme avaliação individual do Dr. Gustavo Martins.';
