@@ -1399,15 +1399,27 @@ function montarSeletor() {
     cat.codigos.forEach(function (cod) {
       var p = PROCEDIMENTOS[cod];
       if (!p) return;
-        /* Subgrupo: cirurgias da regiao dos olhos - fecha grid, abre bloco, reabre grid ao sair */
-        if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) !== -1 && !subgrupoOlhosAberto) {
-          html += '</div><div class="seletor-subgrupo-bloco"><p class="seletor-subgrupo">Cirurgias da região dos olhos</p><div class="seletor-grid">';
-          subgrupoOlhosAberto = true;
-        } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
-          html += '</div></div><div class="seletor-grid">';
-          subgrupoOlhosAberto = false;
-        }
+      /* Subgrupo: cirurgias da regiao dos olhos - fecha grid, abre bloco, reabre grid ao sair */
+      if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) !== -1 && !subgrupoOlhosAberto) {
+        html += '</div><div class="seletor-subgrupo-bloco"><p class="seletor-subgrupo">Cirurgias da região dos olhos</p><div class="seletor-grid">';
+        subgrupoOlhosAberto = true;
+      } else if (cat.id === 'cirurgico' && CIRURGIAS_OLHOS.indexOf(cod) === -1 && subgrupoOlhosAberto) {
+        html += '</div></div><div class="seletor-grid">';
+        subgrupoOlhosAberto = false;
+      }
+      /* Monta bloco de sub-selecao de regioes, se aplicavel */
+      var subselecaoHtml = '';
+      if (p.temRegioes && p.regioes) {
+        subselecaoHtml += '<div class="subselecao" data-pai="' + cod + '">' +
+          '<p class="subselecao-label">Quais regiões? (selecione uma ou mais)</p>';
+        Object.keys(p.regioes).forEach(function (regCod) {
+          var reg = p.regioes[regCod];
+          subselecaoHtml += '<label class="subcheck">' +
+            '<input type="checkbox" data-pai="' + cod + '" value="' + regCod + '"> ' +
+            '<span>' + esc(reg.nome) + '</span></label>';
+        });
         subselecaoHtml += '</div>';
+      }
       html += '<label class="seletor-card" data-cod="' + cod + '">' +
         '<input type="checkbox" value="' + cod + '">' +
         '<span class="check-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>' +
