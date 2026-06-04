@@ -52,18 +52,42 @@
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Clínica Gustavo Martins",
-  "alternateName": "Clínica Dr. Gustavo Martins",
-  "description": "Clínica especializada em harmonização facial, toxina botulínica e Método NaturalUp® no Rio de Janeiro. Resultados naturais, duradouros e progressivos.",
+  "alternateName": ["Clínica Dr. Gustavo Martins", "Clínica GM Harmonização Facial"],
+  "description": "Clínica especializada em harmonização facial, toxina botulínica, preenchimento, Ultherapy PRIME, bichectomia, perfiloplastia e Método NaturalUp® no Rio de Janeiro. Cirurgião-dentista e biomédico esteta, mestre em Harmonização Orofacial.",
   "url": "https://www.clinicagustavomartins.com.br",
   "telephone": "+55-21-99552-3509",
   "email": "contato@clinicagustavomartins.com.br",
   "medicalSpecialty": [
+    "Harmonização Orofacial",
     "Harmonização Facial",
     "Toxina Botulínica",
+    "Preenchimento Facial",
     "Preenchimento Labial",
-    "Odontologia Estética",
-    "Bioestimuladores de Colágeno"
+    "Bioestimuladores de Colágeno",
+    "Ultherapy",
+    "Bichectomia",
+    "Perfiloplastia",
+    "Microagulhamento",
+    "iPRF",
+    "Lifting Não Cirúrgico",
+    "Odontologia Estética"
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Procedimentos",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Toxina Botulínica", "url": "https://www.clinicagustavomartins.com.br/orientacoes/toxina-botulinica"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Preenchimento Facial", "url": "https://www.clinicagustavomartins.com.br/orientacoes/preenchimento-facial"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Bioestimulador Radiesse", "url": "https://www.clinicagustavomartins.com.br/orientacoes/bioestimulador-radiesse"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Ultherapy PRIME", "url": "https://www.clinicagustavomartins.com.br/blog/ultherapy"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Bichectomia", "url": "https://www.clinicagustavomartins.com.br/orientacoes/bichectomia"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Microagulhamento", "url": "https://www.clinicagustavomartins.com.br/orientacoes/microagulhamento"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "iPRF (Plaquetas)", "url": "https://www.clinicagustavomartins.com.br/orientacoes/iprf-plaquetas"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Mini-Lifting Facial", "url": "https://www.clinicagustavomartins.com.br/orientacoes/mini-lifting-facial"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Blefaroplastia", "url": "https://www.clinicagustavomartins.com.br/orientacoes/blefaroplastia-superior"}},
+      {"@type": "Offer", "itemOffered": {"@type": "MedicalProcedure", "name": "Fios PDO", "url": "https://www.clinicagustavomartins.com.br/orientacoes/fios-pdo-tracao"}}
+    ]
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. das Américas, 1155, sala 1610",
@@ -77,6 +101,13 @@
     "latitude": -23.003346,
     "longitude": -43.325619
   },
+  "areaServed": [
+    {"@type": "City", "name": "Rio de Janeiro"},
+    {"@type": "AdministrativeArea", "name": "Barra da Tijuca"},
+    {"@type": "AdministrativeArea", "name": "Copacabana"},
+    {"@type": "AdministrativeArea", "name": "Ipanema"},
+    {"@type": "AdministrativeArea", "name": "Santa Cruz"}
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -85,12 +116,15 @@
       "closes": "19:00"
     }
   ],
-  "image": "https://www.clinicagustavomartins.com.br/assets/dr-gustavo-novo.jpg",
+  "image": [
+    "https://www.clinicagustavomartins.com.br/assets/dr-gustavo-novo.jpg",
+    "https://www.clinicagustavomartins.com.br/assets/sobre-clinica-02.png"
+  ],
   "priceRange": "$$$",
   "currenciesAccepted": "BRL",
   "paymentAccepted": "Cash, Credit Card, Debit Card, PIX",
   "sameAs": [
-    "https://www.instagram.com/gustavomartins.md/",
+    "https://www.instagram.com/dr.gustavomartins/",
     "https://www.google.com/maps/place/Cl%C3%ADnica+Gustavo+Martins+-+Especialista+em+Face/@-23.003346,-43.3256189,17z"
   ],
   "aggregateRating": {
@@ -113,6 +147,59 @@
       "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
       "reviewBody": "Médico excelente, super atencioso e cuidadoso. Os resultados ficaram incríveis e muito naturais. Super recomendo!"
     }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Gustavo Medeiros Martins",
+  "alternateName": "Dr. Gustavo Martins",
+  "description": "Cirurgião-dentista, biomédico esteta e mestre em Harmonização Orofacial. Especialista em harmonização facial, bichectomia, perfiloplastia, Ultherapy PRIME e Método NaturalUp®. Professor, palestrante e speaker Merz Aesthetics. Atende no Rio de Janeiro.",
+  "url": "https://www.clinicagustavomartins.com.br",
+  "image": "https://www.clinicagustavomartins.com.br/assets/dr-gustavo-novo.jpg",
+  "telephone": "+55-21-99552-3509",
+  "jobTitle": "Cirurgião-Dentista e Biomédico Esteta",
+  "worksFor": {
+    "@type": "MedicalBusiness",
+    "name": "Clínica Gustavo Martins",
+    "url": "https://www.clinicagustavomartins.com.br"
+  },
+  "medicalSpecialty": "Harmonização Orofacial",
+  "knowsAbout": [
+    "Harmonização Facial",
+    "Toxina Botulínica",
+    "Preenchimento Facial",
+    "Bioestimuladores de Colágeno",
+    "Ultherapy PRIME",
+    "Bichectomia",
+    "Perfiloplastia",
+    "Microagulhamento",
+    "iPRF",
+    "Fios PDO",
+    "Mini-Lifting Facial",
+    "Blefaroplastia",
+    "Lip Lift"
+  ],
+  "hasCredential": [
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Mestrado", "name": "Mestre em Harmonização Orofacial"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Especialização", "name": "Especialista em Harmonização Orofacial"},
+    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Especialização", "name": "Especialista em Odontogeriatria"}
+  ],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Academia Brasileira de Cirurgias Estéticas da Face"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio de Janeiro",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/dr.gustavomartins/"
   ]
 }
 </script>
