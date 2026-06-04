@@ -169,7 +169,7 @@
     // Monta a mensagem
     var link = BASE_URL + slug;
     var msg = 'Orientacoes Pos-' + dados.nome + '\n\n' + dados.resumo + '\n\nPara ver as orientacoes completas, acesse:\n' + link;
-    var url = 'https://wa.me/' + WPP_NUMBER + '?text=' + encodeURIComponent(msg);
+    var url = 'https://wa.me/?text=' + encodeURIComponent(msg);
 
     // Verifica se o bloco CTA existe e se o botao ainda nao foi adicionado
     var ctaBlock = document.querySelector('.orient-cta-block');
