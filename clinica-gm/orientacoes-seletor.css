@@ -284,13 +284,14 @@
 
 .prazo-lista li {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   background: #fff;
   border-bottom: 1px solid rgba(11, 29, 58, 0.07);
   transition: background 0.15s;
+  overflow: hidden;
 }
 
 .prazo-lista li:first-child { border-radius: 10px 10px 0 0; }
@@ -755,4 +756,20 @@
 .seletor-card .card-text {
   width: 100%;
   min-width: 0;
+}
+
+/* ============================================
+   MOBILE — prazos e sinais de alerta
+   ============================================ */
+@media (max-width: 560px) {
+  .prazo-lista li {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .prazo-lista .prazo-valor {
+    align-self: start;
+    justify-self: start;
+  }
 }
