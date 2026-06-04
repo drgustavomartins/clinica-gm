@@ -37,7 +37,7 @@
 
 .orient-header h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.45rem, 4vw, 2.8rem);
   font-weight: 600;
   line-height: 1.2;
   margin: 0 auto var(--space-4);
@@ -505,4 +505,43 @@
   }
   body { background: #fff; color: #000; }
   .orient-section h2 { color: #000; border-bottom-color: #000; }
+}
+
+/* ===================== FILTRO DE CATEGORIAS ===================== */
+.orient-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 var(--space-4);
+}
+
+.orient-filtro-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 20px;
+  border: 1.5px solid rgba(201, 168, 76, 0.3);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.orient-filtro-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.orient-filtro-btn.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.orient-card-bloco.hidden,
+.orient-card-wrap.hidden,
+a.orient-card.hidden {
+  display: none !important;
 }

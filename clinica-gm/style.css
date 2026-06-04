@@ -298,6 +298,16 @@
   white-space: nowrap;
 }
 
+@media (max-width: 480px) {
+  .hero-unit-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .hero-cta-btns {
+    flex-direction: column;
+  }
+}
+
 /* Vertical video | 9:16 */
 .hero-video {
   display: flex;
@@ -449,6 +459,22 @@
 #procedimentos .gold-line {
   margin-inline: auto;
   margin-bottom: var(--space-12);
+}
+
+.proc-scroll-wrap {
+  position: relative;
+}
+
+.proc-scroll-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: calc(100% - var(--space-4));
+  background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .proc-scroll {
@@ -975,6 +1001,22 @@
 
 .counter {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.counter-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 168, 76, 0.1);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: var(--space-1);
 }
 
 .counter-number {
@@ -990,6 +1032,7 @@
   color: var(--text-muted);
   margin-top: var(--space-1);
   font-weight: 400;
+  max-width: 140px;
 }
 
 /* ===================== ODONTOLOGIA ===================== */
@@ -1311,10 +1354,12 @@
 }
 
 .testimonial-slide-avatar {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-full);
   overflow: hidden;
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
 }
 
 .testimonial-slide-avatar img {
@@ -1657,11 +1702,19 @@
   }
 }
 
-.whatsapp-float {
+/* ===================== FLOAT GROUP ===================== */
+.float-group {
   position: fixed;
   bottom: var(--space-6);
   right: var(--space-6);
   z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.whatsapp-float {
   width: 56px;
   height: 56px;
   display: flex;
@@ -1686,30 +1739,26 @@
 
 /* ===================== INSTAGRAM ===================== */
 .instagram-float {
-  position: fixed;
-  bottom: calc(var(--space-6) + 72px);
-  right: var(--space-6);
-  z-index: 900;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
+  box-shadow: 0 4px 16px rgba(220, 39, 67, 0.3);
   color: #fff;
   transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
 }
 
 .instagram-float:hover {
   transform: scale(1.08);
-  box-shadow: 0 6px 24px rgba(220, 39, 67, 0.45);
+  box-shadow: 0 6px 24px rgba(220, 39, 67, 0.4);
 }
 
 .instagram-float svg {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
 }
 
 .header-ig {

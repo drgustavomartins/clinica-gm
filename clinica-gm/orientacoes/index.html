@@ -80,15 +80,22 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
     </a>
   </div>
 
+  <div class="orient-filtros" role="group" aria-label="Filtrar por categoria">
+    <button class="orient-filtro-btn active" data-filtro="todos">Todos</button>
+    <button class="orient-filtro-btn" data-filtro="injetavel">Minimamente invasivos</button>
+    <button class="orient-filtro-btn" data-filtro="pele">Pele e regeneração</button>
+    <button class="orient-filtro-btn" data-filtro="cirurgico">Cirúrgicos</button>
+  </div>
+
   <div class="orient-grid">
 
-    <a href="/orientacoes/toxina-botulinica" class="orient-card">
+    <a href="/orientacoes/toxina-botulinica" class="orient-card" data-cat="injetavel">
       <h3>Toxina Botulínica</h3>
       <p>Cuidados nas primeiras 4h, 24h e na primeira semana após a aplicação de toxina botulínica.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <div class="orient-card-wrap">
+    <div class="orient-card-wrap" data-cat="injetavel">
       <a href="/orientacoes/preenchimento-facial" class="orient-card">
         <h3>Preenchimento Facial</h3>
         <p>Cuidados gerais + orientações específicas para lábios, nariz, mandíbula, mento e malar.</p>
@@ -97,109 +104,109 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
       <a href="/orientacoes/minhas-orientacoes?p=preenchimento" class="orient-card-sublink">ou ver com sub-seleção por região</a>
     </div>
 
-    <a href="/orientacoes/intradermoterapia" class="orient-card">
+    <a href="/orientacoes/intradermoterapia" class="orient-card" data-cat="pele">
       <h3>Intradermoterapia com Biorregeneradores</h3>
       <p>Aplicação intradérmica de ativos biorregeneradores para rejuvenescimento e melhora da qualidade da pele.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/bioestimulador-radiesse" class="orient-card">
+    <a href="/orientacoes/bioestimulador-radiesse" class="orient-card" data-cat="injetavel">
       <h3>Bioestimulador (Radiesse)</h3>
       <p>Massagens, recuperação e o que esperar após a aplicação de bioestimuladores.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/iprf-plaquetas" class="orient-card">
+    <a href="/orientacoes/iprf-plaquetas" class="orient-card" data-cat="pele">
       <h3>iPRF (Plaquetas)</h3>
       <p>Cuidados após sessão com plaquetas autólogas, na forma injetada ou por microagulhamento.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/lipolise-quimica" class="orient-card">
+    <a href="/orientacoes/lipolise-quimica" class="orient-card" data-cat="injetavel">
       <h3>Lipólise Química</h3>
       <p>Cuidados após sessão de lipólise injetável para gordura localizada, com drenagem e múltiplas sessões.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/microagulhamento" class="orient-card">
+    <a href="/orientacoes/microagulhamento" class="orient-card" data-cat="pele">
       <h3>Microagulhamento</h3>
       <p>Proteção solar, uso de Cicaplast e cuidados nos primeiros dias.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/pdrn" class="orient-card">
+    <a href="/orientacoes/pdrn" class="orient-card" data-cat="pele">
       <h3>PDRN</h3>
       <p>Estimulador biológico para qualidade da pele: cuidados para aplicação injetada ou por microagulhamento.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/plasma-gel" class="orient-card">
+    <a href="/orientacoes/plasma-gel" class="orient-card" data-cat="injetavel">
       <h3>Plasma Gel</h3>
       <p>Recuperação e cuidados após a aplicação de plasma gel.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/fios-pdo-tracao" class="orient-card">
+    <a href="/orientacoes/fios-pdo-tracao" class="orient-card" data-cat="injetavel">
       <h3>Fios PDO Espiculados</h3>
       <p>Restrições de movimentos, alimentação e cuidados nos primeiros 30 dias.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/fios-pdo-lisos" class="orient-card">
+    <a href="/orientacoes/fios-pdo-lisos" class="orient-card" data-cat="injetavel">
       <h3>Fios PDO Lisos</h3>
       <p>Cuidados após a aplicação de fios lisos para bioestimulação.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/lipo-papada-platismoplastia" class="orient-card">
+    <a href="/orientacoes/lipo-papada-platismoplastia" class="orient-card" data-cat="cirurgico">
       <h3>Lipo de Papada com Platismoplastia</h3>
       <p>Cuidados pós-cirúrgicos: cinta compressiva, drenagem linfática a partir do 3º dia e retorno às atividades.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/blefaroplastia-superior" class="orient-card">
+    <a href="/orientacoes/blefaroplastia-superior" class="orient-card" data-cat="cirurgico">
       <h3>Blefaroplastia Superior</h3>
       <p>Cuidados com olhos, compressas, olho seco e recuperação após cirurgia da pálpebra superior.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/blefaroplastia-inferior" class="orient-card">
+    <a href="/orientacoes/blefaroplastia-inferior" class="orient-card" data-cat="cirurgico">
       <h3>Blefaroplastia Inferior (via Subciliar)</h3>
       <p>Cuidados com olhos, compressas e recuperação após cirurgia da pálpebra inferior via subciliar.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/brow-lift" class="orient-card">
+    <a href="/orientacoes/brow-lift" class="orient-card" data-cat="cirurgico">
       <h3>Técnica de Castanhares (Brow Lift Cirúrgico)</h3>
       <p>Cuidados pós-cirúrgicos com a cicatriz acima da sobrancelha, edema periorbital e retorno gradual.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/mini-lifting-facial" class="orient-card">
+    <a href="/orientacoes/mini-lifting-facial" class="orient-card" data-cat="cirurgico">
       <h3>Mini-Lifting Facial</h3>
       <p>Recuperação cirúrgica: pontos, edema, repouso e retorno gradual.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/liplift" class="orient-card">
+    <a href="/orientacoes/liplift" class="orient-card" data-cat="cirurgico">
       <h3>Lifting de Lábio (Lip Lift)</h3>
       <p>Cuidados pós-cirúrgicos com a cicatriz na base do nariz, alimentação e movimentação labial.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/bichectomia" class="orient-card">
+    <a href="/orientacoes/bichectomia" class="orient-card" data-cat="cirurgico">
       <h3>Bichectomia</h3>
       <p>Higienização oral, alimentação, edema nas bochechas e retirada dos pontos não reabsorvíveis em 7 dias.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/cirurgias-gengivais" class="orient-card">
+    <a href="/orientacoes/cirurgias-gengivais" class="orient-card" data-cat="cirurgico">
       <h3>Cirurgias Estéticas Gengivais</h3>
       <p>Higienização, alimentação e cuidados após gengivoplastia, gengivectomia e aumento de coroa clínica.</p>
       <span class="read-more">Ler orientações →</span>
     </a>
 
-    <a href="/orientacoes/lobuloplastia-cirurgica" class="orient-card">
+    <a href="/orientacoes/lobuloplastia-cirurgica" class="orient-card" data-cat="cirurgico">
       <h3>Lobuloplastia Cirúrgica</h3>
       <p>Reconstrução do lóbulo da orelha: cuidados com a cicatriz, pontos não reabsorvíveis e uso de brincos após 30 dias.</p>
       <span class="read-more">Ler orientações →</span>
@@ -222,6 +229,30 @@ a.btn-wpp-proc svg { flex-shrink: 0; }
 </main>
 
 <script src="orientacoes-premium.js" defer></script>
+
+<script>
+// Filtro de categorias
+(function() {
+  var btns = document.querySelectorAll('.orient-filtro-btn');
+  if (!btns.length) return;
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filtro = btn.dataset.filtro;
+      document.querySelectorAll('.orient-grid > *').forEach(function(el) {
+        if (filtro === 'todos') { el.classList.remove('hidden'); return; }
+        var cat = el.dataset.cat;
+        if (cat === filtro) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
 
 <script>
 (function() {
