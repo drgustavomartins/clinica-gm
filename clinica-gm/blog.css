@@ -366,6 +366,30 @@
   gap: var(--space-2);
 }
 
+
+.article-illustration {
+  width: 100%;
+  margin: var(--space-10) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  line-height: 0;
+}
+.article-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+.article-illustration figcaption {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
 /* ---- Referências bibliográficas ---- */
 .article-references {
   max-width: 760px;
