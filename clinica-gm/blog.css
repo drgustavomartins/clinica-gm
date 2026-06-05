@@ -61,6 +61,23 @@
   font-weight: 300;
 }
 
+/* ---- Imagem hero (logo abaixo do titulo) ---- */
+.article-hero-img {
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  margin: 0;
+  line-height: 0;
+}
+
+.article-hero-img img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
 /* ---- Imagem destacada ---- */
 .article-featured {
   max-width: 900px;
