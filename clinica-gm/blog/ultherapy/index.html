@@ -461,6 +461,136 @@
   .u-stats > :last-child { grid-column: auto; }
   .u-gallery4 { grid-template-columns: 1fr 1fr; }
 }
+
+/* ---- article-faq / refs / cta (blog padrão) ---- */
+.article-section-white {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+.article-section-white .u-container-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.article-faq { margin: 1.5rem 0 3rem; }
+.article-faq-item {
+  border-bottom: 1px solid rgba(11,29,58,0.1);
+}
+.article-faq-item summary {
+  list-style: none;
+  padding: 1.1rem 2rem 1.1rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0B1D3A;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.45;
+}
+.article-faq-item summary::-webkit-details-marker { display: none; }
+.article-faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: #C9A84C;
+  font-weight: 300;
+  line-height: 1;
+  transition: 0.2s;
+}
+.article-faq-item[open] summary::after { content: '×'; }
+.article-faq-item p {
+  padding: 0 0 1.1rem;
+  font-size: 0.92rem;
+  color: #2E4068;
+  line-height: 1.7;
+  margin: 0;
+}
+.article-section-white h2 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #0B1D3A;
+  margin: 0 0 1.5rem;
+}
+.article-references {
+  background: #F4F7FB;
+  border-radius: 12px;
+  border-left: 3px solid #C9A84C;
+  padding: 2rem 2.25rem;
+  margin: 3rem 0 2rem;
+}
+.article-references h2 {
+  font-size: 0.72rem !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C9A84C !important;
+  margin: 0 0 1rem !important;
+  text-align: left !important;
+}
+.references-list { margin: 0; padding-left: 1.2rem; }
+.references-list li {
+  font-size: 0.82rem;
+  color: #2E4068;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.references-list li em { font-style: italic; }
+.article-cta {
+  background: #F4F7FB;
+  border-radius: 12px;
+  border-top: 3px solid #C9A84C;
+  padding: 2.5rem;
+  margin: 2rem 0 0;
+}
+.article-cta h3 {
+  font-size: 1.2rem;
+  color: #0B1D3A;
+  margin: 0 0 0.6rem;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.article-cta p {
+  color: #2E4068;
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.article-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #2E4068;
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+.article-back-link:hover { color: #C9A84C; }
+.article-illustration {
+  max-width: 760px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+.article-illustration svg { width: 100%; height: auto; display: block; border-radius: 12px; }
+.article-illustration figcaption {
+  font-size: 0.78rem;
+  color: #2E4068;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  background: #F4F7FB;
+  line-height: 1.5;
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -904,6 +1034,11 @@
     Agendar avaliação pelo WhatsApp
   </a>
   <p style="margin-top:1.5rem; font-size:0.75rem; color:rgba(255,255,255,0.3);">Pacientes reais Ultherapy®. Os resultados individuais podem variar. © Merz Aesthetics / @dr.gustavomartins — imagens autorizadas para uso educacional.</p>
+</section>
+
+
+<section class="article-section-white">
+  <div class="u-container-inner">
 <figure class="article-illustration">
 <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama do mecanismo de ação do Ultherapy: ultrassom microfocado atingindo o SMAS em profundidades específicas">
   <rect width="900" height="380" fill="#0B1D3A"/>
@@ -1007,6 +1142,7 @@
       Agendar Consulta pelo WhatsApp
     </a>
     <a href="/blog" class="article-back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Voltar ao Blog</a>
+  </div>
   </div>
 </section>
 
