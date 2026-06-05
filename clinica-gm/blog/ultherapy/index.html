@@ -129,6 +129,7 @@
   margin-bottom: 1rem;
 }
 .u-section.dark .u-title { color: #fff; }
+.u-section[style*="#F4F7FB"] .u-title { color: #0B1D3A; }
 .u-gold-line {
   width: 48px;
   height: 2px;
@@ -412,7 +413,7 @@
 /* ---- FAQ ---- */
 .u-faq { margin: 2rem 0; }
 .u-faq .faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(11,29,58,0.12);
 }
 .u-faq .faq-question {
   width: 100%;
@@ -422,7 +423,7 @@
   padding: 1.25rem 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
+  color: #0B1D3A;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -1163,7 +1164,7 @@
 
 
 <!-- ==================== FAQ ==================== -->
-<section class="u-section">
+<section class="u-section" style="background:#F4F7FB;">
   <div class="u-container" style="max-width:780px;">
     <span class="u-label" style="text-align:center; display:block;">Dúvidas frequentes</span>
     <h2 class="u-title" style="text-align:center;">Perguntas sobre o Ultherapy</h2>
@@ -1239,67 +1240,7 @@
 
 <section class="article-section-white">
   <div class="u-container-inner">
-<figure class="article-illustration">
-<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama do mecanismo de ação do Ultherapy: ultrassom microfocado atingindo o SMAS em profundidades específicas">
-  <rect width="900" height="380" fill="#0B1D3A"/>
-  <defs><filter id="glu"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <!-- camadas da pele (corte transversal) -->
-  <rect x="0" y="60" width="520" height="38" fill="#1A3020" stroke="#3A6A4A" stroke-width="1" opacity="0.8"/>
-  <text x="260" y="83" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#5A9A6A">EPIDERME</text>
-  <rect x="0" y="98" width="520" height="55" fill="#152535" stroke="#2E5570" stroke-width="1" opacity="0.8"/>
-  <text x="260" y="130" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4A8AB0">DERME</text>
-  <rect x="0" y="153" width="520" height="60" fill="#0F1F2F" stroke="#1E4060" stroke-width="1" opacity="0.8"/>
-  <text x="260" y="188" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#3A6A8A">TECIDO SUBCUTÂNEO</text>
-  <rect x="0" y="213" width="520" height="50" fill="#1A1510" stroke="#4A3010" stroke-width="1" opacity="0.8"/>
-  <text x="260" y="243" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8A6030">SMAS</text>
-  <rect x="0" y="263" width="520" height="60" fill="#0A0F1A" stroke="#151F2A" stroke-width="1" opacity="0.7"/>
-  <text x="260" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#2A3A4A" opacity="0.7">MÚSCULO</text>
-  <!-- transdutor Ultherapy -->
-  <rect x="180" y="10" width="160" height="55" rx="8" fill="#1A2D4A" stroke="#C9A84C" stroke-width="1.5"/>
-  <text x="260" y="38" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#C9A84C">ULTHERAPY®</text>
-  <text x="260" y="53" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#C9A84C" opacity="0.7">transdutor HIFU</text>
-  <!-- feixes de ultrassom convergindo em pontos focais -->
-  <!-- feixe 1.5mm - derme -->
-  <line x1="220" y1="65" x2="240" y2="125" stroke="#5B8DB8" stroke-width="1" opacity="0.5"/>
-  <line x1="300" y1="65" x2="240" y2="125" stroke="#5B8DB8" stroke-width="1" opacity="0.5"/>
-  <circle cx="240" cy="125" r="7" fill="#5B8DB8" filter="url(#glu)" opacity="0.9"/>
-  <line x1="245" y1="120" x2="380" y2="95" stroke="#5B8DB8" stroke-width="1" opacity="0.5"/>
-  <text x="388" y="98" font-family="sans-serif" font-size="10" fill="#5B8DB8">1,5 mm (derme)</text>
-  <!-- feixe 3.0mm - subcutâneo -->
-  <line x1="220" y1="65" x2="260" y2="182" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-  <line x1="300" y1="65" x2="260" y2="182" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-  <circle cx="260" cy="182" r="7" fill="#C9A84C" filter="url(#glu)" opacity="0.9"/>
-  <line x1="267" y1="177" x2="388" y2="155" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-  <text x="393" y="158" font-family="sans-serif" font-size="10" fill="#C9A84C">3,0 mm (subcutâneo)</text>
-  <!-- feixe 4.5mm - SMAS -->
-  <line x1="220" y1="65" x2="280" y2="238" stroke="#1D9E75" stroke-width="1" opacity="0.5"/>
-  <line x1="300" y1="65" x2="280" y2="238" stroke="#1D9E75" stroke-width="1" opacity="0.5"/>
-  <circle cx="280" cy="238" r="9" fill="#1D9E75" filter="url(#glu)" opacity="0.9"/>
-  <line x1="289" y1="232" x2="388" y2="215" stroke="#1D9E75" stroke-width="1" opacity="0.5"/>
-  <text x="393" y="218" font-family="sans-serif" font-size="10" fill="#1D9E75">4,5 mm (SMAS) — lifting</text>
-  <!-- temperatura nos pontos focais -->
-  <text x="240" y="148" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8ABADC">60–70°C</text>
-  <text x="260" y="205" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#E8C46A">60–70°C</text>
-  <text x="280" y="258" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#5DD4A8">65–70°C</text>
-  <!-- epiderme intacta (seta) -->
-  <path d="M140,78 L80,50" fill="none" stroke="#3A6A4A" stroke-width="1" opacity="0.6"/>
-  <text x="75" y="46" text-anchor="end" font-family="sans-serif" font-size="9" fill="#5A9A6A">superfície intacta</text>
-  <!-- legenda direita -->
-  <rect x="600" y="80" width="270" height="200" rx="10" fill="#0F2040" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.4"/>
-  <text x="735" y="106" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#C9A84C" letter-spacing="1">PROFUNDIDADES</text>
-  <circle cx="625" cy="135" r="6" fill="#5B8DB8"/>
-  <text x="638" y="139" font-family="sans-serif" font-size="10" fill="#8ABADC">1,5 mm — colágeno dérmico</text>
-  <circle cx="625" cy="165" r="6" fill="#C9A84C"/>
-  <text x="638" y="169" font-family="sans-serif" font-size="10" fill="#E8C46A">3,0 mm — gordura superficial</text>
-  <circle cx="625" cy="195" r="6" fill="#1D9E75"/>
-  <text x="638" y="199" font-family="sans-serif" font-size="10" fill="#5DD4A8">4,5 mm — SMAS (lifting)</text>
-  <line x1="620" y1="218" x2="855" y2="218" stroke="#C9A84C" stroke-width="0.5" stroke-opacity="0.3"/>
-  <text x="735" y="240" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#4A6A8A">superfície da pele preservada</text>
-  <text x="735" y="256" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#4A6A8A">sem incisão · sem downtime significativo</text>
-  <text x="450" y="355" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#C9A84C" opacity="0.45" letter-spacing="3">HIFU · ULTRASSOM MICROFOCADO · LIFTING NÃO CIRÚRGICO</text>
-</svg>
-<figcaption>Mecanismo de ação do Ultherapy®: feixes de ultrassom microfocado convergem em pontos precisos a 1,5 mm, 3,0 mm e 4,5 mm de profundidade, gerando calor localizado (60–70°C) que estimula neocolagênese sem lesionar a superfície da pele.</figcaption>
-</figure>
+
 
   <h2>Perguntas frequentes</h2>
   <div class="article-faq">
