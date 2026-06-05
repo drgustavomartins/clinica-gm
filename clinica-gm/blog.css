@@ -125,6 +125,7 @@
   color: var(--text);
   line-height: 1.85;
   margin-bottom: var(--space-5);
+  text-align: justify;
 }
 
 .article-body p:last-child {
@@ -193,7 +194,7 @@
   background: var(--bg-surface);
   border: 1px solid rgba(201, 168, 76, 0.25);
   border-radius: var(--radius-lg);
-  padding: var(--space-6) var(--space-7);
+  padding: var(--space-8) var(--space-9);
   margin: var(--space-8) 0;
 }
 
