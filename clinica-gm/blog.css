@@ -366,6 +366,50 @@
   gap: var(--space-2);
 }
 
+/* ---- Referências bibliográficas ---- */
+.article-references {
+  max-width: 760px;
+  margin: var(--space-12) auto var(--space-8);
+  padding: var(--space-6) var(--space-7);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--accent);
+}
+
+.article-references h2 {
+  font-size: var(--text-sm) !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  margin: 0 0 var(--space-4) !important;
+}
+
+.references-list {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+.references-list li {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+}
+
+.references-list li em {
+  font-style: italic;
+}
+
+.article-body sup a {
+  color: var(--accent);
+  font-size: 0.7em;
+  text-decoration: none;
+  border-bottom: none !important;
+  vertical-align: super;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
