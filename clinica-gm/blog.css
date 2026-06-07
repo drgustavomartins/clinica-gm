@@ -659,16 +659,6 @@
 }
 
 /* ---- CTA final do artigo ---- */
-.article-cta {
-  max-width: 760px;
-  margin: var(--space-10) auto 0;
-  padding: var(--space-10);
-  background: linear-gradient(135deg, #0B1D3A 0%, #132B52 100%);
-  border-radius: var(--radius-lg);
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
 
 .article-cta::before {
   content: '';
@@ -700,28 +690,8 @@
   text-align: left;
 }
 
-.article-cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-}
 
-.article-back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  color: rgba(255,255,255,0.5);
-  font-size: var(--text-sm);
-  text-decoration: none;
-  transition: color 0.2s;
-  order: -1;
-}
 
-.article-back-link:hover {
-  color: var(--accent);
-}
 
 /* ---- Referências box ---- */
 .article-references {
@@ -772,19 +742,9 @@
     padding: var(--space-7) var(--space-5);
   }
 
-  .article-cta {
-    padding: var(--space-7) var(--space-5);
-  }
-
-  .article-cta-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .article-back-link {
-    order: 1;
-  }
-
+  
+  
+  
   .ba-grid {
     grid-template-columns: 1fr;
   }
@@ -793,3 +753,68 @@
     height: 320px;
   }
 }
+
+/* ---- Botão WhatsApp (posts do blog) ---- */
+.btn-whatsapp,
+.whatsapp-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #25D366;
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  padding: var(--space-3) var(--space-6);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.btn-whatsapp:hover,
+.whatsapp-inline:hover {
+  background: #1ebe5c;
+  transform: translateY(-2px);
+  color: #fff;
+  border-bottom: none;
+}
+
+.btn-whatsapp svg,
+.whatsapp-inline svg {
+  flex-shrink: 0;
+}
+
+/* ---- CTA box melhorado ---- */
+.article-cta {
+  max-width: 760px;
+  margin: var(--space-10) auto var(--space-10);
+  padding: var(--space-10) var(--space-10);
+  background: linear-gradient(135deg, #0B1D3A 0%, #132B52 100%);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255,255,255,0.5);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.article-back-link:hover {
+  color: var(--accent);
+}
+
