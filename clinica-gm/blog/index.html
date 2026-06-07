@@ -1,56 +1,282 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-
-<title>Blog | Harmonização Facial, Estética e Saúde | Clínica Gustavo Martins</title>
-<meta name="description" content="Conteúdo especializado sobre harmonização facial, toxina botulínica, preenchimento labial, Método NaturalUp® e outros tratamentos estéticos. Dicas do Dr. Gustavo Martins.">
-<meta name="keywords" content="blog harmonização facial, artigos estética facial, blog botox, blog preenchimento labial, método NaturalUp blog, Dr Gustavo Martins blog">
-
+<title>Blog | Clínica Dr. Gustavo Martins</title>
+<meta name="description" content="Conteúdo clínico direto sobre harmonização facial, toxina botulínica, preenchimento, bioestimulação e cuidados com a pele. Direto do consultório para você.">
 <link rel="canonical" href="https://www.clinicagustavomartins.com.br/blog">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="Blog | Clínica Gustavo Martins">
-<meta property="og:description" content="Conteúdo especializado sobre harmonização facial, toxina botulínica, preenchimento labial e Método NaturalUp®.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.clinicagustavomartins.com.br/blog">
-<meta property="og:image" content="https://www.clinicagustavomartins.com.br/assets/dr-gustavo-novo.jpg">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Clínica Gustavo Martins">
-
+<link rel="icon" type="image/png" href="/assets/gm-favicon.png">
 <link rel="stylesheet" href="../base.css">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../proc-page.css">
 <link rel="stylesheet" href="../blog.css">
-
-<link rel="icon" type="image/png" href="/assets/gm-favicon.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Blog Clínica Gustavo Martins",
-  "url": "https://www.clinicagustavomartins.com.br/blog",
-  "description": "Conteúdo especializado sobre harmonização facial, estética e saúde.",
-  "publisher": {
-    "@type": "MedicalBusiness",
-    "name": "Clínica Gustavo Martins",
-    "url": "https://www.clinicagustavomartins.com.br"
-  }
+<style>
+/* ── Blog Index ─────────────────────────────────────── */
+.blog-hero {
+  background: linear-gradient(160deg, #0B1D3A 0%, #132B52 100%);
+  padding: calc(var(--header-h,72px) + 4rem) 0 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-</script>
+.blog-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.08), transparent 70%);
+}
+.blog-hero .container { position: relative; z-index: 1; }
+.blog-hero-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.blog-hero h1 {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.blog-hero p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.blog-hero-wave {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  margin-top: 3rem;
+}
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TG9E4LJLSV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TG9E4LJLSV');
-</script>
+/* ── Search ─────────────────────────────────────────── */
+.blog-search-wrap {
+  max-width: 600px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.blog-search-input {
+  width: 100%;
+  padding: 0.9rem 3rem 0.9rem 1.2rem;
+  border: 1.5px solid rgba(201,168,76,0.35);
+  border-radius: 50px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.blog-search-input::placeholder { color: rgba(255,255,255,0.35); }
+.blog-search-input:focus { border-color: var(--accent); }
+.blog-search-icon {
+  position: absolute;
+  right: 2.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.35);
+  pointer-events: none;
+}
+
+/* ── Featured ────────────────────────────────────────── */
+.blog-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.blog-section-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(201,168,76,0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.blog-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.15rem;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.blog-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.blog-featured-card {
+  background: #0B1D3A;
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-featured-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 0% 100%, rgba(201,168,76,0.06), transparent 70%);
+}
+.blog-featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11,29,58,0.2);
+}
+.blog-featured-body { position: relative; z-index: 1; }
+.blog-featured-card .blog-card-tag {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.blog-featured-card h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+.blog-featured-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.blog-featured-card .blog-card-read {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Filters ─────────────────────────────────────────── */
+.blog-filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 1.5rem;
+}
+.blog-filter-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  border: 1.5px solid rgba(11,29,58,0.15);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.blog-filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.blog-filter-btn.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+/* ── Cards grid ──────────────────────────────────────── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+.blog-card {
+  background: #fff;
+  border: 1.5px solid rgba(11,29,58,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(11,29,58,0.1);
+  border-color: rgba(201,168,76,0.4);
+}
+.blog-card.hidden { display: none; }
+.blog-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.blog-card h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+.blog-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.blog-card-read {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* No results */
+.blog-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-muted);
+  display: none;
+}
+.blog-no-results.visible { display: block; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 860px) {
+  .blog-featured-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -76,551 +302,452 @@
   </div>
 </header>
 
-<nav class="mobile-nav" id="mobileNav">
-  <a href="/#sobre">Sobre</a>
-  <a href="/#procedimentos">Procedimentos</a>
-  <a href="/#naturalup">NaturalUp</a>
-  <a href="/#resultados">Resultados</a>
-  <a href="/blog">Blog</a>
-  <a href="/#contato">Contato</a>
-  <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
-</nav>
-
 <main>
 
-<section class="article-hero">
+<!-- HERO -->
+<section class="blog-hero">
   <div class="container">
-    <nav class="proc-breadcrumb">
-      <a href="/">Início</a><span aria-hidden="true">›</span>
-      <span>Blog</span>
-    </nav>
-    <h1>Blog da Clínica Gustavo Martins</h1>
-    <p class="article-hero-sub">Conteúdo especializado sobre harmonização facial, estética e saúde. Informação de quem realmente entende, direto do consultório para você.</p>
-  </div>
-</section>
+    <p class="blog-hero-label">Clínica Dr. Gustavo Martins</p>
+    <h1>Conteúdo direto do consultório</h1>
+    <p>Estética facial sem enrolação. O que realmente funciona, por que funciona e como isso se aplica ao seu caso.</p>
 
-<section class="section-padding" style="padding-top: var(--space-6);">
-  <div class="container">
-    <div class="blog-grid">
-        <a href="/blog/efeito-mounjaro-rosto" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Emagrecimento</span>
-            <h3>Efeito Mounjaro no rosto: o que a medicação não conta</h3>
-            <p>Perder peso rápido muda o corpo. Mas muda o rosto também. E essa parte quase ninguém planeja.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-
-        <a href="/blog/cirurgia-ou-procedimento-estetico" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Planejamento</span>
-            <h3>Cirurgia ou procedimento estético: qual escolher?</h3>
-            <p>Cada abordagem resolve coisas diferentes. Entenda quando cada uma faz sentido e como as duas se complementam.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/harmonizacao-facial-rio-de-janeiro" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Rio de Janeiro</span>
-            <h3>Harmonização facial no Rio de Janeiro: o que considerar</h3>
-            <p>Com tantas opções no Rio, o que realmente diferencia uma clínica de qualidade? Entenda o que avaliar.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/iprf-queda-cabelo" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">iPRF</span>
-            <h3>Queda de cabelo tem tratamento estético? O papel do iPRF</h3>
-            <p>O iPRF estimula os folículos com os fatores de crescimento do próprio sangue. Funciona e tem evidência.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/bioestimulador-pescoco-colo" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Bioestimulador</span>
-            <h3>Bioestimulador de colágeno para pescoço e colo</h3>
-            <p>O pescoço entrega a idade antes do rosto. Saiba o que é possível fazer nessa região negligenciada.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/o-que-e-smas-tratamentos-faciais" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Anatomia</span>
-            <h3>O que é SMAS e por que ele importa nos tratamentos faciais</h3>
-            <p>A camada que sustenta o rosto. Entender o SMAS explica por que alguns tratamentos chegam onde o envelhecimento acontece.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/harmonizacao-vs-transformacao-facial" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Planejamento</span>
-            <h3>Harmonização facial x transformação facial: qual é a diferença?</h3>
-            <p>São objetivos completamente diferentes. Saber qual você quer é a primeira conversa de qualquer consulta.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/harmonizacao-facial-dar-errado" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Segurança</span>
-            <h3>Por que a harmonização facial pode dar errado</h3>
-            <p>O resultado ruim tem causas previsíveis. Entenda o que leva ao retrabalho e como evitar.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/como-escolher-profissional-harmonizacao-facial" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Guia</span>
-            <h3>Como escolher um profissional de harmonização facial</h3>
-            <p>O profissional é a variável mais importante. Saiba o que realmente vale avaliar antes de marcar uma consulta.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/preenchimento-olheira-indicacao" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Olheiras</span>
-            <h3>Preenchimento de olheira: para quem é e para quem não é</h3>
-            <p>Bem indicado é incrível. Mal indicado, piora. Entenda a diferença antes de decidir.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/pdrn-polynucleotides-espuma-salmao" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Biorregeneração</span>
-            <h3>PDRN e Polynucleotides: o que são e para que servem</h3>
-            <p>Ficaram conhecidos como a espuma de salmão. O que fazem na pele vai muito além do nome curioso.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/microagulhamento-melasma" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Microagulhamento</span>
-            <h3>Microagulhamento para melasma: funciona ou piora?</h3>
-            <p>Depende de como é feito. O protocolo errado piora. O correto melhora. A diferença está nos detalhes.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/hialuronidase-dissolver-preenchimento" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Segurança</span>
-            <h3>Hialuronidase: quando e por que dissolver o preenchimento</h3>
-            <p>Saber que o preenchimento pode ser desfeito muda tudo. Entenda como funciona e quando faz sentido.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/lifting-sobrancelha-sem-cirurgia" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Sem cirurgia</span>
-            <h3>Lifting de sobrancelha sem cirurgia: o que é possível fazer</h3>
-            <p>A sobrancelha caída envelhece o olhar. Existem opções não cirúrgicas eficazes dependendo do grau de ptose.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/sorriso-gengival-tratamento" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Sorriso</span>
-            <h3>Sorriso gengival tem tratamento minimamente invasivo?</h3>
-            <p>Sim. Dois pontos de toxina botulínica mudam completamente o sorriso de quem convive com isso.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/toxina-botulinica-bruxismo" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Bruxismo</span>
-            <h3>Toxina botulínica para bruxismo: como funciona e quanto dura</h3>
-            <p>O masseter hiperativo causa dor, desgaste dental e muda o rosto. A toxina resolve os três.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/ptose-palpebral-como-evitar" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Segurança</span>
-            <h3>O que é ptose palpebral e como evitar depois da toxina</h3>
-            <p>O efeito mais temido da toxina botulínica. É raro, temporário e tem causa bem definida.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/acido-hialuronico-vs-colageno" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Fundamentos</span>
-            <h3>Diferença entre ácido hialurônico e colágeno</h3>
-            <p>São os dois termos mais usados na estética. Mas fazem coisas completamente diferentes.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/preenchimento-labial-some-dissolve" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Preenchimento</span>
-            <h3>Preenchimento labial some com o tempo ou precisa dissolver?</h3>
-            <p>É absorvido naturalmente. Mas se quiser antecipar, existe solução rápida e segura.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/botox-gravida-amamentando" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Segurança</span>
-            <h3>Posso fazer botox grávida ou amamentando?</h3>
-            <p>A orientação é evitar durante esses períodos. Entenda por que e o que é seguro fazer.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/quanto-tempo-inchado-preenchimento" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Pós-procedimento</span>
-            <h3>Quanto tempo fico inchado depois do preenchimento?</h3>
-            <p>Em geral, 3 a 7 dias. Mas o resultado real aparece entre 10 e 14 dias. Entenda o que esperar.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/preenchimento-facial-doi" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Pré-procedimento</span>
-            <h3>Preenchimento facial dói?</h3>
-            <p>Muito menos do que a maioria imagina. Saiba o que esperar antes, durante e depois.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-        <a href="/blog/quanto-custa-harmonizacao-facial" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Custos</span>
-            <h3>Quanto custa harmonização facial?</h3>
-            <p>O preço varia muito. Entenda o que influencia o valor e o que você realmente está comprando.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-<a href="/blog/toxina-botulinica-durar-mais" class="blog-card">
-          <div class="blog-card-body">
-            <span class="blog-card-tag">Toxina Botulínica</span>
-            <h3>Tem como a toxina botulínica durar mais?</h3>
-            <p>Existe um platô de dose a partir do qual colocar mais toxina não muda nada. Entenda o conceito de miomodulação e como o tratamento evolui com o tempo.</p>
-            <span class="blog-card-read">Ler artigo →</span>
-          </div>
-        </a>
-<a href="/blog/ultherapy" class="blog-card">
-        <div class="blog-card-image">
-          <img src="../assets/ultherapy/p17_img05_450x800.jpeg" alt="Ultherapy ultrassom microfocado lifting não cirúrgico" loading="lazy">
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Tecnologia</div>
-          <h3>Ultherapy®: O Lifting Não Cirúrgico com Ultrassom Microfocado</h3>
-          <p>Como o ultrassom microfocado estimula colágeno nas camadas profundas da pele para um lifting real, sem cirurgia.</p>
-          <span class="blog-card-read">
-            Ler artigo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/blog/metodo-naturalup" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #0B1D3A 0%, #132B52 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: var(--accent); padding: var(--space-6);">
-            <div style="font-family: Georgia, serif; font-size: 2rem; font-weight: 400; margin-bottom: var(--space-2);">NaturalUp<sup style="font-size: 0.5em;">®</sup></div>
-            <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6);">Método Exclusivo</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Método Exclusivo</div>
-          <h3>Método NaturalUp®: O Que É e Como Funciona</h3>
-          <p>Entenda a técnica proprietária que transforma rostos com progressividade, naturalidade e durabilidade, sem aparência artificial.</p>
-          <span class="blog-card-read">
-            Ler artigo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/blog/preenchimento-labial" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #C9A84C 0%, #AA8A2E 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: #fff; padding: var(--space-6);">
-            <div style="font-family: Georgia, serif; font-size: 1.75rem; font-weight: 400; margin-bottom: var(--space-2);">Preenchimento<br>Labial</div>
-            <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8;">Ácido Hialurônico</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Harmonização</div>
-          <h3>Preenchimento Labial: Guia Completo para Resultados Naturais</h3>
-          <p>Tudo sobre preenchimento labial: como é feito, duração, riscos, preço e como garantir um resultado elegante, sem exageros.</p>
-          <span class="blog-card-read">
-            Ler artigo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/blog/toxina-botulinica" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #F4F7FB 0%, #E8EEF7 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: #0B1D3A; padding: var(--space-6);">
-            <div style="font-family: Georgia, serif; font-size: 1.75rem; font-weight: 400; margin-bottom: var(--space-2);">Toxina<br>Botulínica</div>
-            <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">Toxina Botulínica</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Harmonização</div>
-          <h3>Toxina Botulínica: Tudo o Que Você Precisa Saber</h3>
-          <p>Como funciona, duração, preço, segurança e como garantir um resultado natural sem congelar o rosto. Guia completo.</p>
-          <span class="blog-card-read">
-            Ler artigo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/blog/iprf" class="blog-card">
-        <div class="blog-card-image">
-          <img src="../assets/iprf/iprf-tubos-separados.jpg" alt="Tubos de i-PRF após centrifugação com separação de plasma dourado e hemácias vermelhas" loading="lazy">
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Bioestimulação</div>
-          <h3>i-PRF: O Que É, Como Funciona e Para Que Serve</h3>
-          <p>Um dos protocolos favoritos do Dr. Gustavo Martins usa o próprio sangue para regenerar a pele e estimular colágeno de forma natural.</p>
-          <span class="blog-card-read">
-            Ler artigo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="/blog/biorregeracao" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #085041 0%, #1D9E75 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: #E1F5EE; padding: var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            <div style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: var(--space-3); opacity: 0.8;">PDRN · Polynucleotides</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Regeneração</div>
-          <h3>Biorregeneração Facial: O Que É, Como Funciona e Para Quem É Indicada</h3>
-          <p>PDRN, Polynucleotides e a diferença entre regenerar e estimular. Por que a biorregeneração representa uma mudança real de paradigma na estética.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/bioestimulo-colageno" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #0B1D3A 0%, #2E4068 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: #C9A84C; padding: var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            <div style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: var(--space-3); opacity: 0.7;">Sculptra · Radiesse · PLLA</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Bioestimulação</div>
-          <h3>Bioestímulo de Colágeno Não Inflamatório: Por Que a Forma de Estimular Importa</h3>
-          <p>Sculptra, Radiesse e PLLA: como cada um funciona, o que os diferencia e por que a via do estímulo define a qualidade do resultado.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/microagulhamento" class="blog-card">
-        <div class="blog-card-image">
-          <img src="../assets/iprf/iprf-aplicacao-facial.jpg" alt="Microagulhamento facial com protocolo personalizado por fototipo na Clínica Dr. Gustavo Martins" loading="lazy">
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Técnica</div>
-          <h3>Microagulhamento: A Técnica Que Respeita os Limites de Cada Pele</h3>
-          <p>Profundidade e pressão adaptadas ao fototipo, combinação com iPRF e vitaminas. Por que individualizar o protocolo faz toda a diferença no resultado.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/preenchimento-estruturador" class="blog-card">
-        <div class="blog-card-image" style="background: linear-gradient(135deg, #412402 0%, #BA7517 100%); display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; color: #FAEEDA; padding: var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            <div style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: var(--space-3); opacity: 0.8;">Ácido Hialurônico Estruturador</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Harmonização</div>
-          <h3>Preenchimentos Faciais Estruturadores: Como Reequilibrar o Rosto Sem Exagero</h3>
-          <p>Malar, mandíbula, mento. Como o ácido hialurônico de alta viscosidade restaura proporções e define marcos anatômicos sem aparência artificial.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/fios-pdo-labios" class="blog-card">
-        <div class="blog-card-image">
-          <img src="../assets/fios-pdo-labios/fios-pdo-labios-depois.jpg" alt="Resultado de fios PDO nos lábios para tratamento de flacidez labial na Clínica Dr. Gustavo Martins" loading="lazy" style="object-position: center 20%;">
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Caso Clínico</div>
-          <h3>Fios PDO para Lábios: Quando o Preenchimento Não é a Resposta</h3>
-          <p>Para flacidez labial real, o preenchimento pode piorar o resultado. Entenda quando os fios de PDO são a indicação certa, com caso real e resultado.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-      <a href="/blog/olheiras" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#1A3050 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">Diagnóstico e tratamento</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Olheiras</div>
-          <h3>Olheiras: Tipos, Causas e o Tratamento Certo para Cada Caso</h3>
-          <p>Vascular, pigmentar, estrutural ou mista. Por que o mesmo tratamento não funciona para todo mundo.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/quanto-dura-procedimento-estetico" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#2E4068 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">Guia de durabilidade</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Guia</div>
-          <h3>Quanto Dura Cada Procedimento Estético? Guia Completo</h3>
-          <p>Botox, preenchimento, bioestimuladores e iPRF: durações reais, o que influencia e quando reaplicar.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/harmonizacao-facial" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#132B52 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <div style="font-family:Georgia,serif;font-size:1.8rem;font-weight:400;margin-bottom:var(--space-2);">Harmonização<br><span style="color:rgba(255,255,255,.5);font-size:1rem;">Facial</span></div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Referência</div>
-          <h3>Harmonização Facial: O Que É e Por Que o Planejamento Vem Antes do Produto</h3>
-          <p>O que inclui, como funciona o planejamento e por que o diagnóstico correto define o resultado.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/botox-ou-preenchimento" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#2A1A0A 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;padding:var(--space-6);">
-            <div style="font-family:Georgia,serif;font-size:1.2rem;color:#C9A84C;">Botox</div>
-            <div style="color:rgba(255,255,255,.3);font-size:1.5rem;margin:.25rem 0;">vs</div>
-            <div style="font-family:Georgia,serif;font-size:1.2rem;color:#5B8DB8;">Preenchimento</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Comparativo</div>
-          <h3>Botox ou Preenchimento: Qual a Diferença e Quando Usar Cada Um</h3>
-          <p>Mecanismos diferentes, indicações diferentes. Entenda por que a escolha errada não entrega o resultado que você quer.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/skin-boosters" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0A2030 0%,#1A4060 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:#8ABADC;padding:var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">Hidratação profunda</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Pele</div>
-          <h3>Skin Boosters: O Que São, Como Funcionam e Para Quem São Indicados</h3>
-          <p>Profhilo, Juvederm Volite, Restylane. O que diferencia o skin booster do preenchimento convencional.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/radiesse-vs-sculptra" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#1A2D10 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;padding:var(--space-6);">
-            <div style="font-family:Georgia,serif;font-size:1.2rem;color:#C9A84C;">Radiesse</div>
-            <div style="color:rgba(255,255,255,.3);font-size:1.5rem;margin:.25rem 0;">vs</div>
-            <div style="font-family:Georgia,serif;font-size:1.2rem;color:#1D9E75;">Sculptra</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Comparativo</div>
-          <h3>Radiesse vs Sculptra: Qual Bioestimulador Escolher para o Seu Caso</h3>
-          <p>Dois líderes em bioestimulação de colágeno com perfis de resultado muito diferentes. Entenda qual se aplica ao seu caso.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/resultado-natural-estetica" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#1A2D4A 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <div style="font-family:Georgia,serif;font-size:1.5rem;font-weight:400;line-height:1.3;">"Você está<br>diferente…<br>de um jeito bom."</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Filosofia</div>
-          <h3>Por Que Resultado Natural Não É Falta de Procedimento</h3>
-          <p>O que realmente causa o rosto artificial e como o planejamento protege a sua identidade.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/estetica-facial-30-40-50-anos" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#2E4068 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <div style="display:flex;gap:1rem;align-items:center;justify-content:center;">
-              <span style="font-family:Georgia,serif;font-size:1.3rem;">30</span>
-              <span style="color:rgba(255,255,255,.3);">·</span>
-              <span style="font-family:Georgia,serif;font-size:1.5rem;color:#fff;">40</span>
-              <span style="color:rgba(255,255,255,.3);">·</span>
-              <span style="font-family:Georgia,serif;font-size:1.3rem;">50</span>
-            </div>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">Por faixa etária</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Guia por Fase</div>
-          <h3>Estética Facial nos 30, 40 e 50 Anos: O Que Fazer em Cada Fase</h3>
-          <p>Prevenir nos 30, tratar nos 40, potencializar nos 50. A lógica clínica muda com cada fase da vida.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/harmonizacao-orofacial-dentista" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#1A1A2E 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">Harmonização Orofacial</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Autoridade</div>
-          <h3>Harmonização Orofacial: O Diferencial Técnico do Cirurgião-Dentista</h3>
-          <p>Por que oclusão, sorriso e proporções são inseparáveis e o que muda na abordagem clínica.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-
-      <a href="/blog/planejamento-facial" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0B1D3A 0%,#2E4068 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;color:var(--accent);padding:var(--space-6);">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-top:var(--space-3);opacity:.7;">A consulta que define tudo</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Metodologia</div>
-          <h3>Planejamento Facial: O Que Acontece Antes de Qualquer Procedimento</h3>
-          <p>A consulta é o procedimento mais importante. O que acontece nela e por que ela define o resultado.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
-      <a href="/blog/xeomin" class="blog-card">
-        <div class="blog-card-image" style="background:linear-gradient(135deg,#0A2010 0%,#0F3020 100%);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;padding:var(--space-6);">
-            <div style="font-family:Georgia,serif;font-size:2rem;font-weight:400;color:#1D9E75;letter-spacing:.05em;">Xeomin®</div>
-            <div style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:var(--space-2);">incobotulinumtoxinA</div>
-            <div style="width:32px;height:1px;background:#1D9E75;margin:.75rem auto;opacity:.5;"></div>
-            <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#1D9E75;opacity:.7;">toxina pura</div>
-          </div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-tag">Opinião Clínica</div>
-          <h3>Por Que Escolho o Xeomin no Meu Dia a Dia</h3>
-          <p>Sou speaker Merz — mas a convicção clínica veio antes da parceria. A lógica científica por trás da preferência pelo Xeomin em protocolos de longo prazo.</p>
-          <span class="blog-card-read">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </div>
-      </a>
+    <div class="blog-search-wrap">
+      <input
+        type="text"
+        id="blog-search"
+        class="blog-search-input"
+        placeholder="Buscar artigo..."
+        autocomplete="off"
+      >
+      <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
     </div>
   </div>
+  <div class="blog-hero-wave">
+    <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,32 C360,64 1080,0 1440,32 L1440,48 L0,48 Z" fill="#ffffff"/>
+    </svg>
+  </div>
 </section>
+
+<div class="blog-section">
+
+  <!-- DESTAQUES -->
+  <h2 class="blog-section-title">Leituras recomendadas</h2>
+  <div class="blog-featured-grid" id="featured-grid">
+          <a href="/blog/efeito-mounjaro-rosto" class="blog-featured-card" data-cat="especiais">
+            <div class="blog-featured-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h2>Efeito Mounjaro no rosto: o que a medicação não conta</h2>
+              <p>Perder peso rápido muda o rosto também. E essa parte quase ninguém planeja.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/toxina-botulinica-durar-mais" class="blog-featured-card" data-cat="toxina">
+            <div class="blog-featured-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h2>Tem como a toxina botulínica durar mais?</h2>
+              <p>Platô de dose, miomodulação e como o tratamento evolui com o tempo.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-facial-dar-errado" class="blog-featured-card" data-cat="planejamento">
+            <div class="blog-featured-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h2>Por que a harmonização facial pode dar errado</h2>
+              <p>O resultado ruim tem causas previsíveis. Entenda e evite.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-featured-card" data-cat="planejamento">
+            <div class="blog-featured-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h2>Estética facial aos 30, 40 e 50 anos</h2>
+              <p>O que prevenir, tratar e potencializar em cada fase da vida.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+  </div>
+
+  <!-- FILTROS -->
+  <div class="blog-filters" id="filter-bar">
+          <button class="blog-filter-btn active" data-filter="todos">Todos</button>
+          <button class="blog-filter-btn" data-filter="toxina">Toxina Botulínica</button>
+          <button class="blog-filter-btn" data-filter="preenchimento">Preenchimento</button>
+          <button class="blog-filter-btn" data-filter="pele">Pele e Bioestimulação</button>
+          <button class="blog-filter-btn" data-filter="planejamento">Planejamento</button>
+          <button class="blog-filter-btn" data-filter="especiais">Tratamentos Especiais</button>
+  </div>
+
+  <!-- TODOS OS ARTIGOS -->
+  <div class="blog-grid" id="blog-grid">
+          <a href="/blog/efeito-mounjaro-rosto" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Efeito Mounjaro no rosto: o que a medicação não conta</h3>
+              <p>Perder peso rápido muda o rosto também. E essa parte quase ninguém planeja.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/toxina-botulinica-durar-mais" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Tem como a toxina botulínica durar mais?</h3>
+              <p>Platô de dose, miomodulação e como o tratamento evolui com o tempo.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-facial-dar-errado" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Por que a harmonização facial pode dar errado</h3>
+              <p>O resultado ruim tem causas previsíveis. Entenda e evite.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Estética facial aos 30, 40 e 50 anos</h3>
+              <p>O que prevenir, tratar e potencializar em cada fase da vida.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/toxina-botulinica" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Toxina botulínica: tudo o que você precisa saber</h3>
+              <p>Como funciona, quanto dura, o que esperar e como evitar resultados ruins.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/toxina-botulinica-bruxismo" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Toxina botulínica para bruxismo: como funciona e quanto dura</h3>
+              <p>O masseter hiperativo causa dor, desgaste dental e muda o rosto. A toxina resolve os três.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/ptose-palpebral-como-evitar" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>O que é ptose palpebral e como evitar</h3>
+              <p>O efeito mais temido da toxina. É raro, temporário e tem causa bem definida.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/botox-gravida-amamentando" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Posso fazer botox grávida ou amamentando?</h3>
+              <p>A orientação é evitar. Entenda por que e o que é seguro fazer nesse período.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/sorriso-gengival-tratamento" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Sorriso gengival tem tratamento minimamente invasivo?</h3>
+              <p>Sim. Dois pontos de toxina mudam completamente o sorriso.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/xeomin" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Xeomin: por que uso e o que o diferencia</h3>
+              <p>A única toxina sem proteínas acessórias. O que isso significa no longo prazo.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/botox-ou-preenchimento" class="blog-card" data-cat="toxina">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Toxina Botulínica</span>
+              <h3>Botox ou preenchimento? Como saber o que você precisa</h3>
+              <p>São mundos diferentes. Confundir os dois é o caminho mais curto para um resultado que não funciona.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/preenchimento-labial" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Preenchimento labial: como fica natural e por que fica artificial</h3>
+              <p>O resultado artificial não é o procedimento. É como ele foi feito.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/preenchimento-estruturador" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Preenchimento estruturador: a lógica das camadas profundas</h3>
+              <p>Não é sobre adicionar volume. É sobre sustentar o que existe.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/preenchimento-olheira-indicacao" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Preenchimento de olheira: para quem é e para quem não é</h3>
+              <p>Bem indicado é incrível. Mal indicado, piora. Entenda a diferença.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/preenchimento-labial-some-dissolve" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Preenchimento labial some ou precisa dissolver?</h3>
+              <p>É absorvido naturalmente. Mas se quiser antecipar, existe solução rápida.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/hialuronidase-dissolver-preenchimento" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Hialuronidase: quando e por que dissolver o preenchimento</h3>
+              <p>O procedimento que desfaz o preenchimento em minutos. Entenda quando faz sentido.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/preenchimento-facial-doi" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Preenchimento facial dói?</h3>
+              <p>Muito menos do que a maioria imagina. O que esperar antes, durante e depois.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/quanto-tempo-inchado-preenchimento" class="blog-card" data-cat="preenchimento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Preenchimento</span>
+              <h3>Quanto tempo fico inchado depois do preenchimento?</h3>
+              <p>Em geral, 3 a 7 dias. O resultado real aparece entre 10 e 14 dias.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/bioestimulo-colageno" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Bioestimuladores de colágeno: como funcionam de verdade</h3>
+              <p>Sculptra, Radiesse e como estimular o colágeno do próprio organismo.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/radiesse-vs-sculptra" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Radiesse ou Sculptra: qual escolher?</h3>
+              <p>São diferentes. A escolha muda o resultado, a durabilidade e o custo.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/iprf" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>iPRF: o procedimento feito com o seu próprio sangue</h3>
+              <p>Fatores de crescimento concentrados que estimulam regeneração sem substância externa.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/biorregeracao" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Biorregeneração: regenerar sem inflamar</h3>
+              <p>Para peles que precisam melhorar sem passar por mais agressão.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/pdrn-polynucleotides-espuma-salmao" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>PDRN e Polynucleotides: o que são e para que servem</h3>
+              <p>A espuma de salmão. O que fazem na pele vai muito além do nome curioso.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/microagulhamento" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Microagulhamento: o que a padronização errada faz de errado</h3>
+              <p>Profundidade, fototipo e protocolo importam mais do que a quantidade de sessões.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/microagulhamento-melasma" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Microagulhamento para melasma: funciona ou piora?</h3>
+              <p>Depende de como é feito. O protocolo errado piora. O correto melhora.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/skin-boosters" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Skin boosters: o que são e para que servem</h3>
+              <p>Não é preenchimento. É hidratação profunda com efeito real na qualidade da pele.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/bioestimulador-pescoco-colo" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Bioestimulador para pescoço e colo: vale a pena?</h3>
+              <p>O pescoço entrega a idade antes do rosto. É uma das regiões mais negligenciadas.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/acido-hialuronico-vs-colageno" class="blog-card" data-cat="pele">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Pele e Bioestimulação</span>
+              <h3>Diferença entre ácido hialurônico e colágeno</h3>
+              <p>Os dois termos mais usados na estética. Fazem coisas completamente diferentes.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/planejamento-facial" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Planejamento facial: o que acontece antes do procedimento</h3>
+              <p>O procedimento não é o que define o resultado. É o que acontece antes dele.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-facial" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Harmonização facial: o que é de verdade</h3>
+              <p>Não é uma lista de procedimentos. É um planejamento que respeita a identidade.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-orofacial-dentista" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Harmonização orofacial pelo dentista: o diferencial</h3>
+              <p>A visão integrada de sorriso e rosto muda o planejamento de forma relevante.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-vs-transformacao-facial" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Harmonização x transformação facial: qual é a diferença?</h3>
+              <p>São objetivos diferentes. Saber qual você quer é a primeira conversa de qualquer consulta.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/resultado-natural-estetica" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Resultado natural: o que significa e por que é possível</h3>
+              <p>Natural não é ausência de procedimento. É planejamento com intenção.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/como-escolher-profissional-harmonizacao-facial" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Como escolher um profissional de harmonização facial</h3>
+              <p>O profissional é a variável mais importante. Saiba o que avaliar.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/quanto-custa-harmonizacao-facial" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Quanto custa harmonização facial?</h3>
+              <p>O preço varia muito. Entenda o que influencia e o que você está comprando.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/cirurgia-ou-procedimento-estetico" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Cirurgia ou procedimento estético: qual escolher?</h3>
+              <p>Cada abordagem resolve coisas diferentes. As duas se complementam.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/quanto-dura-procedimento-estetico" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Quanto dura cada procedimento estético?</h3>
+              <p>Toxina, preenchimento, bioestimulador — durabilidade real de cada um.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/metodo-naturalup" class="blog-card" data-cat="planejamento">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Planejamento</span>
+              <h3>Método NaturalUp: o que é e como funciona</h3>
+              <p>A abordagem de harmonização que pensa no rosto hoje e nos próximos anos.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/olheiras" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Olheiras: os 4 tipos e por que o tratamento errado não funciona</h3>
+              <p>Diagnóstico correto é o primeiro passo. Cada tipo tem uma solução diferente.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/lifting-sobrancelha-sem-cirurgia" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Lifting de sobrancelha sem cirurgia</h3>
+              <p>A sobrancelha caída envelhece o olhar. Existem opções eficazes sem bisturi.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/fios-pdo-labios" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Fios PDO para lábios: quando o preenchimento não é a resposta</h3>
+              <p>Flacidez e falta de volume são problemas diferentes com soluções diferentes.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/ultherapy" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Ultherapy: o que o ultrassom microfocado faz que outros não fazem</h3>
+              <p>O único não cirúrgico aprovado pela FDA para lifting. Como funciona de verdade.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/o-que-e-smas-tratamentos-faciais" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>O que é SMAS e por que ele importa nos tratamentos faciais</h3>
+              <p>A camada que sustenta o rosto. Por que alguns tratamentos chegam lá e outros não.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/iprf-queda-cabelo" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Queda de cabelo: o papel do iPRF no couro cabeludo</h3>
+              <p>O próprio sangue estimulando os folículos. Funciona e tem evidência.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="/blog/harmonizacao-facial-rio-de-janeiro" class="blog-card" data-cat="especiais">
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Especiais</span>
+              <h3>Harmonização facial no Rio de Janeiro</h3>
+              <p>Com tantas opções no Rio, o que realmente diferencia uma clínica de qualidade.</p>
+              <span class="blog-card-read">Ler artigo →</span>
+            </div>
+          </a>
+    <div class="blog-no-results" id="no-results">
+      Nenhum artigo encontrado para essa busca.
+    </div>
+  </div>
+
+</div>
 
 </main>
 
@@ -688,6 +815,50 @@ if (hamburger && mobileNav) {
     hamburger.setAttribute('aria-expanded', open);
   });
 }
+</script>
+</body>
+</html>
+
+<script>
+(function() {
+  var searchInput = document.getElementById('blog-search');
+  var filterBtns = document.querySelectorAll('.blog-filter-btn');
+  var cards = document.querySelectorAll('#blog-grid .blog-card');
+  var noResults = document.getElementById('no-results');
+  var activeFilter = 'todos';
+
+  function applyFilters() {
+    var query = searchInput.value.toLowerCase().trim();
+    var visible = 0;
+
+    cards.forEach(function(card) {
+      var cat = card.getAttribute('data-cat');
+      var text = card.textContent.toLowerCase();
+      var matchesCat = activeFilter === 'todos' || cat === activeFilter;
+      var matchesSearch = !query || text.includes(query);
+
+      if (matchesCat && matchesSearch) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    noResults.classList.toggle('visible', visible === 0);
+  }
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+})();
 </script>
 </body>
 </html>
