@@ -62,73 +62,18 @@
 </script>
 
 <style>
-.hero-mounjaro {
-  position: relative;
-  width: 100%;
-  min-height: 70vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-mounjaro img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  filter: brightness(0.45);
-}
-.hero-mounjaro .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 6rem 2rem 5rem;
-  max-width: 780px;
-}
-.hero-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  font-family: 'Georgia', serif;
-}
-.hero-mounjaro h1 {
-  font-family: 'Georgia', serif;
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 400;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-}
-.hero-mounjaro h1 strong {
-  color: var(--accent);
-  font-weight: 400;
-}
-.hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.hero-meta {
-  margin-top: 2rem;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.hero-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.hero-mounjaro-img {
   width: 100%;
   line-height: 0;
-  z-index: 3;
+  overflow: hidden;
+  max-height: 600px;
+}
+.hero-mounjaro-img img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
 }
 </style>
 </head>
@@ -151,20 +96,29 @@
 <main>
 
 <!-- HERO COM FOTO -->
-<section class="hero-mounjaro">
+<div class="hero-mounjaro-img">
   <img
     src="../../assets/efeito-mounjaro.jpg"
-    alt="Homem e mulher com faixa da Clínica Gustavo Martins, representando o cuidado estético facial durante o emagrecimento com Mounjaro"
+    alt="Homem e mulher com faixa da Clínica Gustavo Martins representando o cuidado estético facial durante o emagrecimento com Mounjaro"
   >
-  <div class="hero-content">
-    <p class="hero-eyebrow">Harmonização Facial · Emagrecimento</p>
-    <h1>Efeito Mounjaro no rosto:<br><strong>o que a medicação não conta</strong></h1>
-    <p class="hero-sub">Perder peso rápido muda o corpo. Mas muda o rosto também. E essa parte quase ninguém planeja.</p>
-    <p class="hero-meta">Dr. Gustavo Martins · CRO-RJ 49765 · 6 de junho de 2026 · Leitura: 7 min</p>
+</div>
+
+<section class="article-hero" style="background: #0B1D3A; padding-top: 2.5rem; padding-bottom: 0;">
+  <div class="container" style="max-width:780px; padding: 0 2rem 0;">
+    <nav class="proc-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Início</a><span aria-hidden="true">›</span><a href="/blog">Blog</a>
+    </nav>
+    <div class="article-meta">
+      <span>Dr. Gustavo Martins · CRO-RJ 49765</span>
+      <span>6 de junho de 2026</span>
+      <span>Leitura: 7 min</span>
+    </div>
+    <h1>Efeito Mounjaro no rosto: <strong>o que a medicação não conta</strong></h1>
+    <p class="article-hero-sub">Perder peso rápido muda o corpo. Mas muda o rosto também. E essa parte quase ninguém planeja.</p>
   </div>
-  <div class="hero-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C360,72 1080,8 1440,40 L1440,56 L0,56 Z" fill="#ffffff"/>
+  <div class="article-hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,32 C360,64 1080,0 1440,32 L1440,48 L0,48 Z" fill="#ffffff"/>
     </svg>
   </div>
 </section>
