@@ -468,6 +468,10 @@
   border-radius: 16px;
   background: linear-gradient(135deg, #0B1D3A, #16315c);
   box-shadow: 0 16px 48px rgba(11, 29, 58, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .orientacoes-page .combinadas-banner .banner-texto::before {
   content: "Personalizado";
@@ -487,6 +491,16 @@
 }
 .orientacoes-page .combinadas-banner p { color: rgba(255,255,255,0.78); font-size: 1rem; line-height: 1.65; }
 .orientacoes-page .combinadas-banner .banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  align-self: stretch;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: var(--space-6);
+  box-sizing: border-box;
   background: var(--accent);
   color: var(--text);
   font-family: var(--font-body);
@@ -494,7 +508,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: var(--space-4) var(--space-8);
+  padding: var(--space-4) var(--space-6);
   transition: background var(--transition-premium), transform var(--transition-premium), box-shadow var(--transition-premium);
 }
 .orientacoes-page .combinadas-banner .banner-btn svg { stroke-width: 1.6; }
