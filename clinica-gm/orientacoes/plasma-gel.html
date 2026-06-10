@@ -117,19 +117,52 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<style id="orient-nav-fix">
+  body.orientacoes-page { padding-top: var(--header-h); }
+</style>
 </head>
 <body class="orientacoes-page">
 
 <!-- Mini header -->
-<header class="orient-mini-header">
-  <a href="/" class="logo" aria-label="Clínica Dr. Gustavo Martins">
-    <img src="../assets/logo-clinica-navy.png" alt="Clínica Dr. Gustavo Martins">
-  </a>
-  <a href="/orientacoes/" class="back-link">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    Todas as orientações
-  </a>
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="Clínica Gustavo Martins, página inicial">
+      <img src="/assets/logo-clinica-navy.png" alt="Clínica Gustavo Martins" class="logo-img">
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <a href="/#sobre">Sobre</a>
+      <a href="/#procedimentos">Procedimentos</a>
+      <a href="/#naturalup">NaturalUp</a>
+      <a href="/#resultados">Resultados</a>
+      <a href="/#odontologia">Odontologia</a>
+      <a href="/blog">Blog</a>
+      <a href="/orientacoes/" aria-current="page">Orientações</a>
+      <a href="/#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold header-cta header-cta-desktop" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
 </header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+  <a href="/#sobre">Sobre</a>
+  <a href="/#procedimentos">Procedimentos</a>
+  <a href="/#naturalup">NaturalUp</a>
+  <a href="/#resultados">Resultados</a>
+  <a href="/#odontologia">Odontologia</a>
+  <a href="/blog">Blog</a>
+  <a href="/orientacoes/" aria-current="page">Orientações</a>
+  <a href="/#contato">Contato</a>
+  <a href="https://wa.me/5521995523509?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+</nav>
 
 <!-- Header da orientação -->
 <section class="orient-header">
@@ -314,5 +347,39 @@ document.querySelectorAll('.orient-faq-question').forEach(btn => {
 </script>
 
 <script src="orientacoes-premium.js" defer></script>
+<script>
+// Header: menu mobile + hide on scroll (mesmo comportamento da home)
+(function(){
+  var hamburger = document.querySelector('.hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function(){
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
+    });
+    mobileNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  var header = document.getElementById('header');
+  if (header) {
+    var lastScroll = 0;
+    window.addEventListener('scroll', function(){
+      var current = window.scrollY;
+      if (current > 100) {
+        if (current > lastScroll && current > 200) { header.classList.add('hidden'); }
+        else { header.classList.remove('hidden'); }
+      } else { header.classList.remove('hidden'); }
+      lastScroll = current;
+    }, { passive: true });
+  }
+})();
+</script>
 </body>
 </html>
