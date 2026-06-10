@@ -268,6 +268,40 @@
 }
 .blog-no-results.visible { display: block; }
 
+/* ── Destaque: artigos com vídeo ──────────────────── */
+.blog-card[data-video],
+.blog-featured-card[data-video] { position: relative; }
+.blog-card[data-video] {
+  border-color: rgba(201,168,76,0.55);
+  box-shadow: 0 6px 22px rgba(201,168,76,0.14);
+}
+.blog-card[data-video]:hover {
+  border-color: var(--accent);
+  box-shadow: 0 14px 34px rgba(201,168,76,0.22);
+}
+.blog-featured-card[data-video] {
+  box-shadow: inset 0 0 0 1.5px rgba(201,168,76,0.55);
+}
+.blog-video-badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  background: var(--accent);
+  color: #0B1D3A;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.62rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(11,29,58,0.18);
+}
+.blog-video-badge svg { width: 9px; height: 9px; fill: #0B1D3A; display: block; }
+
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 860px) {
   .blog-featured-grid { grid-template-columns: 1fr; }
@@ -354,7 +388,8 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
   <!-- DESTAQUES -->
   <h2 class="blog-section-title">Leituras recomendadas</h2>
   <div class="blog-featured-grid" id="featured-grid">
-          <a href="/blog/efeito-mounjaro-rosto" class="blog-featured-card" data-cat="especiais">
+          <a href="/blog/efeito-mounjaro-rosto" class="blog-featured-card" data-cat="especiais" data-video="1">
+            <span class="blog-video-badge"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>Vídeo</span>
             <div class="blog-featured-body">
               <span class="blog-card-tag">Especiais</span>
               <h2>Efeito Mounjaro no rosto: o que a medicação não conta</h2>
@@ -378,7 +413,8 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
               <span class="blog-card-read">Ler artigo →</span>
             </div>
           </a>
-          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-featured-card" data-cat="planejamento">
+          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-featured-card" data-cat="planejamento" data-video="1">
+            <span class="blog-video-badge"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>Vídeo</span>
             <div class="blog-featured-body">
               <span class="blog-card-tag">Planejamento</span>
               <h2>Estética facial aos 30, 40 e 50 anos</h2>
@@ -409,7 +445,8 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
             </div>
           </a>
 
-          <a href="/blog/efeito-mounjaro-rosto" class="blog-card" data-cat="especiais">
+          <a href="/blog/efeito-mounjaro-rosto" class="blog-card" data-cat="especiais" data-video="1">
+            <span class="blog-video-badge"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>Vídeo</span>
             <div class="blog-card-body">
               <span class="blog-card-tag">Especiais</span>
               <h3>Efeito Mounjaro no rosto: o que a medicação não conta</h3>
@@ -433,7 +470,8 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
               <span class="blog-card-read">Ler artigo →</span>
             </div>
           </a>
-          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-card" data-cat="planejamento">
+          <a href="/blog/estetica-facial-30-40-50-anos" class="blog-card" data-cat="planejamento" data-video="1">
+            <span class="blog-video-badge"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>Vídeo</span>
             <div class="blog-card-body">
               <span class="blog-card-tag">Planejamento</span>
               <h3>Estética facial aos 30, 40 e 50 anos</h3>
@@ -593,7 +631,8 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
               <span class="blog-card-read">Ler artigo →</span>
             </div>
           </a>
-          <a href="/blog/microagulhamento" class="blog-card" data-cat="pele">
+          <a href="/blog/microagulhamento" class="blog-card" data-cat="pele" data-video="1">
+            <span class="blog-video-badge"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l8 5-8 5z"/></svg>Vídeo</span>
             <div class="blog-card-body">
               <span class="blog-card-tag">Pele e Bioestimulação</span>
               <h3>Microagulhamento: o que a padronização errada faz de errado</h3>
