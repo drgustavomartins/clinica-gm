@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR"> 
 <head>
+<!-- Google tag (gtag.js) — Google Ads AW-458661423 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-458661423"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-458661423');
+</script>
 
 
 <meta charset="UTF-8">
@@ -897,6 +905,17 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = current;
 }, { passive: true });
+</script>
+
+
+<!-- Google Ads: WhatsApp click conversion -->
+<script>
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp.com/send"]');
+    if(a){
+      gtag('event', 'conversion', {'send_to': 'AW-458661423/aBfVCNG9kb4cEK-82toB'});
+    }
+  });
 </script>
 
 </body>
