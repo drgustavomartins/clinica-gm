@@ -317,6 +317,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-TG9E4LJLSV');
+  gtag('config', 'AW-458661423');
 </script>
 
 
@@ -1735,6 +1736,17 @@ window.addEventListener('scroll', () => {
   </svg>
   <span>Agendar Consulta</span>
 </a>
+
+
+<!-- Google Ads: conversão WhatsApp -->
+<script>
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp.com/send"]');
+    if(a){
+      gtag('event', 'conversion', {'send_to': 'AW-458661423/aBfVCNG9kb4cEK-82toB'});
+    }
+  });
+</script>
 
 </body>
 </html>
