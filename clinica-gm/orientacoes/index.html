@@ -313,10 +313,12 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
       btn.classList.add('active');
       var filtro = btn.dataset.filtro;
       document.querySelectorAll('.orient-grid > *').forEach(function(el) {
-        if (filtro === 'todos') { el.classList.remove('hidden'); return; }
+        if (filtro === 'todos') { el.classList.remove('hidden'); el.classList.add('is-revealed'); return; }
         var cat = el.dataset.cat;
+        if (!cat) { var ic = el.querySelector('.orient-card[data-cat]'); if (ic) cat = ic.dataset.cat; }
         if (cat === filtro) {
           el.classList.remove('hidden');
+          el.classList.add('is-revealed');
         } else {
           el.classList.add('hidden');
         }
