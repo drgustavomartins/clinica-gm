@@ -546,3 +546,13 @@
 a.orient-card.hidden {
   display: none !important;
 }
+
+
+/* Texto justificado da prosa das orientacoes (paragrafos, timeline, FAQ) */
+.orient-section p,
+.timeline-item p,
+.orient-faq-answer p { /* orient-justify-prose */
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
