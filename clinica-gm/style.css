@@ -500,47 +500,56 @@
 }
 
 .proc-card {
-  flex: 0 0 340px;
+  flex: 0 0 300px;
   scroll-snap-align: start;
-  position: relative;
   border-radius: var(--radius-lg);
-  overflow: hidden;
   cursor: default;
-  aspect-ratio: 3/4;
-  background: var(--bg-surface);
+  background: #fff;
+  border: 1px solid var(--divider);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.proc-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  inset: 0;
+.proc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(11, 29, 58, 0.08);
+  border-color: var(--accent);
+}
+
+.proc-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  flex: 0 0 auto;
 }
 
 .proc-card-body {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-8) var(--space-6) var(--space-6);
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
-  color: #fff;
+  color: var(--text);
 }
 
 .proc-card-body h3 {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 600;
-  color: #fff;
+  color: var(--primary);
   margin-bottom: var(--space-2);
 }
 
 .proc-card-body p {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.8);
+  color: var(--text-muted);
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ===================== CIRURGIAS ESTÉTICAS ===================== */
@@ -2154,7 +2163,6 @@
 
   .proc-card {
     flex: 0 0 260px;
-    aspect-ratio: 3/4;
   }
 
   .pillars-timeline {
