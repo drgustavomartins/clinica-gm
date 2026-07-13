@@ -2476,3 +2476,10 @@
     align-items: stretch;
   }
 }
+
+/* PREMIUM: serif display nos titulos editoriais (hero + section-title) */
+.hero h1, .section-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.005em;
+}
+.hero h1 { line-height: 1.02; }
