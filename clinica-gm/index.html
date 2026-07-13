@@ -4,6 +4,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Security Meta Tags -->
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -527,7 +529,8 @@ document.addEventListener('DOMContentLoaded', function() {
 @media(min-width:901px){.authority-inner .authority-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.authority-inner{flex-direction:column;gap:1.8rem}.authority-photo{flex:0 0 auto}}
 .palco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.palco-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;display:block;border:1px solid rgba(201,168,76,.25)}
+.palco-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;display:block;border:1px solid rgba(201,168,76,.25);transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.palco-grid img:hover{transform:scale(1.025);box-shadow:var(--shadow-lg)}
 @media(max-width:820px){.palco-grid{grid-template-columns:1fr;gap:1rem;max-width:520px;margin:0 auto}}
 .hofmakers-card{display:grid;grid-template-columns:0.92fr 1.08fr;align-items:stretch;max-width:1060px;margin:0 auto;border:1px solid rgba(201,168,76,.28);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.38)}
 .hofmakers-photo{min-height:100%}
