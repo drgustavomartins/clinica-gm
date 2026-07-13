@@ -520,6 +520,12 @@ document.addEventListener('DOMContentLoaded', function() {
 .sobre-registro{margin:.4rem 0 1.2rem;font-size:.9rem;font-weight:700;letter-spacing:.03em;color:var(--text-muted,#2E4068)}
 @media(max-width:900px){.authority-grid{grid-template-columns:repeat(2,1fr);gap:1.3rem}}
 @media(max-width:560px){.authority-grid{grid-template-columns:1fr}}
+.authority-inner{display:flex;align-items:center;gap:2.6rem}
+.authority-photo{flex:0 0 230px}
+.authority-photo img{width:230px;height:300px;object-fit:cover;object-position:center 15%;border-radius:16px;border:3px solid rgba(201,168,76,.55);display:block}
+.authority-content{flex:1 1 auto}
+@media(min-width:901px){.authority-inner .authority-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.authority-inner{flex-direction:column;gap:1.8rem}.authority-photo{flex:0 0 auto}}
 </style>
 </head>
 <body>
@@ -613,6 +619,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- ============ FAIXA DE AUTORIDADE ============ -->
 <section class="authority-band" aria-label="Atuacao como professor e palestrante">
   <div class="container">
+    <div class="authority-inner">
+      <div class="authority-photo">
+        <img src="assets/dr-gustavo-evento.jpg" alt="Dr. Gustavo Martins como palestrante em evento de harmonização orofacial" loading="lazy" width="230" height="300">
+      </div>
+      <div class="authority-content">
     <div class="authority-grid">
       <div class="authority-item">
         <span class="authority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
@@ -643,6 +654,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
+      </div>
+    </div>
     <p class="authority-tagline">Eu cuido de pessoas e ensino pessoas a cuidar de pessoas. Você é tratado por quem domina o que faz.</p>
   </div>
 </section>
@@ -652,8 +665,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container">
     <div class="sobre-grid">
       <div class="sobre-photo fade-in">
-        <img src="assets/dr-gustavo-perfil-2.jpg"
-             alt="Dr. Gustavo Martins, especialista em Método NaturalUp®"
+        <img src="assets/dr-gustavo-evento.jpg"
+             alt="Dr. Gustavo Martins, cirurgião-dentista e biomédico esteta, criador do Método NaturalUp®"
              loading="lazy" width="600" height="800">
       </div>
       <div class="sobre-content fade-in">
