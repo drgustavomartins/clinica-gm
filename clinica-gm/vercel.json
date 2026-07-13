@@ -2,14 +2,46 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/harmonizacao-facial", "destination": "/harmonizacao-facial.html" },
-    { "source": "/botox", "destination": "/botox.html" },
-    { "source": "/dtm", "destination": "/dtm.html" },
-    { "source": "/aparelhos-invisiveis", "destination": "/aparelhos-invisiveis.html" },
-    { "source": "/rio", "destination": "/rio/index.html" },
-    { "source": "/rio-es", "destination": "/rio-es/index.html" },
-    { "source": "/orientacoes", "destination": "/orientacoes/index.html" },
-    { "source": "/orientacoes/:slug", "destination": "/orientacoes/:slug.html" }
+    {
+      "source": "/harmonizacao-facial",
+      "destination": "/harmonizacao-facial.html"
+    },
+    {
+      "source": "/botox",
+      "destination": "/botox.html"
+    },
+    {
+      "source": "/dtm",
+      "destination": "/dtm.html"
+    },
+    {
+      "source": "/aparelhos-invisiveis",
+      "destination": "/aparelhos-invisiveis.html"
+    },
+    {
+      "source": "/hofmakers",
+      "destination": "/hofmakers.html"
+    },
+    {
+      "source": "/lifting-facial",
+      "destination": "/lifting-facial.html"
+    },
+    {
+      "source": "/rio",
+      "destination": "/rio/index.html"
+    },
+    {
+      "source": "/rio-es",
+      "destination": "/rio-es/index.html"
+    },
+    {
+      "source": "/orientacoes",
+      "destination": "/orientacoes/index.html"
+    },
+    {
+      "source": "/orientacoes/:slug",
+      "destination": "/orientacoes/:slug.html"
+    }
   ],
   "headers": [
     {
