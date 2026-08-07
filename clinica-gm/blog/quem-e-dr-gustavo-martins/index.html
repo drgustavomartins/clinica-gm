@@ -105,7 +105,7 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', {
         content_name: 'Clique WhatsApp',
-        content_category: 'Consulta Clinica',
+        content_category: window.__cttCategoria || 'Consulta Clinica',
         content_ids: [pg],
         source_page: pg,
         cta_posicao: pos,
@@ -317,9 +317,6 @@ const header=document.getElementById('header');let lastScroll=0;
 window.addEventListener('scroll',()=>{const c=window.scrollY;if(c>100){if(c>lastScroll&&c>200)header.classList.add('hidden');else header.classList.remove('hidden');}else header.classList.remove('hidden');lastScroll=c;},{passive:true});
 const hb=document.querySelector('.hamburger'),mn=document.getElementById('mobileNav');
 if(hb&&mn){hb.addEventListener('click',()=>{const o=mn.classList.toggle('open');hb.setAttribute('aria-expanded',o);});}
-</script>
-<script>
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href*="whatsapp"]');if(a&&typeof fbq!=='undefined'){fbq('track','Lead',{content_name:'Clique WhatsApp',content_category:'Consulta Clinica',value:1,currency:'BRL'});}},true);
 </script>
 </body>
 </html>

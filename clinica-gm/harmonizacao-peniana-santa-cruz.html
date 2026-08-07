@@ -522,7 +522,7 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', {
         content_name: 'Clique WhatsApp',
-        content_category: 'Consulta Clinica',
+        content_category: window.__cttCategoria || 'Consulta Clinica',
         content_ids: [pg],
         source_page: pg,
         cta_posicao: pos,

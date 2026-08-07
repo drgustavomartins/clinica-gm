@@ -32,13 +32,6 @@
 fbq('init','1522893565961600');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"/></noscript>
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp"]').forEach(function(l){
-    l.addEventListener('click',function(){ if(typeof fbq!=='undefined'){fbq('track','Lead',{content_name:'Clique WhatsApp',content_category:'HOF Makers',value:1,currency:'BRL'});}});
-  });
-});
-</script>
 <style>:root{--ink:#0B1D3A;--ink-deep:#071324;--gold:#C9A84C;--gold-deep:#AA8A2E;--surface:#F4F7FB;--paper:#FFFFFF;--muted:#2E4068;--line:rgba(11,29,58,.14);--gold-line:rgba(201,168,76,.38)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -165,6 +158,7 @@ footer a{color:var(--gold);text-decoration:none}
 .fnav{display:flex;gap:20px;flex-wrap:wrap}
 @media(max-width:620px){footer .wrap{flex-direction:column;align-items:flex-start;text-align:left}}
 </style>
+<script>window.__cttCategoria = 'HOF Makers';</script>
 <!-- Rastreamento de contato WhatsApp -->
 <script>
 (function(){
@@ -201,7 +195,7 @@ footer a{color:var(--gold);text-decoration:none}
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Lead', {
         content_name: 'Clique WhatsApp',
-        content_category: 'Consulta Clinica',
+        content_category: window.__cttCategoria || 'Consulta Clinica',
         content_ids: [pg],
         source_page: pg,
         cta_posicao: pos,
