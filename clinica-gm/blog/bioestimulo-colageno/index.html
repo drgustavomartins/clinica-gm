@@ -30,7 +30,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Sculptra e Radiesse são bioestimuladores?","acceptedAnswer":{"@type":"Answer","text":"Sim, ambos são bioestimuladores de colágeno. O Sculptra usa PLLA (ácido poli-L-lático) e age de forma mais gradual, com pico de resultado em 3 a 6 meses. O Radiesse usa microesferas de hidroxiapatita de cálcio e tem ação dual: volumização imediata e bioestimulação progressiva. A escolha entre eles depende do objetivo clínico, da região tratada e do perfil do paciente."}},{"@type":"Question","name":"Bioestimulador de colágeno faz volume?","acceptedAnswer":{"@type":"Answer","text":"Depende do produto. O Radiesse tem ação volumizadora imediata além da bioestimulação. O Sculptra não faz volume imediato; seu resultado é construído progressivamente ao longo de meses. Em ambos os casos, o objetivo principal é restaurar a espessura e a qualidade dérmica, não adicionar volume como um preenchimento convencional."}},{"@type":"Question","name":"Quantas sessões de bioestimulador são necessárias?","acceptedAnswer":{"@type":"Answer","text":"Para Sculptra, o protocolo mais comum é de 2 a 3 sessões com intervalo de 4 a 6 semanas. Para Radiesse, muitas vezes uma única sessão já entrega resultado expressivo, com manutenção a cada 12 a 18 meses. O planejamento é sempre individualizado."}},{"@type":"Question","name":"Bioestimulador de colágeno tem contraindicações?","acceptedAnswer":{"@type":"Answer","text":"Sim. Gravidez, amamentação, doenças autoimunes ativas e histórico de queloides são contraindicações relevantes. A avaliação clínica prévia é obrigatória para identificar contraindicações específicas de cada paciente."}}]}
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG9E4LJLSV"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TG9E4LJLSV');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TG9E4LJLSV');gtag('config','AW-458661423');</script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -49,6 +49,66 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- Rastreamento de contato WhatsApp -->
+<script>
+(function(){
+  function posicao(a){
+    if (a.classList && a.classList.contains('whatsapp-float')) return 'flutuante';
+    if (!a.closest) return 'corpo';
+    if (a.closest('.proc-hero, .hero, .hero-section, .orient-header')) return 'hero';
+    if (a.closest('.proc-cta, .article-cta, .article-inline-cta, .orient-cta-block, .cta-section, .final-cta')) return 'cta';
+    if (a.closest('.orient-card-bloco, .blog-card, .proc-card')) return 'card';
+    if (a.closest('footer')) return 'rodape';
+    return 'corpo';
+  }
+  function pagina(){
+    var p = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    return p || '/';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var pg = pagina();
+    var pos = posicao(a);
+    var rotulo = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+
+    // Link sem numero de destino: botao de compartilhamento, nao e contato com a clinica
+    var contato = /wa\.me\/\d/.test(href) || /whatsapp\.com\/send\?phone=\d/.test(href);
+    if (!contato) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'share', {method: 'whatsapp', source_page: pg, cta_posicao: pos});
+      }
+      return;
+    }
+
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {
+        content_name: 'Clique WhatsApp',
+        content_category: 'Consulta Clinica',
+        content_ids: [pg],
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo,
+        value: 1,
+        currency: 'BRL'
+      });
+    }
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 1,
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo
+      });
+      gtag('event', 'conversion', {send_to: 'AW-458661423/aBfVCNG9kb4cEK-82toB'});
+    }
+  }, true);
+})();
+</script>
+<!-- Fim do rastreamento de contato WhatsApp -->
+
 </head>
 <body>
 <header class="header" id="header">

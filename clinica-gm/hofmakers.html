@@ -25,7 +25,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalWebPage", "name": "HOF Makers | Equipe Cirúrgica e Ensino em Estética e Cirurgia da Face", "url": "https://www.clinicagustavomartins.com.br/hofmakers", "inLanguage": "pt-BR", "description": "HOF Makers é a equipe cirúrgica e a marca de ensino do Dr. Gustavo Martins e do Dr. Eduardo Coutinho, dedicada à estética e cirurgia da face no Rio de Janeiro.", "about": [{"@type": "Person", "name": "Dr. Gustavo Medeiros Martins", "jobTitle": "Cirurgião-dentista e Biomédico Esteta", "identifier": "CRO-RJ 49765"}, {"@type": "Person", "name": "Dr. Eduardo Coutinho", "jobTitle": "Cirurgião-dentista, especialista em Cirurgia e Traumatologia Bucomaxilofacial, Harmonização Orofacial e Cirurgia Estética Orofacial", "identifier": "CRO-RJ 38163"}], "publisher": {"@type": "MedicalBusiness", "name": "Clínica Gustavo Martins", "url": "https://www.clinicagustavomartins.com.br", "telephone": "+55-21-99552-3509"}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.clinicagustavomartins.com.br"}, {"@type": "ListItem", "position": 2, "name": "HOF Makers", "item": "https://www.clinicagustavomartins.com.br/hofmakers"}]}}</script>
 <link rel="icon" type="image/png" href="/assets/gm-favicon.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG9E4LJLSV"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TG9E4LJLSV');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TG9E4LJLSV');gtag('config','AW-458661423');</script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1522893565961600');fbq('track','PageView');
@@ -164,6 +164,66 @@ footer a{color:var(--gold);text-decoration:none}
 .fnav{display:flex;gap:20px;flex-wrap:wrap}
 @media(max-width:620px){footer .wrap{flex-direction:column;align-items:flex-start;text-align:left}}
 </style>
+<!-- Rastreamento de contato WhatsApp -->
+<script>
+(function(){
+  function posicao(a){
+    if (a.classList && a.classList.contains('whatsapp-float')) return 'flutuante';
+    if (!a.closest) return 'corpo';
+    if (a.closest('.proc-hero, .hero, .hero-section, .orient-header')) return 'hero';
+    if (a.closest('.proc-cta, .article-cta, .article-inline-cta, .orient-cta-block, .cta-section, .final-cta')) return 'cta';
+    if (a.closest('.orient-card-bloco, .blog-card, .proc-card')) return 'card';
+    if (a.closest('footer')) return 'rodape';
+    return 'corpo';
+  }
+  function pagina(){
+    var p = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    return p || '/';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var pg = pagina();
+    var pos = posicao(a);
+    var rotulo = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+
+    // Link sem numero de destino: botao de compartilhamento, nao e contato com a clinica
+    var contato = /wa\.me\/\d/.test(href) || /whatsapp\.com\/send\?phone=\d/.test(href);
+    if (!contato) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'share', {method: 'whatsapp', source_page: pg, cta_posicao: pos});
+      }
+      return;
+    }
+
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {
+        content_name: 'Clique WhatsApp',
+        content_category: 'Consulta Clinica',
+        content_ids: [pg],
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo,
+        value: 1,
+        currency: 'BRL'
+      });
+    }
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 1,
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo
+      });
+      gtag('event', 'conversion', {send_to: 'AW-458661423/aBfVCNG9kb4cEK-82toB'});
+    }
+  }, true);
+})();
+</script>
+<!-- Fim do rastreamento de contato WhatsApp -->
+
 </head>
 <body><div class="topbar"><div class="wrap">
   <div class="tb-left">

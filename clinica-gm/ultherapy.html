@@ -232,25 +232,66 @@ src="https://www.facebook.com/tr?id=1522893565961600&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<!-- Meta Pixel Evento Lead WhatsApp Click -->
+<!-- Rastreamento de contato WhatsApp -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
-  whatsappLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-          content_name: 'Clique WhatsApp',
-          content_category: 'Consulta Clinica',
-          value: 1,
-          currency: 'BRL'
-        });
+(function(){
+  function posicao(a){
+    if (a.classList && a.classList.contains('whatsapp-float')) return 'flutuante';
+    if (!a.closest) return 'corpo';
+    if (a.closest('.proc-hero, .hero, .hero-section, .orient-header')) return 'hero';
+    if (a.closest('.proc-cta, .article-cta, .article-inline-cta, .orient-cta-block, .cta-section, .final-cta')) return 'cta';
+    if (a.closest('.orient-card-bloco, .blog-card, .proc-card')) return 'card';
+    if (a.closest('footer')) return 'rodape';
+    return 'corpo';
+  }
+  function pagina(){
+    var p = location.pathname.replace(/index\.html$/, '').replace(/\.html$/, '');
+    return p || '/';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var pg = pagina();
+    var pos = posicao(a);
+    var rotulo = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+
+    // Link sem numero de destino: botao de compartilhamento, nao e contato com a clinica
+    var contato = /wa\.me\/\d/.test(href) || /whatsapp\.com\/send\?phone=\d/.test(href);
+    if (!contato) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'share', {method: 'whatsapp', source_page: pg, cta_posicao: pos});
       }
-    });
-  });
-});
+      return;
+    }
+
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {
+        content_name: 'Clique WhatsApp',
+        content_category: 'Consulta Clinica',
+        content_ids: [pg],
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo,
+        value: 1,
+        currency: 'BRL'
+      });
+    }
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 1,
+        source_page: pg,
+        cta_posicao: pos,
+        cta_rotulo: rotulo
+      });
+      gtag('event', 'conversion', {send_to: 'AW-458661423/aBfVCNG9kb4cEK-82toB'});
+    }
+  }, true);
+})();
 </script>
-<!-- End Meta Pixel Event -->
+<!-- Fim do rastreamento de contato WhatsApp -->
+
 </head>
 <body>
 
