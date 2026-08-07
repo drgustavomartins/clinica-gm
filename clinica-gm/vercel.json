@@ -27,12 +27,20 @@
       "destination": "/lifting-facial.html"
     },
     {
-      "source": "/ultherapy",
-      "destination": "/ultherapy.html"
-    },
-    {
       "source": "/harmonizacao-peniana",
       "destination": "/harmonizacao-peniana.html"
+    },
+    {
+      "source": "/harmonizacao-peniana-copacabana",
+      "destination": "/harmonizacao-peniana-copacabana.html"
+    },
+    {
+      "source": "/harmonizacao-peniana-barra-da-tijuca",
+      "destination": "/harmonizacao-peniana-barra-da-tijuca.html"
+    },
+    {
+      "source": "/harmonizacao-peniana-santa-cruz",
+      "destination": "/harmonizacao-peniana-santa-cruz.html"
     },
     {
       "source": "/rio",
