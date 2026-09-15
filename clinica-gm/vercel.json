@@ -3,16 +3,6 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "links.clinicagustavomartins.com.br"
-        }
-      ],
-      "destination": "/links/index.html"
-    },
-    {
       "source": "/harmonizacao-facial",
       "destination": "/harmonizacao-facial.html"
     },
@@ -101,6 +91,17 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "links.clinicagustavomartins.com.br"
+        }
+      ],
+      "destination": "https://www.clinicagustavomartins.com.br/links",
+      "permanent": false
+    },
     {
       "source": "/harmonizacao-peniana-barra-da-tijuca",
       "destination": "/harmonizacao-peniana-copacabana",
