@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "links.clinicagustavomartins.com.br"
+        }
+      ],
+      "destination": "/links/index.html"
+    },
+    {
       "source": "/harmonizacao-facial",
       "destination": "/harmonizacao-facial.html"
     },
